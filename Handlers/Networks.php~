@@ -1,0 +1,6 @@
+<?php
+class IRCBot_Handlers_Network {
+    public $networks;
+    
+    //public function 
+}
