@@ -1,4 +1,12 @@
 <?php
+function getBotById($botId = 0)
+{
+    if (!$botId) {
+        $botId = botId();
+    }
+    return IRCBot_Application::getInstance()->getBotHandler()
+        ->getBotById($botId);
+}
 function chan()
 {
     return IRCBot_Application::getInstance()->getIdentifierHandler()->chan;
@@ -13,11 +21,7 @@ function botId()
 }
 function privMsg($target, $message, $botId = 0)
 {
-    if (!$botId) {
-        $botId = botId();
-    }
-    $bot = IRCBot_Application::getInstance()->getBotHandler()
-        ->getBotById($botId);
+    $bot = getBotById($botId);
     if ($bot) {
         return $bot->privMsg($target, $message);
     } else {
@@ -30,11 +34,7 @@ function msg($target, $message, $botId = 0)
 }
 function notice($target, $message, $botId = 0)
 {
-    if (!$botId) {
-        $botId = botId();
-    }
-    $bot = IRCBot_Application::getInstance()->getBotHandler()
-        ->getBotById($botId);
+    $bot = getBotById($botId);
     if ($bot) {
         return $bot->notice($target, $message);
     } else {
@@ -43,11 +43,7 @@ function notice($target, $message, $botId = 0)
 }
 function joinChan($channel, $botId = 0)
 {
-    if (!$botId) {
-        $botId = botId();
-    }
-    $bot = IRCBot_Application::getInstance()->getBotHandler()
-        ->getBotById($botId);
+    $bot = getBotById($botId);
     if ($bot) {
         return $bot->join($channel);
     } else {
@@ -56,11 +52,7 @@ function joinChan($channel, $botId = 0)
 }
 function partChan($channel, $message = null, $botId = 0)
 {
-    if (!$botId) {
-        $botId = botId();
-    }
-    $bot = IRCBot_Application::getInstance()->getBotHandler()
-        ->getBotById($botId);
+    $bot = getBotById($botId);
     if ($bot) {
         return $bot->part($channel, $message);
     } else {
