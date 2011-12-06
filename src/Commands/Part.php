@@ -23,6 +23,13 @@ class IRCBot_Commands_Part extends IRCBot_Types_Command
     {
         return 'onPart';
     }
+    public function getIdentifiers()
+    {
+        $identifiers = array();
+        $identifiers['chan'] = $this->getChan();
+        $identifiers['nick'] = $this->mask->nickname;
+        return $identifiers;
+    }
     public function  __toString()
     {
         return sprintf('PART %s :%s', $this->channel, $this->message) . "\n\r";

@@ -18,6 +18,13 @@ class IRCBot_Commands_PrivMsg extends IRCBot_Types_MessageCommand
     {
         return 'onPrivMsg';
     }
+    public function getIdentifiers()
+    {
+        $identifiers = array();
+        $identifiers['chan'] = $this->getChan();
+        $identifiers['nick'] = $this->mask->nickname;
+        return $identifiers;
+    }
     public function  __toString() {
         return sprintf('PRIVMSG %s :%s', $this->target, $this->message) . "\n\r";
     }

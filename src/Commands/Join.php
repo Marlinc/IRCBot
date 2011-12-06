@@ -22,6 +22,13 @@ class IRCBot_Commands_Join extends IRCBot_Types_Command
     {
         return 'onJoin';
     }
+    public function getIdentifiers()
+    {
+        $identifiers = array();
+        $identifiers['chan'] = $this->getChan();
+        $identifiers['nick'] = $this->mask->nickname;
+        return $identifiers;
+    }
     public function  __toString()
     {
         return sprintf('JOIN :%s', $this->channel) . "\n\r";

@@ -7,5 +7,9 @@ class IRCBot_Types_Command extends IRCBot_Types_Response
      */
     public $botId = 0;
     public function fromRawData($rawData) {}
+    public function getIdentifiers()
+    {
+        return array();
+    }
 }
 ?>

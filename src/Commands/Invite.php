@@ -23,6 +23,13 @@ class IRCBot_Commands_Invite extends IRCBot_Types_Command
     {
         return 'onInvite';
     }
+    public function getIdentifiers()
+    {
+        $identifiers = array();
+        $identifiers['chan'] = $this->getChan();
+        $identifiers['nick'] = $this->mask->nickname;
+        return $identifiers;
+    }
     public function  __toString()
     {
         return sprintf('INVITE %s :%s', $this->target, $this->channel) . "\n\r";

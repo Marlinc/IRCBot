@@ -23,6 +23,13 @@ class IRCBot_Commands_Topic extends IRCBot_Types_Command
     {
         return 'onTopic';
     }
+    public function getIdentifiers()
+    {
+        $identifiers = array();
+        $identifiers['chan'] = $this->getChan();
+        $identifiers['nick'] = $this->mask->nickname;
+        return $identifiers;
+    }
     public function  __toString()
     {
         return sprintf('TOPIC %s :%s', $this->channel, $this->message) . "\n\r";
