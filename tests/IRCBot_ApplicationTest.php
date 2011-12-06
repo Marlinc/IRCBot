@@ -18,7 +18,7 @@ class IRCBot_ApplicationTest extends PHPUnit_Framework_TestCase {
      * This method is called before a test is executed.
      */
     protected function setUp() {
-        $this->object = new IRCBot_Application;
+        $this->object = IRCBot_Application::getInstance();
     }
 
     /**
@@ -31,90 +31,65 @@ class IRCBot_ApplicationTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testGetInstance().
      */
     public function testGetInstance() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertInstanceOf('IRCBot_Application', $this->object);
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testGetEventHandler().
      */
     public function testGetEventHandler() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertInstanceOf('IRCBot_Handlers_Events',
+            $this->object->getEventHandler());
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testGetModuleHandler().
      */
     public function testGetModuleHandler() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertInstanceOf('IRCBot_Handlers_Modules',
+            $this->object->getModuleHandler());
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testGetBotHandler().
      */
     public function testGetBotHandler() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertInstanceOf('IRCBot_Handlers_Bots',
+            $this->object->getBotHandler());
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testGetSocketHandler().
      */
     public function testGetSocketHandler() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertInstanceOf('IRCBot_Handlers_Sockets',
+            $this->object->getSocketHandler());
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testGetQueueHandler().
      */
     public function testGetQueueHandler() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertInstanceOf('IRCBot_Handlers_Sockets',
+            $this->object->getSocketHandler());
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testGetCommandParser().
      */
     public function testGetCommandParser() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertInstanceOf('IRCBot_Parsers_Commands',
+            $this->object->getCommandParser());
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testGetResponseHandler().
      */
     public function testGetResponseHandler() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertInstanceOf('IRCBot_Handlers_Responses',
+            $this->object->getResponseHandler());
     }
 
     /**

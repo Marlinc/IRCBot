@@ -19,6 +19,8 @@ class IRCBot_Utilities_StringTest extends PHPUnit_Framework_TestCase {
      */
     protected function setUp() {
         $this->object = new IRCBot_Utilities_String;
+        $testString = 'Hello! This sentence should be tokenized.';
+        IRCBot_Utilities_String::tokenize($testString);
     }
 
     /**
@@ -42,40 +44,28 @@ class IRCBot_Utilities_StringTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testToken().
      */
     public function testToken() {
-        // Remove the following lines when you implement this test.
-        $testString = 'Hello! This sentence should be tokenized.';
-        IRCBot_Utilities_String::tokenize($testString);
-        
         $this->assertEquals('Hello!', IRCBot_Utilities_String::token('0'));
-        
-        /*$this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );*/
+        $this->assertEquals('This sentence', IRCBot_Utilities_String::token('1-2'));
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testTokenizeCleanup().
      */
     public function testTokenizeCleanup() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        IRCBot_Utilities_String::tokenizeCleanup();
+        $this->assertNotEquals('Hello!', IRCBot_Utilities_String::token('0'));
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testRemoveNewlines().
      */
     public function testRemoveNewlines() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $string = 'A string with ' . PHP_EOL . ' much ' . PHP_EOL . PHP_EOL
+            . ' newlines';
+        $newString = IRCBot_Utilities_String::removeNewlines($string);  
+        $this->assertEquals('A string with much newlines', $newString);
     }
 
 }
