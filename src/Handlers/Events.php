@@ -23,18 +23,24 @@ class IRCBot_Handlers_Events
     private $_callbacks = array();
     /**
      * Raises the specific event with the data if given
-     * @param string $eventName The name of the event to be raised
+     * @param mixed $eventName The name of the event to be raised or a array of names
      * @param mixed $data The data send with the raised event
      */
     public function raiseEvent($eventName, $data = null)
     {
-        if ($eventName != 'loopIterate') {
-            IRCBot_Application::getInstance()->getDebugger()
-                ->log('Events', 'RaisedEvent', $eventName);
-        }
-        foreach ($this->_callbacks as $callback) {
-            if ($callback['eventName'] == $eventName) {
-                call_user_func($callback['callback'], $data);
+        if (is_array($eventName)) {
+            foreach ($eventName as $name) {
+                $this->raiseEvent($name, $data);
+            }
+        } else {
+            if ($eventName != 'loopIterate') {
+                IRCBot_Application::getInstance()->getDebugger()
+                    ->log('Events', 'RaisedEvent', $eventName);
+            }
+            foreach ($this->_callbacks as $callback) {
+                if ($callback['eventName'] == $eventName) {
+                    call_user_func($callback['callback'], $data);
+                }
             }
         }
     }
