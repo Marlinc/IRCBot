@@ -42,50 +42,41 @@ class IRCBot_Handlers_Responses
             $identifiers->set('chan', $command->getChan())
                 ->set('nick', $command->mask->nickname);
             IRCBot_Utilities_String::tokenize($command->message);
-            $eventHandler->raiseEvent('onNotice', $command);
         }
         elseif ($command instanceof IRCBot_Commands_Ping) {
-            $eventHandler->raiseEvent('onPing', $command);
         }
         elseif ($command instanceof IRCBot_Commands_Pong) {
-            $eventHandler->raiseEvent('onPong', $command);
         }
         elseif ($command instanceof IRCBot_Commands_Quit) {
             IRCBot_Utilities_String::tokenize($command->message);
-            $eventHandler->raiseEvent('onQuit', $command);
         }
         elseif ($command instanceof IRCBot_Commands_PrivMsg) {
             $identifiers->set('chan', $command->getChan())
                 ->set('nick', $command->mask->nickname);
             IRCBot_Utilities_String::tokenize($command->message);
-            $eventHandler->raiseEvent('onPrivMsg', $command);
         }
         elseif ($command instanceof IRCBot_Commands_Join) {
             $identifiers->set('chan', $command->channel)
                 ->set('nick', $command->mask->nickname);
-            $eventHandler->raiseEvent('onJoin', $command);
         }
         elseif ($command instanceof IRCBot_Commands_Part) {
             $identifiers->set('chan', $command->channel)
                 ->set('nick', $command->mask->nickname);
             IRCBot_Utilities_String::tokenize($command->message);
-            $eventHandler->raiseEvent('onPart', $command);
         }
         elseif ($command instanceof IRCBot_Commands_Topic) {
             $identifiers->set('chan', $command->channel)
                 ->set('nick', $command->mask->nickname);
             IRCBot_Utilities_String::tokenize($command->message);
-            $eventHandler->raiseEvent('onTopic', $command);
         }
         elseif ($command instanceof IRCBot_Commands_Error) {
             IRCBot_Utilities_String::tokenize($command->message);
-            $eventHandler->raiseEvent('onError', $command);
         }
         elseif ($command instanceof IRCBot_Commands_Invite) {
             $identifiers->set('chan', $command->channel)
                 ->set('nick', $command->mask->nickname);
-            $eventHandler->raiseEvent('onInvite', $command);
         }
+        $eventHandler->raiseEvent($command->getEventName(), $command);
     }
     public function handleNumeric(IRCBot_Types_Numeric $numeric)
     {

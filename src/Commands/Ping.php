@@ -10,7 +10,12 @@ class IRCBot_Commands_Ping extends IRCBot_Types_Command
     {
         sscanf($rawData, 'PING :%[ -~]', $this->code);
     }
-    public function  __toString() {
+    public function getEventName()
+    {
+        return 'onPing';
+    }
+    public function  __toString()
+    {
         return sprintf('PING :%s', $this->code);
     }
 }

@@ -1,7 +1,8 @@
 <?php
 class IRCBot_Commands_Notice extends IRCBot_Types_MessageCommand
 {
-    public function  __construct($target = null, $message = null) {
+    public function  __construct($target = null, $message = null)
+    {
         $this->target = $target;
         $this->message = $message;
     }
@@ -14,7 +15,12 @@ class IRCBot_Commands_Notice extends IRCBot_Types_MessageCommand
         $this->sender = $mask->nickname;
         $this->mask = $mask;
     }
-    public function  __toString() {
+    public function getEventName()
+    {
+        return 'onNotice';
+    }
+    public function  __toString()
+    {
         return sprintf('NOTICE %s :%s', $this->target, $this->message) . "\n\r";
     }
 }

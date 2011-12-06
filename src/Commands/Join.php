@@ -6,7 +6,8 @@ class IRCBot_Commands_Join extends IRCBot_Types_Command
      */
     public $mask;
     public $channel;
-    public function  __construct($channel = null) {
+    public function  __construct($channel = null)
+    {
         $this->channel = $channel;
     }
     public function fromRawData($rawData)
@@ -17,7 +18,12 @@ class IRCBot_Commands_Join extends IRCBot_Types_Command
         $mask->fromMask($this->mask);
         $this->mask = $mask;
     }
-    public function  __toString() {
+    public function getEventName()
+    {
+        return 'onJoin';
+    }
+    public function  __toString()
+    {
         return sprintf('JOIN :%s', $this->channel) . "\n\r";
     }
 }

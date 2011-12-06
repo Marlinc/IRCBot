@@ -7,7 +7,8 @@ class IRCBot_Commands_Part extends IRCBot_Types_Command
     public $mask;
     public $channel;
     public $message = '';
-    public function  __construct($channel = null, $message = null) {
+    public function  __construct($channel = null, $message = null)
+    {
         $this->channel = $channel;
         $this->message = $message;
     }
@@ -18,7 +19,12 @@ class IRCBot_Commands_Part extends IRCBot_Types_Command
         $mask->fromMask($this->mask);
         $this->mask = $mask;
     }
-    public function  __toString() {
+    public function getEventName()
+    {
+        return 'onPart';
+    }
+    public function  __toString()
+    {
         return sprintf('PART %s :%s', $this->channel, $this->message) . "\n\r";
     }
 }

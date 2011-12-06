@@ -14,6 +14,10 @@ class IRCBot_Commands_PrivMsg extends IRCBot_Types_MessageCommand
         $this->sender = $mask->nickname;
         $this->mask = $mask;
     }
+    public function getEventName()
+    {
+        return 'onPrivMsg';
+    }
     public function  __toString() {
         return sprintf('PRIVMSG %s :%s', $this->target, $this->message) . "\n\r";
     }
