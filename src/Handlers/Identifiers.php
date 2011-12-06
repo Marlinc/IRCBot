@@ -2,7 +2,7 @@
 class IRCBot_Handlers_Identifiers
 {
     private $_identifiers = array();
-    public function set($identifier, $value)
+    public function set()
     {
         if (is_array(func_get_arg(0)) {
             $settings = func_get_arg(0);
