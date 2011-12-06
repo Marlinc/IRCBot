@@ -4,7 +4,7 @@ class IRCBot_Handlers_Identifiers
     private $_identifiers = array();
     public function set()
     {
-        if (is_array(func_get_arg(0)) {
+        if (is_array(func_get_arg(0))) {
             $settings = func_get_arg(0);
             foreach ($settings as $setting => $value) {
                 $this->set($setting, $value);
