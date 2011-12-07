@@ -41,7 +41,7 @@ class IRCBot_Handlers_Responses
         if (isset($command->message)) {
             IRCBot_Utilities_String::tokenize($command->message);
         }
-        $identifiers->set($command->getIdentifier());
+        $identifiers->set($command->getIdentifiers());
         $eventHandler->raiseEvent($command->getEventName(), $command);
     }
     public function handleNumeric(IRCBot_Types_Numeric $numeric)
