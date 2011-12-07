@@ -39,8 +39,6 @@ class IRCBot_Loop
                 $condition = true;
             }
             call_user_func($onInterate, $this->iterations);
-            var_dump($this->iterations, $iterations);
-            ob_flush();
             usleep(25*1000);
         }
         return $this->iterations;
