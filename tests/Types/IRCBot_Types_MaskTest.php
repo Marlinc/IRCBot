@@ -19,6 +19,7 @@ class IRCBot_Types_MaskTest extends PHPUnit_Framework_TestCase {
      */
     protected function setUp() {
         $this->object = new IRCBot_Types_Mask;
+        $this->object->fromMask('nick!user@host');
     }
 
     /**
@@ -31,24 +32,18 @@ class IRCBot_Types_MaskTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testFromMask().
      */
     public function testFromMask() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertEquals('nick', $this->object->nickname);
+        $this->assertEquals('user', $this->object->ident);
+        $this->assertEquals('host', $this->object->host);
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement test__toString().
      */
     public function test__toString() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertEquals('nick!user@host', (string) $this->object);
     }
 
 }

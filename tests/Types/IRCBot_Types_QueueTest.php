@@ -19,6 +19,9 @@ class IRCBot_Types_QueueTest extends PHPUnit_Framework_TestCase {
      */
     protected function setUp() {
         $this->object = new IRCBot_Types_Queue;
+        $this->object->addEntry('test');
+        $this->object->addEntry('test2');
+        $this->object->addEntry('test3');
     }
 
     /**
@@ -31,68 +34,48 @@ class IRCBot_Types_QueueTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testGetFirstEntry().
      */
     public function testGetFirstEntry() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertEquals('test', $this->object->getFirstEntry());
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testDelFirstEntry().
      */
     public function testDelFirstEntry() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->delFirstEntry();
+        $this->assertEquals('test2', $this->object->getFirstEntry());
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testShift().
      */
     public function testShift() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertEquals('test', $this->object->shift());
+        $this->assertEquals('test2', $this->object->shift());
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testAddEntry().
      */
     public function testAddEntry() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->addEntry('aaaa');
+        $this->assertEquals(4, $this->object->getEntryCount());
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testAddEntries().
      */
     public function testAddEntries() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->addEntries(array('aaaa', 'aaaa'));
+        $this->assertEquals(5, $this->object->getEntryCount());
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testGetEntryCount().
      */
     public function testGetEntryCount() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertEquals(3, $this->object->getEntryCount());
     }
 
     /**
@@ -100,21 +83,17 @@ class IRCBot_Types_QueueTest extends PHPUnit_Framework_TestCase {
      * @todo Implement testClean().
      */
     public function testClean() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->clean();
+        $this->assertEquals(0, $this->object->getEntryCount());
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testIsEmpty().
      */
     public function testIsEmpty() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertFalse($this->object->isEmpty());
+        $this->object->clean();
+        $this->assertTrue($this->object->isEmpty());
     }
 
 }
