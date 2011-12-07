@@ -19,6 +19,8 @@ class IRCBot_Types_ChannelTest extends PHPUnit_Framework_TestCase {
      */
     protected function setUp() {
         $this->object = new IRCBot_Types_Channel;
+        $this->object->nicklist['TestUser1'] = CHAN_MODE_OP;
+        $this->object->nicklist['TestUser2'] = 0;
     }
 
     /**
@@ -31,13 +33,10 @@ class IRCBot_Types_ChannelTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testIsOp().
      */
     public function testIsOp() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertTrue($this->object->isOp('TestUser1'));
+        $this->assertFalse($this->object->isOp('TestUser2'));
     }
 
 }

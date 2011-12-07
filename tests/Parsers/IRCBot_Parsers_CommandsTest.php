@@ -31,13 +31,16 @@ class IRCBot_Parsers_CommandsTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testParseCommand().
      */
     public function testParseCommand() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $tests = array();
+        $tests[':nick!user@host NOTICE BotName :Hey!'] = 'IRCBot_Commands_Notice';
+        $tests['PING :TestPing'] = 'IRCBot_Commands_Ping';
+        $tests['PONG :TestPong'] = 'IRCBot_Commands_Pong';
+        $tests[':nick!user@host QUIT :TestPong'] = 'IRCBot_Commands_Quit';
+        foreach ($tests as $text => $class) {
+            $this->assertInstanceOf($class, $this->object->parseCommand($text));
+        }
     }
 
 }

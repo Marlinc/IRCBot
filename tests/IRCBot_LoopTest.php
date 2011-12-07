@@ -31,13 +31,16 @@ class IRCBot_LoopTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testStartLoop().
      */
     public function testStartLoop() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->assertEquals(10, $this->object->startLoop(10, function () {},
+            function () {}));
+        $this->assertEquals(25, $this->object->startLoop(25, function () {},
+            function () {}));
+        $this->assertEquals(100, $this->object->startLoop(100, function () {},
+            function () {}));
+        $this->assertEquals(250, $this->object->startLoop(250, function () {},
+            function () {}));
     }
 
 }
