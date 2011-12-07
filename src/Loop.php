@@ -21,16 +21,39 @@ class IRCBot_Loop
     /**
      * This method will start the infinite loop
      */
-    public function startLoop()
+    public function startLoop($iterations = 0, $onStart = null, $onInterate = null)
+    {
+        if (!$onStart) {
+            $onStart = array($this, 'onStart');
+        }
+        if (!$onInterate) {
+            $onInterate = array($this, 'onIterate');
+        }
+        call_user_func($onStart);
+        $condition = true;
+        while ($condition) {
+            ++$this->iterations;
+            if (!empty($iterations)) {
+                $condition = ($iterations > $this->iterations);
+            } else {
+                $condition = true;
+            }
+            call_user_func($onInterate, $this->iterations);
+            var_dump($this->iterations, $iterations);
+            ob_flush();
+            usleep(25*1000);
+        }
+        return $this->iterations;
+    }
+    public function onStart()
     {
         IRCBot_Application::getInstance()->getEventHandler()
             ->raiseEvent('loopStarted');
-        while (true) {
-            ++$this->iterations;
-            IRCBot_Application::getInstance()->getEventHandler()
-                ->raiseEvent('loopIterate', $this->iterations);
-            usleep(25*1000);
-        }
+    }
+    public function onIterate($iteration)
+    {
+        IRCBot_Application::getInstance()->getEventHandler()
+            ->raiseEvent('loopIterate', $iteration);
     }
 }
 ?>
