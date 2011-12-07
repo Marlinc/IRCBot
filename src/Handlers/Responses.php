@@ -50,7 +50,7 @@ class IRCBot_Handlers_Responses
         IRCBot_Utilities_String::tokenize($numeric->message);
         $identifiers = IRCBot_Application::getInstance()->getIdentifierHandler();
         $identifiers->botId = $numeric->botId;
-        $eventHandler->raiseEvent($this->getEventName(), $numeric);
+        $eventHandler->raiseEvent($numeric->getEventName(), $numeric);
     }
 }
 ?>
