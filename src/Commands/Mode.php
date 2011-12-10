@@ -10,7 +10,6 @@ class IRCBot_Commands_Mode extends IRCBot_Types_Command
         preg_match('/\:(.+) MODE (.+) (\:)?(.+)/', $rawData, $matches);
         list(, $this->mask, $this->target,, $this->modes) = $matches;
         $this->mask = new IRCBot_Types_Mask($this->mask);
-        var_dump($this);
     }
     public function getEventName()
     {
