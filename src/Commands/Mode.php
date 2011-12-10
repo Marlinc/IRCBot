@@ -1,24 +1,23 @@
 <?php
-class IRCBot_Commands_Nick extends IRCBot_Types_Command
+class IRCBot_Commands_Mode extends IRCBot_Types_Command
 {
-    /**
-     * The old nickname
-     * @var string
-     */
-    public $oldNick;
-    /**
-     * The new nickname
-     * @var string
-     */
-    public $newNick;
-    public function  __construct($newNick = null) {
-        $this->newNick = $newNick;
-    }
+    public $mask;
+    public $target;
+    public $modes; 
+    
     public function fromRawData($rawData)
     {
-        sscanf($rawData, ':%s NICK :%s', $this->oldNick, $this->newNick);
+        preg_match('/\:(.+) MODE (.+) (\:)?(.+)/', $rawData, $matches);
+        list(, $this->mask, $this->target,, $this->modes) = $matches;
+        $this->mask = new IRCBot_Types_Mask($this->mask);
+        var_dump($this);
     }
-    public function  __toString() {
+    public function getEventName()
+    {
+        return 'onMode';
+    }
+    public function  __toString()
+    {
         return sprintf('NICK %s', $this->newNick) . "\n\r";
     }
 }
