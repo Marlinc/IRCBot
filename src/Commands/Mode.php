@@ -18,7 +18,7 @@ class IRCBot_Commands_Mode extends IRCBot_Types_Command
     }
     public function  __toString()
     {
-        return sprintf('NICK %s', $this->newNick) . "\n\r";
+        return sprintf('MODE %s %s', $this->target, $this->modes) . "\n\r";
     }
 }
 ?>
