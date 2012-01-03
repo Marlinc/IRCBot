@@ -11,38 +11,38 @@ class IRCBot_Types_Queue
     }
     public function delFirstEntry()
     {
-    reset($this->_queue);
-    $data = each($this->_queue);
-    unset($this->_queue[$data['key']]);
-    return $this;
+        reset($this->_queue);
+        $data = each($this->_queue);
+        unset($this->_queue[$data['key']]);
+        return $this;
     }
     public function shift()
     {
-    return array_shift($this->_queue);
+        return array_shift($this->_queue);
     }
     public function addEntry($entry)
     {
-    $this->_queue[] = $entry;
-    return $this;
+        $this->_queue[] = $entry;
+        return $this;
     }
     public function addEntries(array $entries)
     {
-    foreach ($entries as $entry) {
-    $this->addEntry($entry);
-    }
-    return $this;
+        foreach ($entries as $entry) {
+            $this->addEntry($entry);
+        }
+        return $this;
     }
     public function getEntryCount()
     {
-    return count($this->_queue);
+        return count($this->_queue);
     }
     public function clean()
     {
-    $this->_queue = array();
+        $this->_queue = array();
     }
     public function isEmpty()
     {
-    return (count($this->_queue) == 0) ? true : false;
+        return (count($this->_queue) == 0) ? true : false;
     }
 }
 ?>
