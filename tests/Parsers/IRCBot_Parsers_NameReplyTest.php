@@ -19,6 +19,9 @@ class IRCBot_Parsers_NameReplyTest extends PHPUnit_Framework_TestCase {
      */
     protected function setUp() {
         $this->object = new IRCBot_Parsers_NameReply;
+        define('CHAN_MODE_VOICE',  1);
+        define('CHAN_MODE_HALFOP', 2);
+        define('CHAN_MODE_OP',     4);
     }
 
     /**
@@ -31,13 +34,17 @@ class IRCBot_Parsers_NameReplyTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testParseNames().
      */
     public function testParseNames() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $start = ':server 353 bot = #channel :';
+        $tests = array();
+        $tests['@TestBot'] = array('TestBot' => CHAN_MODE_OP);
+        $tests['+TestBot'] = array('TestBot' => CHAN_MODE_VOICE);
+        $tests['+TestBot @TestUser'] = array('TestBot'  => CHAN_MODE_VOICE,
+                                             'TestUser' => CHAN_MODE_OP);
+        foreach ($tests as $data => $userlist) {
+            $this->assertEquals($userlist, $this->object->parseNames($start . $data));
+        }
     }
 
 }
