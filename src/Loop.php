@@ -40,7 +40,7 @@ class IRCBot_Loop
         if (!$onStart) {
             $onStart = array($this, 'onStart');
         }
-        if (!$onInterate) {
+        if (!$onIterate) {
             $onIterate = array($this, 'onIterate');
         }
         call_user_func($onStart);
