@@ -102,7 +102,8 @@ class IRCBot_Application
         $this->_handlers['networks'] = new IRCBot_Handlers_Networks();
         $this->_parsers['commands'] = new IRCBot_Parsers_Commands();
         $this->_loop = new IRCBot_Loop();
-        $this->getModuleHandler()->addModuleByObject(new IRCBot_Modules_Main());
+        $mainModule = new IRCBot_Modules_Main();
+        $this->getModuleHandler()->addModuleByObject($mainModule);
         $this->getEventHandler()->raiseEvent('ircbotInitialized');
     }
     /**
