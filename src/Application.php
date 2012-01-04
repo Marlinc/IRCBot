@@ -1,9 +1,14 @@
 <?php
 /**
+ * The main application class
+ * 
+ * PHP version 5
+ * 
  * @category IRCBot
- * @package IRCBot
- * @subpackage Application
- * @author Marlin Cremers <marlinc@mms-projects.net>
+ * @package  IRCBot
+ * @author   Marlin Cremers <marlinc@mms-projects.net>
+ * @license  http://www.freebsd.org/copyright/freebsd-license.html  BSD License (2 Clause)
+ * @link     https://github.com/Marlinc/IRCBot
  */
 
 require_once 'Handlers/Events.php';
@@ -56,31 +61,30 @@ require_once 'shortFunctions.php';
  *
  * The main IRCBot application object contains all the other important objects
  * like the database, socket and module handlers
+ * 
+ * @author  Marlin Cremers <marlinc@mms-projects.net>
+ * @license http://www.freebsd.org/copyright/freebsd-license.html  BSD License (2 Clause)
+ * @link    https://github.com/Marlinc/IRCBot
  */
 class IRCBot_Application
 {
-    /**
-     * The IRCBot application instance
-     *
-     * @access private
-     * @var object
-     */
     private static $_instance = null;
-    /**
-     * This variable contains all the handlers
-     * @var array 
-     */
     private $_handlers = array();
     private $_parsers = array();
-    /**
-     * This variable contains the IRCBot loop
-     * @var IRCBot_Loop
-     */
     private $_loop = null;
     private $_debugger = null;
-    private function  __construct() {}
+    
+    /**
+     * The private constructor
+     */
+    private function  __construct()
+    {
+        
+    }
     /**
      * Initialize the IRCBot application
+     * 
+     * @return void
      */
     private function _init()
     {
@@ -103,6 +107,7 @@ class IRCBot_Application
     }
     /**
      * Return a instance of the IRCBot application
+     * 
      * @return IRCBot_Application
      */
     public static function getInstance()
@@ -114,6 +119,8 @@ class IRCBot_Application
         return self::$_instance;
     }
     /**
+     * Returns the event handler
+     * 
      * @return IRCBot_Handlers_Events
      */
     public function getEventHandler()
@@ -121,6 +128,8 @@ class IRCBot_Application
         return $this->_handlers['events'];
     }
     /**
+     * Returns the module handler
+     * 
      * @return IRCBot_Handlers_Modules
      */
     public function getModuleHandler()
@@ -128,6 +137,8 @@ class IRCBot_Application
         return $this->_handlers['modules'];
     }
     /**
+     * Returns the bot handler
+     * 
      * @return IRCBot_Handlers_Bots
      */
     public function getBotHandler()
@@ -135,6 +146,8 @@ class IRCBot_Application
         return $this->_handlers['bots'];
     }
     /**
+     * Returns the socket handler
+     * 
      * @return IRCBot_Handlers_Sockets
      */
     public function getSocketHandler()
@@ -142,6 +155,8 @@ class IRCBot_Application
         return $this->_handlers['sockets'];
     }
     /**
+     * Returns the queue handler
+     * 
      * @return IRCBot_Handlers_Queues
      */
     public function getQueueHandler()
@@ -149,6 +164,8 @@ class IRCBot_Application
         return $this->_handlers['queues'];
     }
     /**
+     * Returns the command parser
+     * 
      * @return IRCBot_Parsers_Commands
      */
     public function getCommandParser()
@@ -156,6 +173,8 @@ class IRCBot_Application
         return $this->_parsers['commands'];
     }
     /**
+     * Returns the response handler
+     * 
      * @return IRCBot_Handlers_Commands
      */
     public function getResponseHandler()
@@ -163,6 +182,8 @@ class IRCBot_Application
         return $this->_handlers['responses'];
     }
     /**
+     * Returns the user command handler
+     * 
      * @return IRCBot_Handlers_UserCommands
      */
     public function getUserCommandHandler()
@@ -170,6 +191,8 @@ class IRCBot_Application
         return $this->_handlers['user_commands'];
     }
     /**
+     * Returns the identifier handler
+     * 
      * @return IRCBot_Handlers_Identifiers
      */
     public function getIdentifierHandler()
@@ -177,6 +200,8 @@ class IRCBot_Application
         return $this->_handlers['identifiers'];
     }
     /**
+     * Returns the channel handler
+     * 
      * @return IRCBot_Handlers_Channels
      */
     public function getChannelHandler()
@@ -184,6 +209,8 @@ class IRCBot_Application
         return $this->_handlers['channels'];
     }
     /**
+     * Returns the network handler
+     * 
      * @return IRCBot_Handlers_Networks
      */
     public function getNetworkHandler()
@@ -191,6 +218,8 @@ class IRCBot_Application
         return $this->_handlers['networks'];
     }
     /**
+     * Returns the loop class
+     * 
      * @return IRCBot_Loop
      */
     public function getLoop()
@@ -198,6 +227,8 @@ class IRCBot_Application
         return $this->_loop;
     }
     /**
+     * Returns the debugger class
+     * 
      * @return IRCBot_Debugger
      */
     public function getDebugger()

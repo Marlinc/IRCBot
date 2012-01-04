@@ -1,4 +1,26 @@
 <?php
+/**
+ * File with shortened functions
+ * 
+ * This file contains functions that are use most so they can be called in a much
+ * easier fashion
+ * 
+ * PHP version 5
+ * 
+ * @author  Marlin Cremers <marlinc@mms-projects.net>
+ * @license http://www.freebsd.org/copyright/freebsd-license.html  BSD License (2 Clause)
+ * @link    https://github.com/Marlinc/IRCBot
+ */
+
+/**
+ * Returns a bot class by the given id
+ * 
+ * @param int $botId The bot id
+ * 
+ * @return IRCBot_Types_Bot
+ * 
+ * @see IRCBot_Handlers_Bots::getBotById()
+ */
 function getBotById($botId = 0)
 {
     if (!$botId) {
@@ -7,10 +29,20 @@ function getBotById($botId = 0)
     return IRCBot_Application::getInstance()->getBotHandler()
         ->getBotById($botId);
 }
+/**
+ * Returns the current channel name
+ * 
+ * @return string Returns the channel name 
+ */
 function chan()
 {
     return IRCBot_Application::getInstance()->getIdentifierHandler()->chan;
 }
+/**
+ * Returns the nickname of the user who triggered the current event
+ * 
+ * @return string The nickname of a user
+ */
 function nick()
 {
     return IRCBot_Application::getInstance()->getIdentifierHandler()->nick;
