@@ -1,6 +1,7 @@
 <?php
 
 require_once dirname(__FILE__) . '/../../src/Handlers/Channels.php';
+require_once dirname(__FILE__) . '/../../src/Types/Channel.php';
 
 /**
  * Test class for IRCBot_Handlers_Channels.
@@ -19,6 +20,14 @@ class IRCBot_Handlers_ChannelsTest extends PHPUnit_Framework_TestCase {
      */
     protected function setUp() {
         $this->object = new IRCBot_Handlers_Channels;
+        $channels = array();
+        $channels[] = 'test-channel';
+        $channels[] = 'TestChannel123.1';
+        foreach ($channels as $channel) {
+            $return = $this->object->addChan($channel, 0);
+            $this->assertInstanceOf('IRCBot_Types_Channel', $return);
+            $this->assertEquals($channel, $return->name);
+        }
     }
 
     /**
@@ -31,35 +40,37 @@ class IRCBot_Handlers_ChannelsTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testGetChan().
-     */
-    public function testGetChan() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
-    }
-
-    /**
-     * @covers {className}::{origMethodName}
-     * @todo Implement testAddChan().
      */
     public function testAddChan() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $return = $this->object->addChan('somechan', 0);
+        $this->assertInstanceOf('IRCBot_Types_Channel', $return);
+        $this->assertEquals('somechan', $return->name);
+    }
+    
+    /**
+     * @covers {className}::{origMethodName}
+     */
+    public function testGetChan() {
+        $channels = array();
+        $channels['test-channel'] = true;
+        $channels['TestChannel123.1'] = true;
+        $channels['doesn\'t extist'] = false;
+        foreach ($channels as $channel => $shouldSucceed) {
+            $return = $this->object->getChan($channel, 0);
+            if ($shouldSucceed) {
+                $this->assertEquals($channel, $return->name);
+            } else {
+                $this->assertNull($return);
+            }
+        }
     }
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testDelChan().
      */
     public function testDelChan() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->delChan('test-channel', 0);
+        $this->assertNull($this->object->delChan('test-channel', 0));
     }
 
 }
