@@ -1,8 +1,9 @@
 language: php
 php:
-  - 5.2
   - 5.3
   - 5.4
+before_script:
+  - tests/travis/extensions.sh
 script: phpunit tests/
 notifications:
   irc: "irc.quakenet.org#mms-projects"
