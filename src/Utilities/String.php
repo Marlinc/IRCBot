@@ -1,13 +1,47 @@
 <?php
+/**
+ * The string utility file
+ * 
+ * PHP version 5
+ * 
+ * @author  Marlin Cremers <marlinc@mms-projects.net>
+ * @license http://www.freebsd.org/copyright/freebsd-license.html  BSD License (2 Clause)
+ * @link    https://github.com/Marlinc/IRCBot
+ */
+
+/**
+ * The actual string utility class
+ * 
+ * @author  Marlin Cremers <marlinc@mms-projects.net>
+ * @license http://www.freebsd.org/copyright/freebsd-license.html  BSD License (2 Clause)
+ * @link    https://github.com/Marlinc/IRCBot
+ */
 class IRCBot_Utilities_String
 {
     static private $_tokens = array();
     static private $_tokenizeChr = 32;
+    
+    /**
+     * Tokenizes a string 
+     *  
+     * @param string $string The string to tokenize
+     * @param int    $chr    The ASCII character code to use when tokenizing
+     * 
+     * @return void
+     */
     static public function tokenize($string, $chr = 32)
     {
         self::$_tokenizeChr = (is_int($chr)) ? chr($chr) : $chr;
         self::$_tokens = explode(self::$_tokenizeChr, $string);
     }
+    
+    /**
+     * Returns a specific token a tokenized string
+     * 
+     * @param string $token The token to return
+     * 
+     * @return string Returns the tokens
+     */
     static public function token($token)
     {
         $token = (string) $token;
@@ -32,12 +66,25 @@ class IRCBot_Utilities_String
             return $tmp1;
         }
     }
+    /**
+     * Cleansup the tokenizer
+     * 
+     * @return void
+     */
     static public function tokenizeCleanup()
     {
         self::$_tokenizeChr = 32;
         self::$_tokens = array();
     }
-    static public function removeNewlines($string) {
+    /**
+     * Removes newlines from the passed string
+     * 
+     * @param string $string The string to remove newlines from
+     * 
+     * @return string Returns a string without newlines 
+     */
+    static public function removeNewlines($string)
+    {
         $string = trim(preg_replace("/[\n\r]/", null, $string));
         $string = explode(' ', $string);
         foreach ($string as $key => $value) {
