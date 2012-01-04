@@ -19,9 +19,15 @@ class IRCBot_Parsers_NameReplyTest extends PHPUnit_Framework_TestCase {
      */
     protected function setUp() {
         $this->object = new IRCBot_Parsers_NameReply;
-        define('CHAN_MODE_VOICE',  1);
-        define('CHAN_MODE_HALFOP', 2);
-        define('CHAN_MODE_OP',     4);
+        if (!defined('CHAN_MODE_VOICE')) {
+            define('CHAN_MODE_VOICE',  1);
+        }
+        if (!defined('CHAN_MODE_HALFOP')) {
+            define('CHAN_MODE_HALFOP',  2);
+        }
+        if (!defined('CHAN_MODE_OP')) {
+            define('CHAN_MODE_OP',  4);
+        }
     }
 
     /**
