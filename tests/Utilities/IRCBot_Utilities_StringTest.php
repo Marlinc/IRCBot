@@ -33,13 +33,12 @@ class IRCBot_Utilities_StringTest extends PHPUnit_Framework_TestCase {
 
     /**
      * @covers {className}::{origMethodName}
-     * @todo Implement testTokenize().
      */
     public function testTokenize() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $testString = 'Testing.Tokenize.Will.It.Work?';
+        $tokens = IRCBot_Utilities_String::tokenize($testString, '.', true);
+        $expected = array('Testing', 'Tokenize', 'Will', 'It', 'Work?');
+        $this->assertEquals($expected, $tokens);
     }
 
     /**
