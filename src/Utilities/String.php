@@ -25,14 +25,19 @@ class IRCBot_Utilities_String
      * Tokenizes a string 
      *  
      * @param string $string The string to tokenize
-     * @param int    $chr    The ASCII character code to use when tokenizing
+     * @param int    $chr    The ASCII character code to use when 
+     * @param bool   $return Specify if it needs to return a array of tokens
      * 
-     * @return void
+     * @return void|array
      */
-    static public function tokenize($string, $chr = 32)
+    static public function tokenize($string, $chr = 32, $return = false)
     {
         self::$_tokenizeChr = (is_int($chr)) ? chr($chr) : $chr;
-        self::$_tokens = explode(self::$_tokenizeChr, $string);
+        if (!$return) {
+            self::$_tokens = explode(self::$_tokenizeChr, $string);
+        } else {
+            return explode(self::$_tokenizeChr, $string);
+        }
     }
     
     /**
