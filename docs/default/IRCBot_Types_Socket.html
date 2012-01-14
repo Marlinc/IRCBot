@@ -1,1079 +1,1276 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-  <html xmlns="http://www.w3.org/1999/xhtml">
-		<head>
-			<!-- template designed by Marco Von Ballmoos -->
-			<title>Docs For Class IRCBot_Types_Socket</title>
-			<link rel="stylesheet" href="../media/stylesheet.css" />
-			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
-		</head>
-		<body>
-			<div class="page-body">			
-<h2 class="class-name">Class IRCBot_Types_Socket</h2>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- template designed by Marco Von Ballmoos -->
+<title>Docs For Class IRCBot_Types_Socket</title>
+<link rel="stylesheet" href="../media/stylesheet.css" />
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+</head>
+<body>
+	<div class="page-body">
+		<h2 class="class-name">Class IRCBot_Types_Socket</h2>
 
-<a name="sec-description"></a>
-<div class="info-box">
-	<div class="info-box-title">Description</div>
-	<div class="nav-bar">
-					<span class="disabled">Description</span> |
-													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
-						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
-						
-					</div>
-	<div class="info-box-body">
-        		<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">The socket class</p>
-		<p class="notes">
-			Located in <a class="field" href="_Types---Socket.php.html">/Types/Socket.php</a> (line <span class="field">12</span>)
-		</p>
-		
-				
-		<pre></pre>
-	
+		<a name="sec-description"></a>
+		<div class="info-box">
+			<div class="info-box-title">Description</div>
+			<div class="nav-bar">
+				<span class="disabled">Description</span> | <a
+					href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				| <a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+
 			</div>
-</div>
+			<div class="info-box-body">
+				<!-- ========== Info from phpDoc block ========= -->
+				<p class="short-description">The socket class</p>
+				<p class="notes">
+					Located in <a class="field" href="_Types---Socket.php.html">/Types/Socket.php</a>
+					(line <span class="field">12</span>)
+				</p>
+
+
+				<pre></pre>
+
+			</div>
+		</div>
 
 
 
-	<a name="sec-var-summary"></a>
-	<div class="info-box">
-		<div class="info-box-title">Variable Summary</span></div>
-		<div class="nav-bar">
-			<a href="#sec-description">Description</a> |
-						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
-							| 
-									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
-							
-								</div>
-		<div class="info-box-body">
-			<div class="var-summary">
-																								<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$socketId" title="details" class="var-name">$socketId</a>
+		<a name="sec-var-summary"></a>
+		<div class="info-box">
+			<div class="info-box-title">
+				Variable Summary</span>
+			</div>
+			<div class="nav-bar">
+				<a href="#sec-description">Description</a> | <span class="disabled">Vars</span>
+				(<a href="#sec-vars">details</a>) | <a href="#sec-method-summary">Methods</a>
+				(<a href="#sec-methods">details</a>)
+
+			</div>
+			<div class="info-box-body">
+				<div class="var-summary">
+					<div class="var-title">
+						<span class="var-type">mixed</span> <a href="#$socketId"
+							title="details" class="var-name">$socketId</a>
+					</div>
 				</div>
-											</div>
+			</div>
 		</div>
-	</div>
 
-	<a name="sec-method-summary"></a>
-	<div class="info-box">
-		<div class="info-box-title">Method Summary</span></div>
-		<div class="nav-bar">
-			<a href="#sec-description">Description</a> |
-																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
-				 
-				|
-						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
-		</div>
-		<div class="info-box-body">			
-			<div class="method-summary">
-																																																																																																																																																																																																																				
-												<div class="method-definition">
-											<span class="method-result">mixed</span>
-										<a href="#accept" title="details" class="method-name">accept</a>
-										()
-									</div>
-																<div class="method-definition">
-											<span class="method-result">bool</span>
-										<a href="#bind" title="details" class="method-name">bind</a>
-											(<span class="var-type">string</span>&nbsp;<span class="var-name">$address</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$port</span> = <span class="var-default">0</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#clearError" title="details" class="method-name">clearError</a>
-										()
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#close" title="details" class="method-name">close</a>
-										()
-									</div>
-																<div class="method-definition">
-											<span class="method-result">bool</span>
-										<a href="#connect" title="details" class="method-name">connect</a>
-											(<span class="var-type">string</span>&nbsp;<span class="var-name">$address</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$port</span> = <span class="var-default">0</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#create" title="details" class="method-name">create</a>
-											(<span class="var-type">int</span>&nbsp;<span class="var-name">$domain</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$protocol</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#createListen" title="details" class="method-name">createListen</a>
-											(<span class="var-type">int</span>&nbsp;<span class="var-name">$port</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$backlog</span> = <span class="var-default">128</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">bool</span>
-										<a href="#createPair" title="details" class="method-name">createPair</a>
-											(<span class="var-type">int</span>&nbsp;<span class="var-name">$domain</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$protocol</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$fd</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$&fd</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#getOption" title="details" class="method-name">getOption</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$level</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$optname</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">bool</span>
-										<a href="#getPeerName" title="details" class="method-name">getPeerName</a>
-											(<span class="var-type">string</span>&nbsp;<span class="var-name">&$address</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">&$port</span> = <span class="var-default">null</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">bool</span>
-										<a href="#getSockName" title="details" class="method-name">getSockName</a>
-											(<span class="var-type">string</span>&nbsp;<span class="var-name">&$addr</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">&$port</span> = <span class="var-default">null</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#lastError" title="details" class="method-name">lastError</a>
-										()
-									</div>
-																<div class="method-definition">
-											<span class="method-result">mixed</span>
-										<a href="#listen" title="details" class="method-name">listen</a>
-											([<span class="var-type">int</span>&nbsp;<span class="var-name">$backlog</span> = <span class="var-default">0</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">mixed</span>
-										<a href="#read" title="details" class="method-name">read</a>
-											(<span class="var-type">int</span>&nbsp;<span class="var-name">$length</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">PHP_BINARY_READ</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#readLine" title="details" class="method-name">readLine</a>
-										()
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#recv" title="details" class="method-name">recv</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">&$buf</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$len</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$flags</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#recvFrom" title="details" class="method-name">recvFrom</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">&$buf</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$len</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$flags</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">&$port</span> = <span class="var-default">null</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#send" title="details" class="method-name">send</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$buf</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$len</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$flags</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#sendTo" title="details" class="method-name">sendTo</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$buf</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$len</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$flags</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$addr</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$port</span> = <span class="var-default">0</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">bool</span>
-										<a href="#setBlock" title="details" class="method-name">setBlock</a>
-										()
-									</div>
-																<div class="method-definition">
-											<span class="method-result">bool</span>
-										<a href="#setNonBlock" title="details" class="method-name">setNonBlock</a>
-										()
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#setOption" title="details" class="method-name">setOption</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$level</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$optname</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$optval</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#setResource" title="details" class="method-name">setResource</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">&$resource</span>, <span class="var-type">resource</span>&nbsp;<span class="var-name">$&resource</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#shutdown" title="details" class="method-name">shutdown</a>
-											([<span class="var-type"></span>&nbsp;<span class="var-name">$how</span> = <span class="var-default">2</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">string</span>
-										<a href="#strError" title="details" class="method-name">strError</a>
-											(<span class="var-type">int</span>&nbsp;<span class="var-name">$errno</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">mixed</span>
-										<a href="#write" title="details" class="method-name">write</a>
-											(<span class="var-type">string</span>&nbsp;<span class="var-name">$buffer</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">0</span>])
-									</div>
-								</div>
-		</div>
-	</div>		
+		<a name="sec-method-summary"></a>
+		<div class="info-box">
+			<div class="info-box-title">
+				Method Summary</span>
+			</div>
+			<div class="nav-bar">
+				<a href="#sec-description">Description</a> | <a
+					href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
 
-	<a name="sec-vars"></a>
-	<div class="info-box">
-		<div class="info-box-title">Variables</div>
-		<div class="nav-bar">
-			<a href="#sec-description">Description</a> |
-										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
-						
-			
-										| 
-									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
-							
+				| <span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+			</div>
+			<div class="info-box-body">
+				<div class="method-summary">
+
+					<div class="method-definition">
+						<span class="method-result">mixed</span> <a href="#accept"
+							title="details" class="method-name">accept</a> ()
 					</div>
-		<div class="info-box-body">
-			<a name="var$socketId" id="$socketId"><!-- --></A>
-<div class="evenrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$socketId</span>
-			 = <span class="var-default"> 0</span>			(line <span class="line-number">19</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	
-		
-		
-
-</div>
-						
+					<div class="method-definition">
+						<span class="method-result">bool</span> <a href="#bind"
+							title="details" class="method-name">bind</a> (<span
+							class="var-type">string</span>&nbsp;<span class="var-name">$address</span>,
+						[<span class="var-type">int</span>&nbsp;<span class="var-name">$port</span>
+						= <span class="var-default">0</span>])
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#clearError"
+							title="details" class="method-name">clearError</a> ()
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#close"
+							title="details" class="method-name">close</a> ()
+					</div>
+					<div class="method-definition">
+						<span class="method-result">bool</span> <a href="#connect"
+							title="details" class="method-name">connect</a> (<span
+							class="var-type">string</span>&nbsp;<span class="var-name">$address</span>,
+						[<span class="var-type">int</span>&nbsp;<span class="var-name">$port</span>
+						= <span class="var-default">0</span>])
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#create"
+							title="details" class="method-name">create</a> (<span
+							class="var-type">int</span>&nbsp;<span class="var-name">$domain</span>,
+						<span class="var-type">int</span>&nbsp;<span class="var-name">$type</span>,
+						<span class="var-type">int</span>&nbsp;<span class="var-name">$protocol</span>)
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#createListen"
+							title="details" class="method-name">createListen</a> (<span
+							class="var-type">int</span>&nbsp;<span class="var-name">$port</span>,
+						[<span class="var-type">int</span>&nbsp;<span class="var-name">$backlog</span>
+						= <span class="var-default">128</span>])
+					</div>
+					<div class="method-definition">
+						<span class="method-result">bool</span> <a href="#createPair"
+							title="details" class="method-name">createPair</a> (<span
+							class="var-type">int</span>&nbsp;<span class="var-name">$domain</span>,
+						<span class="var-type">int</span>&nbsp;<span class="var-name">$type</span>,
+						<span class="var-type">int</span>&nbsp;<span class="var-name">$protocol</span>,
+						<span class="var-type">array</span>&nbsp;<span class="var-name">&$fd</span>,
+						<span class="var-type">array</span>&nbsp;<span class="var-name">$&fd</span>)
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#getOption"
+							title="details" class="method-name">getOption</a> (<span
+							class="var-type"></span>&nbsp;<span class="var-name">$level</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$optname</span>)
+					</div>
+					<div class="method-definition">
+						<span class="method-result">bool</span> <a href="#getPeerName"
+							title="details" class="method-name">getPeerName</a> (<span
+							class="var-type">string</span>&nbsp;<span class="var-name">&$address</span>,
+						[<span class="var-type">int</span>&nbsp;<span class="var-name">&$port</span>
+						= <span class="var-default">null</span>])
+					</div>
+					<div class="method-definition">
+						<span class="method-result">bool</span> <a href="#getSockName"
+							title="details" class="method-name">getSockName</a> (<span
+							class="var-type">string</span>&nbsp;<span class="var-name">&$addr</span>,
+						[<span class="var-type">int</span>&nbsp;<span class="var-name">&$port</span>
+						= <span class="var-default">null</span>])
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#lastError"
+							title="details" class="method-name">lastError</a> ()
+					</div>
+					<div class="method-definition">
+						<span class="method-result">mixed</span> <a href="#listen"
+							title="details" class="method-name">listen</a> ([<span
+							class="var-type">int</span>&nbsp;<span class="var-name">$backlog</span>
+						= <span class="var-default">0</span>])
+					</div>
+					<div class="method-definition">
+						<span class="method-result">mixed</span> <a href="#read"
+							title="details" class="method-name">read</a> (<span
+							class="var-type">int</span>&nbsp;<span class="var-name">$length</span>,
+						[<span class="var-type">int</span>&nbsp;<span class="var-name">$type</span>
+						= <span class="var-default">PHP_BINARY_READ</span>])
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#readLine"
+							title="details" class="method-name">readLine</a> ()
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#recv"
+							title="details" class="method-name">recv</a> (<span
+							class="var-type"></span>&nbsp;<span class="var-name">&$buf</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$len</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$flags</span>)
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#recvFrom"
+							title="details" class="method-name">recvFrom</a> (<span
+							class="var-type"></span>&nbsp;<span class="var-name">&$buf</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$len</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$flags</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">&$name</span>,
+						[<span class="var-type"></span>&nbsp;<span class="var-name">&$port</span>
+						= <span class="var-default">null</span>])
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#send"
+							title="details" class="method-name">send</a> (<span
+							class="var-type"></span>&nbsp;<span class="var-name">$buf</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$len</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$flags</span>)
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#sendTo"
+							title="details" class="method-name">sendTo</a> (<span
+							class="var-type"></span>&nbsp;<span class="var-name">$buf</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$len</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$flags</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$addr</span>,
+						[<span class="var-type"></span>&nbsp;<span class="var-name">$port</span>
+						= <span class="var-default">0</span>])
+					</div>
+					<div class="method-definition">
+						<span class="method-result">bool</span> <a href="#setBlock"
+							title="details" class="method-name">setBlock</a> ()
+					</div>
+					<div class="method-definition">
+						<span class="method-result">bool</span> <a href="#setNonBlock"
+							title="details" class="method-name">setNonBlock</a> ()
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#setOption"
+							title="details" class="method-name">setOption</a> (<span
+							class="var-type"></span>&nbsp;<span class="var-name">$level</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$optname</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$optval</span>)
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#setResource"
+							title="details" class="method-name">setResource</a> (<span
+							class="var-type"></span>&nbsp;<span class="var-name">&$resource</span>,
+						<span class="var-type">resource</span>&nbsp;<span class="var-name">$&resource</span>)
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#shutdown"
+							title="details" class="method-name">shutdown</a> ([<span
+							class="var-type"></span>&nbsp;<span class="var-name">$how</span>
+						= <span class="var-default">2</span>])
+					</div>
+					<div class="method-definition">
+						<span class="method-result">string</span> <a href="#strError"
+							title="details" class="method-name">strError</a> (<span
+							class="var-type">int</span>&nbsp;<span class="var-name">$errno</span>)
+					</div>
+					<div class="method-definition">
+						<span class="method-result">mixed</span> <a href="#write"
+							title="details" class="method-name">write</a> (<span
+							class="var-type">string</span>&nbsp;<span class="var-name">$buffer</span>,
+						[<span class="var-type">int</span>&nbsp;<span class="var-name">$length</span>
+						= <span class="var-default">0</span>])
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
-	
-	<a name="sec-methods"></a>
-	<div class="info-box">
-		<div class="info-box-title">Methods</div>
-		<div class="nav-bar">
-			<a href="#sec-description">Description</a> |
-															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
-																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
-						
+
+		<a name="sec-vars"></a>
+		<div class="info-box">
+			<div class="info-box-title">Variables</div>
+			<div class="nav-bar">
+				<a href="#sec-description">Description</a> | <a
+					href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+
+
+				| <a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+
+			</div>
+			<div class="info-box-body">
+				<a name="var$socketId" id="$socketId">
+					<!-- -->
+				</A>
+				<div class="evenrow">
+
+					<div class="var-header">
+						<span class="var-title"> <span class="var-type">mixed</span>
+							<span class="var-name">$socketId</span> = <span
+							class="var-default"> 0</span> (line <span class="line-number">19</span>)
+						</span>
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+
+
+
+
+				</div>
+
+			</div>
 		</div>
-		<div class="info-box-body">
-			<A NAME='method_detail'></A>
 
-<a name="methodaccept" id="accept"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">accept</span> (line <span class="line-number">102</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">After the socket socket has been created using socke::create(),</p>
-<p class="description"><p>bound to a name with socket_bind(), and told to listen for connections  with socket::listen(), this function will accept incoming connections on  that socket. Once a successful connection is made, a new socket resource  is returned, which may be used for communication. If there are multiple  connections queued on the socket, the first will be used. If there are  no pending connections, socket::accept() will block until a connection  becomes present. If socket has been made non-blocking using  socket::setBlocking() or socket::setNonBlock(), FALSE will be returned.  The socket resource returned by socket::accept() may not be used to  accept new connections. The original listening socket socket, however,  remains open and may be reused.</p></p>
-	<ul class="tags">
-				<li><span class="field">return:</span> Returns a new socket resource on  success, or FALSE on error. The actual error code can be retrieved by  calling socket::lastError(). This error code may be passed to  socket::strError() to get a textual explanation of the error.</li>
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">mixed</span>
-		<span class="method-name">
-			accept
-		</span>
-				()
+		<a name="sec-methods"></a>
+		<div class="info-box">
+			<div class="info-box-title">Methods</div>
+			<div class="nav-bar">
+				<a href="#sec-description">Description</a> | <a
+					href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+
 			</div>
-	
-		
-			
-	</div>
-<a name="methodbind" id="bind"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">bind</span> (line <span class="line-number">292</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Binds the name given in address to the socket described by socket.</p>
-<p class="description"><p>This has to be done before a connection is be established using  socket::connect() or socket::listen().</p></p>
-	<ul class="tags">
-				<li><span class="field">return:</span> Returns TRUE on success or FALSE on failure.  The error code can be retrieved with socket::lastError(). This code may  be passed to socket::strError() to get a textual explanation of the error.</li>
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">bool</span>
-		<span class="method-name">
-			bind
-		</span>
-					(<span class="var-type">string</span>&nbsp;<span class="var-name">$address</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$port</span> = <span class="var-default">0</span>])
+			<div class="info-box-body">
+				<A NAME='method_detail'></A> <a name="methodaccept" id="accept">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">accept</span> (line <span
+							class="line-number">102</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">After the socket socket has been
+						created using socke::create(),</p>
+					<p class="description">
+						<p>bound to a name with socket_bind(), and told to listen for
+							connections with socket::listen(), this function will accept
+							incoming connections on that socket. Once a successful connection
+							is made, a new socket resource is returned, which may be used for
+							communication. If there are multiple connections queued on the
+							socket, the first will be used. If there are no pending
+							connections, socket::accept() will block until a connection
+							becomes present. If socket has been made non-blocking using
+							socket::setBlocking() or socket::setNonBlock(), FALSE will be
+							returned. The socket resource returned by socket::accept() may
+							not be used to accept new connections. The original listening
+							socket socket, however, remains open and may be reused.</p>
+					</p>
+					<ul class="tags">
+						<li><span class="field">return:</span> Returns a new socket
+							resource on success, or FALSE on error. The actual error code can
+							be retrieved by calling socket::lastError(). This error code may
+							be passed to socket::strError() to get a textual explanation of
+							the error.</li>
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">mixed</span> <span class="method-name">
+							accept </span> ()
+					</div>
+
+
+
+				</div>
+				<a name="methodbind" id="bind">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">bind</span> (line <span
+							class="line-number">292</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">Binds the name given in address to
+						the socket described by socket.</p>
+					<p class="description">
+						<p>This has to be done before a connection is be established
+							using socket::connect() or socket::listen().</p>
+					</p>
+					<ul class="tags">
+						<li><span class="field">return:</span> Returns TRUE on
+							success or FALSE on failure. The error code can be retrieved with
+							socket::lastError(). This code may be passed to
+							socket::strError() to get a textual explanation of the error.</li>
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">bool</span> <span class="method-name">
+							bind </span> (<span class="var-type">string</span>&nbsp;<span
+							class="var-name">$address</span>, [<span class="var-type">int</span>&nbsp;<span
+							class="var-name">$port</span> = <span class="var-default">0</span>])
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type">string</span> <span
+							class="var-name">$address</span><span class="var-description">:
+								If the socket is of the AF_INET family, the address is an IP in
+								dotted-quad notation (e.g. 127.0.0.1). If the socket is of the
+								AF_UNIX family, the address is the path of a Unix-domain socket
+								(e.g. /tmp/my.sock).</span></li>
+						<li><span class="var-type">int</span> <span class="var-name">$port</span><span
+							class="var-description">: The port parameter is only used
+								when binding an AF_INET socket, and designates the port on which
+								to listen for connections.</span></li>
+					</ul>
+
+
+				</div>
+				<a name="methodclearError" id="clearError">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">clearError</span> (line <span
+							class="line-number">329</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							clearError </span> ()
+					</div>
+
+
+
+				</div>
+				<a name="methodclose" id="close">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">close</span> (line <span
+							class="line-number">163</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">socket::close() closes the socket
+						resource given by socket. This function is specific to sockets and
+						cannot be used on any other type of resources.</p>
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							close </span> ()
+					</div>
+
+
+
+				</div>
+				<a name="methodconnect" id="connect">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">connect</span> (line <span
+							class="line-number">260</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">Initiate a connection to address
+						using the socket resource socket, which must be a valid socket
+						resource created with socket::create().</p>
+					<ul class="tags">
+						<li><span class="field">return:</span> Returns TRUE on
+							success or FALSE on failure. The error code can be retrieved with
+							socket::lastError(). This code may be passed to
+							socket::strError() to get a textual explanation of the error</li>
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">bool</span> <span class="method-name">
+							connect </span> (<span class="var-type">string</span>&nbsp;<span
+							class="var-name">$address</span>, [<span class="var-type">int</span>&nbsp;<span
+							class="var-name">$port</span> = <span class="var-default">0</span>])
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type">string</span> <span
+							class="var-name">$address</span><span class="var-description">:
+								The address parameter is either an IPv4 address in dotted-quad
+								notation (e.g. 127.0.0.1) if socket is AF_INET, a valid IPv6
+								address (e.g. ::1) if IPv6 support is enabled and socket is
+								AF_INET6 or the pathname of a Unix domain socket, if the socket
+								family is AF_UNIX.</span></li>
+						<li><span class="var-type">int</span> <span class="var-name">$port</span><span
+							class="var-description">: The port parameter is only used
+								and is mandatory when connecting to an AF_INET or an AF_INET6
+								socket, and designates the port on the remote host to which a
+								connection should be made.</span></li>
+					</ul>
+
+
+				</div>
+				<a name="methodcreate" id="create">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">create</span> (line <span
+							class="line-number">44</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">Creates and returns a socket
+						resource, also referred to as an endpoint of communication. A
+						typical network connection is made up of 2 sockets, one performing
+						the role of the client, and another performing the role of the
+						server.</p>
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							create </span> (<span class="var-type">int</span>&nbsp;<span
+							class="var-name">$domain</span>, <span class="var-type">int</span>&nbsp;<span
+							class="var-name">$type</span>, <span class="var-type">int</span>&nbsp;<span
+							class="var-name">$protocol</span>)
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type">int</span> <span class="var-name">$domain</span><span
+							class="var-description">: The domain parameter specifies
+								the protocol family to be used by the socket.</span></li>
+						<li><span class="var-type">int</span> <span class="var-name">$type</span><span
+							class="var-description">: The type parameter selects the
+								type of communication to be used by the socket.</span></li>
+						<li><span class="var-type">int</span> <span class="var-name">$protocol</span><span
+							class="var-description">: The protocol parameter sets the
+								specific protocol within the specified domain to be used when
+								communicating on the returned socket. The proper value can be
+								retrieved by name by using getprotobyname(). If the desired
+								protocol is TCP, or UDP the corresponding constants SOL_TCP, and
+								SOL_UDP can also be used.</span></li>
+					</ul>
+
+
+				</div>
+				<a name="methodcreateListen" id="createListen">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">createListen</span> (line <span
+							class="line-number">59</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">This creates a new socket resource
+						of type AF_INET listening on all local interfaces on the given
+						port waiting for new connections.</p>
+					<p class="description">
+						<p>This method is meant to ease the task of creating a new
+							socket which only listens to accept new connections.</p>
+					</p>
+					<ul class="tags">
+						<li><span class="field">link:</span> <a
+							href="http://nl2.php.net/manual/en/function.socket-create-listen.php">http://nl2.php.net/manual/en/function.socket-create-listen.php</a></li>
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							createListen </span> (<span class="var-type">int</span>&nbsp;<span
+							class="var-name">$port</span>, [<span class="var-type">int</span>&nbsp;<span
+							class="var-name">$backlog</span> = <span class="var-default">128</span>])
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type">int</span> <span class="var-name">$port</span><span
+							class="var-description">: The port on which to listen on
+								all interfaces.</span></li>
+						<li><span class="var-type">int</span> <span class="var-name">$backlog</span><span
+							class="var-description">: The backlog parameter defines
+								the maximum length the queue of pending connections may grow to.
+								SOMAXCONN may be passed as backlog parameter</span></li>
+					</ul>
+
+
+				</div>
+				<a name="methodcreatePair" id="createPair">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">createPair</span> (line <span
+							class="line-number">80</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">This creates two connected and
+						indistinguishable sockets, and stores them in fd. This function is
+						commonly used in IPC (InterProcess Communication).</p>
+					<ul class="tags">
+						<li><span class="field">return:</span> Returns TRUE on
+							success or FALSE on failure.</li>
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">bool</span> <span class="method-name">
+							createPair </span> (<span class="var-type">int</span>&nbsp;<span
+							class="var-name">$domain</span>, <span class="var-type">int</span>&nbsp;<span
+							class="var-name">$type</span>, <span class="var-type">int</span>&nbsp;<span
+							class="var-name">$protocol</span>, <span class="var-type">array</span>&nbsp;<span
+							class="var-name">&$fd</span>, <span class="var-type">array</span>&nbsp;<span
+							class="var-name">$&fd</span>)
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type">int</span> <span class="var-name">$domain</span><span
+							class="var-description">: The domain parameter specifies
+								the protocol family to be used by the socket.</span></li>
+						<li><span class="var-type">int</span> <span class="var-name">$type</span><span
+							class="var-description">: The type parameter selects the
+								type of communication to be used by the socket.</span></li>
+						<li><span class="var-type">int</span> <span class="var-name">$protocol</span><span
+							class="var-description">: The protocol parameter sets the
+								specific protocol within the specified domain to be used when
+								communicating on the returned socket. The proper value can be
+								retrieved by name by using getprotobyname(). If the desired
+								protocol is TCP, or UDP the corresponding constants SOL_TCP, and
+								SOL_UDP can also be used.</span></li>
+						<li><span class="var-type">array</span> <span
+							class="var-name">$&fd</span><span class="var-description">:
+								Reference to an array in which the two socket resources will be
+								inserted.</span></li>
+						<li><span class="var-type">array</span> <span
+							class="var-name">&$fd</span></li>
+					</ul>
+
+
+				</div>
+				<a name="methodgetOption" id="getOption">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">getOption</span> (line <span
+							class="line-number">313</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							getOption </span> (<span class="var-type"></span>&nbsp;<span
+							class="var-name">$level</span>, <span class="var-type"></span>&nbsp;<span
+							class="var-name">$optname</span>)
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">$level</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$optname</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methodgetPeerName" id="getPeerName">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">getPeerName</span> (line <span
+							class="line-number">242</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">Queries the remote side of the
+						given socket which may either result in host/port or in a Unix
+						filesystem path, dependent on its type.</p>
+					<ul class="tags">
+						<li><span class="field">return:</span> Returns TRUE on
+							success or FALSE on failure. socket::getPeerName() may also
+							return FALSE if the socket type is not any of AF_INET, AF_INET6,
+							or AF_UNIX, in which case the last socket error code is not
+							updated.</li>
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">bool</span> <span class="method-name">
+							getPeerName </span> (<span class="var-type">string</span>&nbsp;<span
+							class="var-name">&$address</span>, [<span class="var-type">int</span>&nbsp;<span
+							class="var-name">&$port</span> = <span class="var-default">null</span>])
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type">string</span> <span
+							class="var-name">&$address</span><span class="var-description">:
+								If the given socket is of type AF_INET or AF_INET6,
+								socket::getPeerName() will return the peers (remote) IP address
+								in appropriate notation (e.g. 127.0.0.1 or fe80::1) in the
+								address parameter and, if the optional port parameter is
+								present, also the associated port. If the given socket is of
+								type AF_UNIX, socket::getPeerName() will return the Unix
+								filesystem path (e.g. /var/run/daemon.sock) in the address
+								parameter.</span></li>
+						<li><span class="var-type">int</span> <span class="var-name">&$port</span><span
+							class="var-description">: If given, this will hold the
+								port associated to address.</span></li>
+					</ul>
+
+
+				</div>
+				<a name="methodgetSockName" id="getSockName">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">getSockName</span> (line <span
+							class="line-number">221</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">Note: socket::getSockName() should
+						not be used with AF_UNIX sockets created with socket::connect().
+						Only sockets created with socket::accept() or a primary server
+						socket following a call to socket::bind() will return meaningful
+						values.</p>
+					<ul class="tags">
+						<li><span class="field">return:</span> Returns TRUE on
+							success or FALSE on failure. socket::getSockName() may also
+							return FALSE if the socket type is not any of AF_INET, AF_INET6,
+							or AF_UNIX, in which case the last socket error code is not
+							updated.</li>
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">bool</span> <span class="method-name">
+							getSockName </span> (<span class="var-type">string</span>&nbsp;<span
+							class="var-name">&$addr</span>, [<span class="var-type">int</span>&nbsp;<span
+							class="var-name">&$port</span> = <span class="var-default">null</span>])
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type">string</span> <span
+							class="var-name">&$addr</span><span class="var-description">:
+								If the given socket is of type AF_INET or AF_INET6,
+								socket::getSockName() will return the local IP address in
+								appropriate notation (e.g. 127.0.0.1 or fe80::1) in the address
+								parameter and, if the optional port parameter is present, also
+								the associated port. If the given socket is of type AF_UNIX,
+								socket::getSockName() will return the Unix filesystem path (e.g.
+								/var/run/daemon.sock) in the address parameter.</span></li>
+						<li><span class="var-type">int</span> <span class="var-name">&$port</span><span
+							class="var-description">: If provided, this will hold the
+								associated port.</span></li>
+					</ul>
+
+
+				</div>
+				<a name="methodlastError" id="lastError">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">lastError</span> (line <span
+							class="line-number">325</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							lastError </span> ()
+					</div>
+
+
+
+				</div>
+				<a name="methodlisten" id="listen">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">listen</span> (line <span
+							class="line-number">154</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">After the socket socket has been
+						created using socket::create() and bound to a name with
+						socket::bind(), it may be told to listen for incoming connections
+						on socket.</p>
+					<p class="description">
+						<p>socket::listen() is applicable only to sockets of type
+							SOCK_STREAM or SOCK_SEQPACKET.</p>
+					</p>
+					<ul class="tags">
+						<li><span class="field">return:</span> Returns TRUE on
+							success or FALSE on failure. The error code can be retrieved with
+							socket::lastError(). This code may be passed to
+							socket::strError() to get a textual explanation of the error.</li>
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">mixed</span> <span class="method-name">
+							listen </span> ([<span class="var-type">int</span>&nbsp;<span
+							class="var-name">$backlog</span> = <span class="var-default">0</span>])
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type">int</span> <span class="var-name">$backlog</span><span
+							class="var-description">: A maximum of backlog incoming
+								connections will be queued for processing. If a connection
+								request arrives with the queue full the client may receive an
+								error with an indication of ECONNREFUSED, or, if the underlying
+								protocol supports retransmission, the request may be ignored so
+								that retries may succeed.</span></li>
+					</ul>
+
+
+				</div>
+				<a name="methodread" id="read">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">read</span> (line <span
+							class="line-number">199</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">The function socket::read() reads
+						from the socket resource socket created by the socket::create() or
+						socket:;accept() functions.</p>
+					<ul class="tags">
+						<li><span class="field">return:</span> returns the data as a
+							string on success, or FALSE on error (including if the remote
+							host has closed the connection). The error code can be retrieved
+							with socket::lastError(). This code may be passed to
+							socket::strError() to get a textual representation of the error.</li>
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">mixed</span> <span class="method-name">
+							read </span> (<span class="var-type">int</span>&nbsp;<span
+							class="var-name">$length</span>, [<span class="var-type">int</span>&nbsp;<span
+							class="var-name">$type</span> = <span class="var-default">PHP_BINARY_READ</span>])
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type">int</span> <span class="var-name">$length</span><span
+							class="var-description">: The maximum number of bytes read
+								is specified by the length parameter. Otherwise you can use \r,
+								\n, or \0 to end reading (depending on the type parameter, see
+								below).</span></li>
+						<li><span class="var-type">int</span> <span class="var-name">$type</span><span
+							class="var-description">: Optional type parameter is a
+								named constant: PHP_BINARY_READ (Default) - use the system
+								recv() function. Safe for reading binary data. PHP_NORMAL_READ -
+								reading stops at \n or \r.</span></li>
+					</ul>
+
+
+				</div>
+				<a name="methodreadLine" id="readLine">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">readLine</span> (line <span
+							class="line-number">333</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							readLine </span> ()
+					</div>
+
+
+
+				</div>
+				<a name="methodrecv" id="recv">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">recv</span> (line <span
+							class="line-number">296</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							recv </span> (<span class="var-type"></span>&nbsp;<span class="var-name">&$buf</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$len</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$flags</span>)
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">&$buf</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$len</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$flags</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methodrecvFrom" id="recvFrom">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">recvFrom</span> (line <span
+							class="line-number">304</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							recvFrom </span> (<span class="var-type"></span>&nbsp;<span
+							class="var-name">&$buf</span>, <span class="var-type"></span>&nbsp;<span
+							class="var-name">$len</span>, <span class="var-type"></span>&nbsp;<span
+							class="var-name">$flags</span>, <span class="var-type"></span>&nbsp;<span
+							class="var-name">&$name</span>, [<span class="var-type"></span>&nbsp;<span
+							class="var-name">&$port</span> = <span class="var-default">null</span>])
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">&$buf</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$len</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$flags</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">&$name</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">&$port</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methodsend" id="send">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">send</span> (line <span
+							class="line-number">300</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							send </span> (<span class="var-type"></span>&nbsp;<span class="var-name">$buf</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$len</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$flags</span>)
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">$buf</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$len</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$flags</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methodsendTo" id="sendTo">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">sendTo</span> (line <span
+							class="line-number">309</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							sendTo </span> (<span class="var-type"></span>&nbsp;<span
+							class="var-name">$buf</span>, <span class="var-type"></span>&nbsp;<span
+							class="var-name">$len</span>, <span class="var-type"></span>&nbsp;<span
+							class="var-name">$flags</span>, <span class="var-type"></span>&nbsp;<span
+							class="var-name">$addr</span>, [<span class="var-type"></span>&nbsp;<span
+							class="var-name">$port</span> = <span class="var-default">0</span>])
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">$buf</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$len</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$flags</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$addr</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$port</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methodsetBlock" id="setBlock">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">setBlock</span> (line <span
+							class="line-number">135</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">The socket_set_block() function
+						removes the O_NONBLOCK flag on the socket specified by the socket
+						parameter.</p>
+					<p class="description">
+						<p>When an operation (e.g. receive, send, connect, accept,
+							...) is performed on a blocking socket, the script will pause its
+							execution until it receives a signal or it can perform the
+							operation.</p>
+					</p>
+					<ul class="tags">
+						<li><span class="field">return:</span> Returns TRUE on
+							success or FALSE on failure.</li>
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">bool</span> <span class="method-name">
+							setBlock </span> ()
+					</div>
+
+
+
+				</div>
+				<a name="methodsetNonBlock" id="setNonBlock">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">setNonBlock</span> (line <span
+							class="line-number">123</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">The socket::setNonBlock() function
+						sets the O_NONBLOCK flag on the socket specified by the socket
+						parameter.</p>
+					<p class="description">
+						<p>When an operation (e.g. receive, send, connect, accept,
+							...) is performed on a non-blocking socket, the script not pause
+							its execution until it receives a signal or it can perform the
+							operation. Rather, if the operation would result in a block, the
+							called function will fail.</p>
+					</p>
+					<ul class="tags">
+						<li><span class="field">return:</span> Returns TRUE on
+							success or FALSE on failure.</li>
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">bool</span> <span class="method-name">
+							setNonBlock </span> ()
+					</div>
+
+
+
+				</div>
+				<a name="methodsetOption" id="setOption">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">setOption</span> (line <span
+							class="line-number">317</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							setOption </span> (<span class="var-type"></span>&nbsp;<span
+							class="var-name">$level</span>, <span class="var-type"></span>&nbsp;<span
+							class="var-name">$optname</span>, <span class="var-type"></span>&nbsp;<span
+							class="var-name">$optval</span>)
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">$level</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$optname</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$optval</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methodsetResource" id="setResource">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">setResource</span> (line <span
+							class="line-number">25</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">Sets the internal resource to a
+						existing one</p>
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							setResource </span> (<span class="var-type"></span>&nbsp;<span
+							class="var-name">&$resource</span>, <span class="var-type">resource</span>&nbsp;<span
+							class="var-name">$&resource</span>)
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type">resource</span> <span
+							class="var-name">$&resource</span></li>
+						<li><span class="var-type"></span> <span class="var-name">&$resource</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methodshutdown" id="shutdown">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">shutdown</span> (line <span
+							class="line-number">321</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							shutdown </span> ([<span class="var-type"></span>&nbsp;<span
+							class="var-name">$how</span> = <span class="var-default">2</span>])
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">$how</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methodstrError" id="strError">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">strError</span> (line <span
+							class="line-number">273</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">socket::strError() takes as its
+						errno parameter a socket error code as returned by
+						socket::lastError() and returns the corresponding explanatory
+						text.</p>
+					<ul class="tags">
+						<li><span class="field">return:</span> Returns the error
+							message associated with the errno parameter.</li>
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">string</span> <span
+							class="method-name"> strError </span> (<span class="var-type">int</span>&nbsp;<span
+							class="var-name">$errno</span>)
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type">int</span> <span class="var-name">$errno</span><span
+							class="var-description">: A valid socket error number,
+								likely produced by socket::lastError().</span></li>
+					</ul>
+
+
+				</div>
+				<a name="methodwrite" id="write">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">write</span> (line <span
+							class="line-number">176</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<p class="short-description">The function socket::write()
+						writes to the socket from the given buffer.</p>
+					<ul class="tags">
+						<li><span class="field">return:</span> Returns the number of
+							bytes successfully written to the socket or FALSE on failure. The
+							error code can be retrieved with socket::lastError(). This code
+							may be passed to socket::strError() to get a textual explanation
+							of the error.</li>
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">mixed</span> <span class="method-name">
+							write </span> (<span class="var-type">string</span>&nbsp;<span
+							class="var-name">$buffer</span>, [<span class="var-type">int</span>&nbsp;<span
+							class="var-name">$length</span> = <span class="var-default">0</span>])
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type">string</span> <span
+							class="var-name">$buffer</span></li>
+						<li><span class="var-type">int</span> <span class="var-name">$length</span>
+						</li>
+					</ul>
+
+
+				</div>
+
 			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type">string</span>
-				<span class="var-name">$address</span><span class="var-description">: If the socket is of the AF_INET family, the  address is an IP in dotted-quad notation (e.g. 127.0.0.1).  If the socket is of the AF_UNIX family, the address is the path of a  Unix-domain socket (e.g. /tmp/my.sock).</span>			</li>
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$port</span><span class="var-description">: The port parameter is only used when binding an  AF_INET socket, and designates the port on which to listen for  connections.</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodclearError" id="clearError"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">clearError</span> (line <span class="line-number">329</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			clearError
-		</span>
-				()
-			</div>
-	
-		
-			
-	</div>
-<a name="methodclose" id="close"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">close</span> (line <span class="line-number">163</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">socket::close() closes the socket resource given by socket. This  function is specific to sockets and cannot be used on any other type of  resources.</p>
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			close
-		</span>
-				()
-			</div>
-	
-		
-			
-	</div>
-<a name="methodconnect" id="connect"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">connect</span> (line <span class="line-number">260</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Initiate a connection to address using the socket resource socket,  which must be a valid socket resource created with socket::create().</p>
-	<ul class="tags">
-				<li><span class="field">return:</span> Returns TRUE on success or FALSE on failure. The error  code can be retrieved with socket::lastError(). This code may be passed  to socket::strError() to get a textual explanation of the error</li>
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">bool</span>
-		<span class="method-name">
-			connect
-		</span>
-					(<span class="var-type">string</span>&nbsp;<span class="var-name">$address</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$port</span> = <span class="var-default">0</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type">string</span>
-				<span class="var-name">$address</span><span class="var-description">: The address parameter is either an IPv4 address  in dotted-quad notation (e.g. 127.0.0.1) if socket is AF_INET, a valid  IPv6 address (e.g. ::1) if IPv6 support is enabled and socket is AF_INET6  or the pathname of a Unix domain socket, if the socket family is AF_UNIX.</span>			</li>
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$port</span><span class="var-description">: The port parameter is only used and is mandatory when  connecting to an AF_INET or an AF_INET6 socket, and designates the port  on the remote host to which a connection should be made.</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodcreate" id="create"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">create</span> (line <span class="line-number">44</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Creates and returns a socket resource, also referred to as an endpoint of  communication. A typical network connection is made up of 2 sockets, one  performing the role of the client, and another performing the role of the  server.</p>
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			create
-		</span>
-					(<span class="var-type">int</span>&nbsp;<span class="var-name">$domain</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$protocol</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$domain</span><span class="var-description">: The domain parameter specifies the protocol family to  be used by the socket.</span>			</li>
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$type</span><span class="var-description">: The type parameter selects the type of communication to  be used by the socket.</span>			</li>
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$protocol</span><span class="var-description">: The protocol parameter sets the specific protocol  within the specified domain to be used when communicating on the  returned socket. The proper value can be retrieved by name by using  getprotobyname(). If the desired protocol is TCP, or UDP the  corresponding constants SOL_TCP, and SOL_UDP can also be used.</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodcreateListen" id="createListen"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">createListen</span> (line <span class="line-number">59</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">This creates a new socket resource of type AF_INET listening on all local  interfaces on the given port waiting for new connections.</p>
-<p class="description"><p>This method is meant to ease the task of creating a new socket which  only listens to accept new connections.</p></p>
-	<ul class="tags">
-				<li><span class="field">link:</span> <a href="http://nl2.php.net/manual/en/function.socket-create-listen.php">http://nl2.php.net/manual/en/function.socket-create-listen.php</a></li>
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			createListen
-		</span>
-					(<span class="var-type">int</span>&nbsp;<span class="var-name">$port</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$backlog</span> = <span class="var-default">128</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$port</span><span class="var-description">: The port on which to listen on all interfaces.</span>			</li>
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$backlog</span><span class="var-description">: The backlog parameter defines the maximum length the  queue of pending connections may grow to. SOMAXCONN may be passed as  backlog parameter</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodcreatePair" id="createPair"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">createPair</span> (line <span class="line-number">80</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">This creates two connected and indistinguishable sockets, and stores  them in fd. This function is commonly used in  IPC (InterProcess Communication).</p>
-	<ul class="tags">
-				<li><span class="field">return:</span> Returns TRUE on success or FALSE on failure.</li>
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">bool</span>
-		<span class="method-name">
-			createPair
-		</span>
-					(<span class="var-type">int</span>&nbsp;<span class="var-name">$domain</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">int</span>&nbsp;<span class="var-name">$protocol</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$fd</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$&fd</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$domain</span><span class="var-description">: The domain parameter specifies the protocol family to  be used by the socket.</span>			</li>
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$type</span><span class="var-description">: The type parameter selects the type of communication to  be used by the socket.</span>			</li>
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$protocol</span><span class="var-description">: The protocol parameter sets the specific protocol  within the specified domain to be used when communicating on the  returned socket. The proper value can be retrieved by name by using  getprotobyname(). If the desired protocol is TCP, or UDP the  corresponding constants SOL_TCP, and SOL_UDP can also be used.</span>			</li>
-					<li>
-				<span class="var-type">array</span>
-				<span class="var-name">$&fd</span><span class="var-description">: Reference to an array in which the two socket resources  will be inserted.</span>			</li>
-					<li>
-				<span class="var-type">array</span>
-				<span class="var-name">&$fd</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodgetOption" id="getOption"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">getOption</span> (line <span class="line-number">313</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			getOption
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$level</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$optname</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$level</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$optname</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodgetPeerName" id="getPeerName"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">getPeerName</span> (line <span class="line-number">242</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Queries the remote side of the given socket which may either result in  host/port or in a Unix filesystem path, dependent on its type.</p>
-	<ul class="tags">
-				<li><span class="field">return:</span> Returns TRUE on success or FALSE on failure.  socket::getPeerName() may also return FALSE if the socket type is not  any of AF_INET, AF_INET6, or AF_UNIX, in which case the last socket  error code is not updated.</li>
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">bool</span>
-		<span class="method-name">
-			getPeerName
-		</span>
-					(<span class="var-type">string</span>&nbsp;<span class="var-name">&$address</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">&$port</span> = <span class="var-default">null</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type">string</span>
-				<span class="var-name">&$address</span><span class="var-description">: If the given socket is of type AF_INET or  AF_INET6, socket::getPeerName() will return the peers (remote) IP  address in appropriate notation (e.g. 127.0.0.1 or fe80::1) in the  address parameter and, if the optional port parameter is present, also  the associated port.  If the given socket is of type AF_UNIX, socket::getPeerName() will  return the Unix filesystem path (e.g. /var/run/daemon.sock) in the  address parameter.</span>			</li>
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">&$port</span><span class="var-description">: If given, this will hold the port associated to address.</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodgetSockName" id="getSockName"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">getSockName</span> (line <span class="line-number">221</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Note: socket::getSockName() should not be used with AF_UNIX sockets  created with socket::connect(). Only sockets created with  socket::accept() or a primary server socket following a call to  socket::bind() will return meaningful values.</p>
-	<ul class="tags">
-				<li><span class="field">return:</span> Returns TRUE on success or FALSE on failure.  socket::getSockName() may also return FALSE if the socket type is not  any of AF_INET, AF_INET6, or AF_UNIX, in which case the last socket  error code is not updated.</li>
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">bool</span>
-		<span class="method-name">
-			getSockName
-		</span>
-					(<span class="var-type">string</span>&nbsp;<span class="var-name">&$addr</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">&$port</span> = <span class="var-default">null</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type">string</span>
-				<span class="var-name">&$addr</span><span class="var-description">: If the given socket is of type AF_INET or AF_INET6,  socket::getSockName() will return the local IP address in appropriate  notation (e.g. 127.0.0.1 or fe80::1) in the address parameter and,  if the optional port parameter is present, also the associated port.  If the given socket is of type AF_UNIX, socket::getSockName() will  return the Unix filesystem path (e.g. /var/run/daemon.sock) in the  address parameter.</span>			</li>
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">&$port</span><span class="var-description">: If provided, this will hold the associated port.</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodlastError" id="lastError"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">lastError</span> (line <span class="line-number">325</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			lastError
-		</span>
-				()
-			</div>
-	
-		
-			
-	</div>
-<a name="methodlisten" id="listen"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">listen</span> (line <span class="line-number">154</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">After the socket socket has been created using socket::create() and bound  to a name with socket::bind(), it may be told to listen for incoming  connections on socket.</p>
-<p class="description"><p>socket::listen() is applicable only to sockets of type SOCK_STREAM or  SOCK_SEQPACKET.</p></p>
-	<ul class="tags">
-				<li><span class="field">return:</span> Returns TRUE on success or FALSE on failure. The error  code can be retrieved with socket::lastError(). This code may be passed  to socket::strError() to get a textual explanation of the error.</li>
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">mixed</span>
-		<span class="method-name">
-			listen
-		</span>
-					([<span class="var-type">int</span>&nbsp;<span class="var-name">$backlog</span> = <span class="var-default">0</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$backlog</span><span class="var-description">: A maximum of backlog incoming connections will be  queued for processing. If a connection request arrives with the queue  full the client may receive an error with an indication of ECONNREFUSED,  or, if the underlying protocol supports retransmission, the request may  be ignored so that retries may succeed.</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodread" id="read"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">read</span> (line <span class="line-number">199</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">The function socket::read() reads from the socket resource socket  created by the socket::create() or socket:;accept() functions.</p>
-	<ul class="tags">
-				<li><span class="field">return:</span> returns the data as a string on success,  or FALSE on error (including if the remote host has closed the  connection). The error code can be retrieved with socket::lastError().  This code may be passed to socket::strError() to get a textual  representation of the error.</li>
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">mixed</span>
-		<span class="method-name">
-			read
-		</span>
-					(<span class="var-type">int</span>&nbsp;<span class="var-name">$length</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">PHP_BINARY_READ</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$length</span><span class="var-description">: The maximum number of bytes read is specified by the  length parameter. Otherwise you can use \r, \n, or \0 to end reading  (depending on the type parameter, see below).</span>			</li>
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$type</span><span class="var-description">: Optional type parameter is a named constant:  PHP_BINARY_READ (Default) - use the system recv() function. Safe for  reading binary data.  PHP_NORMAL_READ - reading stops at \n or \r.</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodreadLine" id="readLine"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">readLine</span> (line <span class="line-number">333</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			readLine
-		</span>
-				()
-			</div>
-	
-		
-			
-	</div>
-<a name="methodrecv" id="recv"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">recv</span> (line <span class="line-number">296</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			recv
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">&$buf</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$len</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$flags</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">&$buf</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$len</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$flags</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodrecvFrom" id="recvFrom"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">recvFrom</span> (line <span class="line-number">304</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			recvFrom
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">&$buf</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$len</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$flags</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">&$port</span> = <span class="var-default">null</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">&$buf</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$len</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$flags</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">&$name</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">&$port</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodsend" id="send"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">send</span> (line <span class="line-number">300</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			send
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$buf</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$len</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$flags</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$buf</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$len</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$flags</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodsendTo" id="sendTo"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">sendTo</span> (line <span class="line-number">309</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			sendTo
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$buf</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$len</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$flags</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$addr</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$port</span> = <span class="var-default">0</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$buf</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$len</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$flags</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$addr</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$port</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodsetBlock" id="setBlock"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">setBlock</span> (line <span class="line-number">135</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">The socket_set_block() function removes the O_NONBLOCK flag on the  socket specified by the socket parameter.</p>
-<p class="description"><p>When an operation (e.g. receive, send, connect, accept, ...) is  performed on a blocking socket, the script will pause its execution  until it receives a signal or it can perform the operation.</p></p>
-	<ul class="tags">
-				<li><span class="field">return:</span> Returns TRUE on success or FALSE on failure.</li>
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">bool</span>
-		<span class="method-name">
-			setBlock
-		</span>
-				()
-			</div>
-	
-		
-			
-	</div>
-<a name="methodsetNonBlock" id="setNonBlock"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">setNonBlock</span> (line <span class="line-number">123</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">The socket::setNonBlock() function sets the O_NONBLOCK flag on the  socket specified by the socket parameter.</p>
-<p class="description"><p>When an operation (e.g. receive, send, connect, accept, ...) is  performed on a non-blocking socket, the script not pause its execution  until it receives a signal or it can perform the operation. Rather, if  the operation would result in a block, the called function will fail.</p></p>
-	<ul class="tags">
-				<li><span class="field">return:</span> Returns TRUE on success or FALSE on failure.</li>
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">bool</span>
-		<span class="method-name">
-			setNonBlock
-		</span>
-				()
-			</div>
-	
-		
-			
-	</div>
-<a name="methodsetOption" id="setOption"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">setOption</span> (line <span class="line-number">317</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			setOption
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$level</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$optname</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$optval</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$level</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$optname</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$optval</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodsetResource" id="setResource"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">setResource</span> (line <span class="line-number">25</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">Sets the internal resource to a existing one</p>
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			setResource
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">&$resource</span>, <span class="var-type">resource</span>&nbsp;<span class="var-name">$&resource</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type">resource</span>
-				<span class="var-name">$&resource</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">&$resource</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodshutdown" id="shutdown"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">shutdown</span> (line <span class="line-number">321</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			shutdown
-		</span>
-					([<span class="var-type"></span>&nbsp;<span class="var-name">$how</span> = <span class="var-default">2</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$how</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodstrError" id="strError"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">strError</span> (line <span class="line-number">273</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">socket::strError() takes as its errno parameter a socket error code as  returned by socket::lastError() and returns the corresponding  explanatory text.</p>
-	<ul class="tags">
-				<li><span class="field">return:</span> Returns the error message associated with the errno  parameter.</li>
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">string</span>
-		<span class="method-name">
-			strError
-		</span>
-					(<span class="var-type">int</span>&nbsp;<span class="var-name">$errno</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$errno</span><span class="var-description">: A valid socket error number, likely produced by  socket::lastError().</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodwrite" id="write"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">write</span> (line <span class="line-number">176</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">The function socket::write() writes to the socket from the given buffer.</p>
-	<ul class="tags">
-				<li><span class="field">return:</span> Returns the number of bytes successfully written to the  socket or FALSE on failure. The error code can be retrieved with  socket::lastError(). This code may be passed to socket::strError() to get  a textual explanation of the error.</li>
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">mixed</span>
-		<span class="method-name">
-			write
-		</span>
-					(<span class="var-type">string</span>&nbsp;<span class="var-name">$buffer</span>, [<span class="var-type">int</span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">0</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type">string</span>
-				<span class="var-name">$buffer</span>			</li>
-					<li>
-				<span class="var-type">int</span>
-				<span class="var-name">$length</span>			</li>
-				</ul>
-		
-			
-	</div>
-						
 		</div>
+
+
+		<p class="notes" id="credit">
+			Documentation generated on Wed, 04 Jan 2012 16:59:22 +0100 by <a
+				href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
+		</p>
 	</div>
-
-
-	<p class="notes" id="credit">
-		Documentation generated on Wed, 04 Jan 2012 16:59:22 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
-	</p>
-	</div></body>
+</body>
 </html>

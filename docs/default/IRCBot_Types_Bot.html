@@ -1,803 +1,825 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-  <html xmlns="http://www.w3.org/1999/xhtml">
-		<head>
-			<!-- template designed by Marco Von Ballmoos -->
-			<title>Docs For Class IRCBot_Types_Bot</title>
-			<link rel="stylesheet" href="../media/stylesheet.css" />
-			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
-		</head>
-		<body>
-			<div class="page-body">			
-<h2 class="class-name">Class IRCBot_Types_Bot</h2>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- template designed by Marco Von Ballmoos -->
+<title>Docs For Class IRCBot_Types_Bot</title>
+<link rel="stylesheet" href="../media/stylesheet.css" />
+<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1' />
+</head>
+<body>
+	<div class="page-body">
+		<h2 class="class-name">Class IRCBot_Types_Bot</h2>
 
-<a name="sec-description"></a>
-<div class="info-box">
-	<div class="info-box-title">Description</div>
-	<div class="nav-bar">
-					<span class="disabled">Description</span> |
-													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
-						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
-						
+		<a name="sec-description"></a>
+		<div class="info-box">
+			<div class="info-box-title">Description</div>
+			<div class="nav-bar">
+				<span class="disabled">Description</span> | <a
+					href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				| <a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+
+			</div>
+			<div class="info-box-body">
+				<!-- ========== Info from phpDoc block ========= -->
+				<p class="short-description">The bot class</p>
+				<p class="notes">
+					Located in <a class="field" href="_Types---Bot.php.html">/Types/Bot.php</a>
+					(line <span class="field">12</span>)
+				</p>
+
+
+				<pre></pre>
+
+			</div>
+		</div>
+
+
+
+		<a name="sec-var-summary"></a>
+		<div class="info-box">
+			<div class="info-box-title">
+				Variable Summary</span>
+			</div>
+			<div class="nav-bar">
+				<a href="#sec-description">Description</a> | <span class="disabled">Vars</span>
+				(<a href="#sec-vars">details</a>) | <a href="#sec-method-summary">Methods</a>
+				(<a href="#sec-methods">details</a>)
+
+			</div>
+			<div class="info-box-body">
+				<div class="var-summary">
+					<div class="var-title">
+						<span class="var-type">mixed</span> <a href="#$botId"
+							title="details" class="var-name">$botId</a>
 					</div>
-	<div class="info-box-body">
-        		<!-- ========== Info from phpDoc block ========= -->
-<p class="short-description">The bot class</p>
-		<p class="notes">
-			Located in <a class="field" href="_Types---Bot.php.html">/Types/Bot.php</a> (line <span class="field">12</span>)
+					<div class="var-title">
+						<span class="var-type">mixed</span> <a href="#$currentNetwork"
+							title="details" class="var-name">$currentNetwork</a>
+					</div>
+					<div class="var-title">
+						<span class="var-type">mixed</span> <a href="#$ident"
+							title="details" class="var-name">$ident</a>
+					</div>
+					<div class="var-title">
+						<span class="var-type">mixed</span> <a href="#$isConnected"
+							title="details" class="var-name">$isConnected</a>
+					</div>
+					<div class="var-title">
+						<span class="var-type">mixed</span> <a href="#$isSocketReady"
+							title="details" class="var-name">$isSocketReady</a>
+					</div>
+					<div class="var-title">
+						<span class="var-type">mixed</span> <a href="#$nickname"
+							title="details" class="var-name">$nickname</a>
+					</div>
+					<div class="var-title">
+						<span class="var-type">mixed</span> <a
+							href="#$nicknameAlternative" title="details" class="var-name">$nicknameAlternative</a>
+					</div>
+					<div class="var-title">
+						<span class="var-type">mixed</span> <a href="#$realName"
+							title="details" class="var-name">$realName</a>
+					</div>
+					<div class="var-title">
+						<span class="var-type">mixed</span> <a href="#$serverAddress"
+							title="details" class="var-name">$serverAddress</a>
+					</div>
+					<div class="var-title">
+						<span class="var-type">mixed</span> <a href="#$serverMOTD"
+							title="details" class="var-name">$serverMOTD</a>
+					</div>
+					<div class="var-title">
+						<span class="var-type">mixed</span> <a href="#$serverPort"
+							title="details" class="var-name">$serverPort</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<a name="sec-method-summary"></a>
+		<div class="info-box">
+			<div class="info-box-title">
+				Method Summary</span>
+			</div>
+			<div class="nav-bar">
+				<a href="#sec-description">Description</a> | <a
+					href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+
+				| <span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+			</div>
+			<div class="info-box-body">
+				<div class="method-summary">
+
+					<div class="method-definition">
+						<span class="method-result">IRCBot_Types_Bot</span> <a
+							href="#__construct" title="details" class="method-name">__construct</a>
+						()
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#connect"
+							title="details" class="method-name">connect</a> ([<span
+							class="var-type"></span>&nbsp;<span class="var-name">$address</span>
+						= <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span
+							class="var-name">$port</span> = <span class="var-default">null</span>])
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#disconnected"
+							title="details" class="method-name">disconnected</a> ()
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#handleQueueIn"
+							title="details" class="method-name">handleQueueIn</a> ()
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#handleQueueOut"
+							title="details" class="method-name">handleQueueOut</a> ([<span
+							class="var-type"></span>&nbsp;<span class="var-name">$completely</span>
+						= <span class="var-default">false</span>])
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a
+							href="#handleQueueParsed" title="details" class="method-name">handleQueueParsed</a>
+						()
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#handleSocket"
+							title="details" class="method-name">handleSocket</a> ()
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#join"
+							title="details" class="method-name">join</a> (<span
+							class="var-type"></span>&nbsp;<span class="var-name">$channel</span>)
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#msg"
+							title="details" class="method-name">msg</a> (<span
+							class="var-type"></span>&nbsp;<span class="var-name">$target</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$message</span>)
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#notice"
+							title="details" class="method-name">notice</a> (<span
+							class="var-type"></span>&nbsp;<span class="var-name">$target</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$message</span>)
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#part"
+							title="details" class="method-name">part</a> (<span
+							class="var-type"></span>&nbsp;<span class="var-name">$channel</span>,
+						[<span class="var-type"></span>&nbsp;<span class="var-name">$message</span>
+						= <span class="var-default">null</span>])
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#privMsg"
+							title="details" class="method-name">privMsg</a> (<span
+							class="var-type"></span>&nbsp;<span class="var-name">$target</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$message</span>)
+					</div>
+					<div class="method-definition">
+						<span class="method-result">void</span> <a href="#sendRawData"
+							title="details" class="method-name">sendRawData</a> (<span
+							class="var-type"></span>&nbsp;<span class="var-name">$rawData</span>)
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<a name="sec-vars"></a>
+		<div class="info-box">
+			<div class="info-box-title">Variables</div>
+			<div class="nav-bar">
+				<a href="#sec-description">Description</a> | <a
+					href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+
+
+				| <a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+
+			</div>
+			<div class="info-box-body">
+				<a name="var$botId" id="$botId">
+					<!-- -->
+				</A>
+				<div class="evenrow">
+
+					<div class="var-header">
+						<span class="var-title"> <span class="var-type">mixed</span>
+							<span class="var-name">$botId</span> = <span class="var-default">
+								0</span> (line <span class="line-number">18</span>)
+						</span>
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+
+
+
+
+				</div>
+				<a name="var$currentNetwork" id="$currentNetwork">
+					<!-- -->
+				</A>
+				<div class="oddrow">
+
+					<div class="var-header">
+						<span class="var-title"> <span class="var-type">mixed</span>
+							<span class="var-name">$currentNetwork</span> (line <span
+							class="line-number">22</span>)
+						</span>
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+
+
+
+
+				</div>
+				<a name="var$ident" id="$ident">
+					<!-- -->
+				</A>
+				<div class="evenrow">
+
+					<div class="var-header">
+						<span class="var-title"> <span class="var-type">mixed</span>
+							<span class="var-name">$ident</span> = <span class="var-default">
+								'PHPIRCBot'</span> (line <span class="line-number">16</span>)
+						</span>
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+
+
+
+
+				</div>
+				<a name="var$isConnected" id="$isConnected">
+					<!-- -->
+				</A>
+				<div class="oddrow">
+
+					<div class="var-header">
+						<span class="var-title"> <span class="var-type">mixed</span>
+							<span class="var-name">$isConnected</span> = <span
+							class="var-default"> false</span> (line <span class="line-number">27</span>)
+						</span>
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+
+
+
+
+				</div>
+				<a name="var$isSocketReady" id="$isSocketReady">
+					<!-- -->
+				</A>
+				<div class="evenrow">
+
+					<div class="var-header">
+						<span class="var-title"> <span class="var-type">mixed</span>
+							<span class="var-name">$isSocketReady</span> = <span
+							class="var-default"> false</span> (line <span class="line-number">28</span>)
+						</span>
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+
+
+
+
+				</div>
+				<a name="var$nickname" id="$nickname">
+					<!-- -->
+				</A>
+				<div class="oddrow">
+
+					<div class="var-header">
+						<span class="var-title"> <span class="var-type">mixed</span>
+							<span class="var-name">$nickname</span> = <span
+							class="var-default"> 'PHPIRCBot'</span> (line <span
+							class="line-number">14</span>)
+						</span>
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+
+
+
+
+				</div>
+				<a name="var$nicknameAlternative" id="$nicknameAlternative">
+					<!-- -->
+				</A>
+				<div class="evenrow">
+
+					<div class="var-header">
+						<span class="var-title"> <span class="var-type">mixed</span>
+							<span class="var-name">$nicknameAlternative</span> = <span
+							class="var-default"> 'PHPIRCBot_'</span> (line <span
+							class="line-number">15</span>)
+						</span>
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+
+
+
+
+				</div>
+				<a name="var$realName" id="$realName">
+					<!-- -->
+				</A>
+				<div class="oddrow">
+
+					<div class="var-header">
+						<span class="var-title"> <span class="var-type">mixed</span>
+							<span class="var-name">$realName</span> = <span
+							class="var-default"> 'A PHPIRCBot creation'</span> (line <span
+							class="line-number">17</span>)
+						</span>
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+
+
+
+
+				</div>
+				<a name="var$serverAddress" id="$serverAddress">
+					<!-- -->
+				</A>
+				<div class="evenrow">
+
+					<div class="var-header">
+						<span class="var-title"> <span class="var-type">mixed</span>
+							<span class="var-name">$serverAddress</span> = <span
+							class="var-default"> null</span> (line <span class="line-number">19</span>)
+						</span>
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+
+
+
+
+				</div>
+				<a name="var$serverMOTD" id="$serverMOTD">
+					<!-- -->
+				</A>
+				<div class="oddrow">
+
+					<div class="var-header">
+						<span class="var-title"> <span class="var-type">mixed</span>
+							<span class="var-name">$serverMOTD</span> = <span
+							class="var-default">array()</span> (line <span
+							class="line-number">21</span>)
+						</span>
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+
+
+
+
+				</div>
+				<a name="var$serverPort" id="$serverPort">
+					<!-- -->
+				</A>
+				<div class="evenrow">
+
+					<div class="var-header">
+						<span class="var-title"> <span class="var-type">mixed</span>
+							<span class="var-name">$serverPort</span> = <span
+							class="var-default"> 6667</span> (line <span class="line-number">20</span>)
+						</span>
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+
+
+
+
+				</div>
+
+			</div>
+		</div>
+
+		<a name="sec-methods"></a>
+		<div class="info-box">
+			<div class="info-box-title">Methods</div>
+			<div class="nav-bar">
+				<a href="#sec-description">Description</a> | <a
+					href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+
+			</div>
+			<div class="info-box-body">
+				<A NAME='method_detail'></A> <a name="method__construct"
+					id="__construct">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">Constructor __construct</span> (line <span
+							class="line-number">29</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">IRCBot_Types_Bot</span> <span
+							class="method-name"> __construct </span> ()
+					</div>
+
+
+
+				</div>
+				<a name="methodconnect" id="connect">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">connect</span> (line <span
+							class="line-number">39</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							connect </span> ([<span class="var-type"></span>&nbsp;<span
+							class="var-name">$address</span> = <span class="var-default">null</span>],
+						[<span class="var-type"></span>&nbsp;<span class="var-name">$port</span>
+						= <span class="var-default">null</span>])
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">$address</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$port</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methoddisconnected" id="disconnected">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">disconnected</span> (line <span
+							class="line-number">154</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							disconnected </span> ()
+					</div>
+
+
+
+				</div>
+				<a name="methodhandleQueueIn" id="handleQueueIn">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">handleQueueIn</span> (line <span
+							class="line-number">95</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							handleQueueIn </span> ()
+					</div>
+
+
+
+				</div>
+				<a name="methodhandleQueueOut" id="handleQueueOut">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">handleQueueOut</span> (line <span
+							class="line-number">76</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							handleQueueOut </span> ([<span class="var-type"></span>&nbsp;<span
+							class="var-name">$completely</span> = <span class="var-default">false</span>])
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">$completely</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methodhandleQueueParsed" id="handleQueueParsed">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">handleQueueParsed</span> (line <span
+							class="line-number">110</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							handleQueueParsed </span> ()
+					</div>
+
+
+
+				</div>
+				<a name="methodhandleSocket" id="handleSocket">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">handleSocket</span> (line <span
+							class="line-number">60</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							handleSocket </span> ()
+					</div>
+
+
+
+				</div>
+				<a name="methodjoin" id="join">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">join</span> (line <span
+							class="line-number">144</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							join </span> (<span class="var-type"></span>&nbsp;<span class="var-name">$channel</span>)
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">$channel</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methodmsg" id="msg">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">msg</span> (line <span
+							class="line-number">134</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							msg </span> (<span class="var-type"></span>&nbsp;<span class="var-name">$target</span>,
+						<span class="var-type"></span>&nbsp;<span class="var-name">$message</span>)
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">$target</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$message</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methodnotice" id="notice">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">notice</span> (line <span
+							class="line-number">139</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							notice </span> (<span class="var-type"></span>&nbsp;<span
+							class="var-name">$target</span>, <span class="var-type"></span>&nbsp;<span
+							class="var-name">$message</span>)
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">$target</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$message</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methodpart" id="part">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">part</span> (line <span
+							class="line-number">149</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							part </span> (<span class="var-type"></span>&nbsp;<span class="var-name">$channel</span>,
+						[<span class="var-type"></span>&nbsp;<span class="var-name">$message</span>
+						= <span class="var-default">null</span>])
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">$channel</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$message</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methodprivMsg" id="privMsg">
+					<!-- -->
+				</a>
+				<div class="evenrow">
+
+					<div class="method-header">
+						<span class="method-title">privMsg</span> (line <span
+							class="line-number">129</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							privMsg </span> (<span class="var-type"></span>&nbsp;<span
+							class="var-name">$target</span>, <span class="var-type"></span>&nbsp;<span
+							class="var-name">$message</span>)
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">$target</span>
+						</li>
+						<li><span class="var-type"></span> <span class="var-name">$message</span>
+						</li>
+					</ul>
+
+
+				</div>
+				<a name="methodsendRawData" id="sendRawData">
+					<!-- -->
+				</a>
+				<div class="oddrow">
+
+					<div class="method-header">
+						<span class="method-title">sendRawData</span> (line <span
+							class="line-number">122</span>)
+					</div>
+
+					<!-- ========== Info from phpDoc block ========= -->
+					<ul class="tags">
+						<li><span class="field">access:</span> public</li>
+					</ul>
+
+					<div class="method-signature">
+						<span class="method-result">void</span> <span class="method-name">
+							sendRawData </span> (<span class="var-type"></span>&nbsp;<span
+							class="var-name">$rawData</span>)
+					</div>
+
+					<ul class="parameters">
+						<li><span class="var-type"></span> <span class="var-name">$rawData</span>
+						</li>
+					</ul>
+
+
+				</div>
+
+			</div>
+		</div>
+
+
+		<p class="notes" id="credit">
+			Documentation generated on Wed, 04 Jan 2012 16:59:20 +0100 by <a
+				href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
 		</p>
-		
-				
-		<pre></pre>
-	
-			</div>
-</div>
-
-
-
-	<a name="sec-var-summary"></a>
-	<div class="info-box">
-		<div class="info-box-title">Variable Summary</span></div>
-		<div class="nav-bar">
-			<a href="#sec-description">Description</a> |
-						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
-							| 
-									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
-							
-								</div>
-		<div class="info-box-body">
-			<div class="var-summary">
-																																																																																																								<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$botId" title="details" class="var-name">$botId</a>
-				</div>
-																<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$currentNetwork" title="details" class="var-name">$currentNetwork</a>
-				</div>
-																<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$ident" title="details" class="var-name">$ident</a>
-				</div>
-																<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$isConnected" title="details" class="var-name">$isConnected</a>
-				</div>
-																<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$isSocketReady" title="details" class="var-name">$isSocketReady</a>
-				</div>
-																<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$nickname" title="details" class="var-name">$nickname</a>
-				</div>
-																<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$nicknameAlternative" title="details" class="var-name">$nicknameAlternative</a>
-				</div>
-																<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$realName" title="details" class="var-name">$realName</a>
-				</div>
-																<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$serverAddress" title="details" class="var-name">$serverAddress</a>
-				</div>
-																<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$serverMOTD" title="details" class="var-name">$serverMOTD</a>
-				</div>
-																<div class="var-title">
-					<span class="var-type">mixed</span>
-					<a href="#$serverPort" title="details" class="var-name">$serverPort</a>
-				</div>
-											</div>
-		</div>
 	</div>
-
-	<a name="sec-method-summary"></a>
-	<div class="info-box">
-		<div class="info-box-title">Method Summary</span></div>
-		<div class="nav-bar">
-			<a href="#sec-description">Description</a> |
-																		<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
-				 
-				|
-						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
-		</div>
-		<div class="info-box-body">			
-			<div class="method-summary">
-																																																																																																												
-												<div class="method-definition">
-											<span class="method-result">IRCBot_Types_Bot</span>
-										<a href="#__construct" title="details" class="method-name">__construct</a>
-										()
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#connect" title="details" class="method-name">connect</a>
-											([<span class="var-type"></span>&nbsp;<span class="var-name">$address</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$port</span> = <span class="var-default">null</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#disconnected" title="details" class="method-name">disconnected</a>
-										()
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#handleQueueIn" title="details" class="method-name">handleQueueIn</a>
-										()
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#handleQueueOut" title="details" class="method-name">handleQueueOut</a>
-											([<span class="var-type"></span>&nbsp;<span class="var-name">$completely</span> = <span class="var-default">false</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#handleQueueParsed" title="details" class="method-name">handleQueueParsed</a>
-										()
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#handleSocket" title="details" class="method-name">handleSocket</a>
-										()
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#join" title="details" class="method-name">join</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$channel</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#msg" title="details" class="method-name">msg</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$target</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$message</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#notice" title="details" class="method-name">notice</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$target</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$message</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#part" title="details" class="method-name">part</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$channel</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$message</span> = <span class="var-default">null</span>])
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#privMsg" title="details" class="method-name">privMsg</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$target</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$message</span>)
-									</div>
-																<div class="method-definition">
-											<span class="method-result">void</span>
-										<a href="#sendRawData" title="details" class="method-name">sendRawData</a>
-											(<span class="var-type"></span>&nbsp;<span class="var-name">$rawData</span>)
-									</div>
-								</div>
-		</div>
-	</div>		
-
-	<a name="sec-vars"></a>
-	<div class="info-box">
-		<div class="info-box-title">Variables</div>
-		<div class="nav-bar">
-			<a href="#sec-description">Description</a> |
-										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
-						
-			
-										| 
-									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
-							
-					</div>
-		<div class="info-box-body">
-			<a name="var$botId" id="$botId"><!-- --></A>
-<div class="evenrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$botId</span>
-			 = <span class="var-default"> 0</span>			(line <span class="line-number">18</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	
-		
-		
-
-</div>
-<a name="var$currentNetwork" id="$currentNetwork"><!-- --></A>
-<div class="oddrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$currentNetwork</span>
-						(line <span class="line-number">22</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	
-		
-		
-
-</div>
-<a name="var$ident" id="$ident"><!-- --></A>
-<div class="evenrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$ident</span>
-			 = <span class="var-default"> 'PHPIRCBot'</span>			(line <span class="line-number">16</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	
-		
-		
-
-</div>
-<a name="var$isConnected" id="$isConnected"><!-- --></A>
-<div class="oddrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$isConnected</span>
-			 = <span class="var-default"> false</span>			(line <span class="line-number">27</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	
-		
-		
-
-</div>
-<a name="var$isSocketReady" id="$isSocketReady"><!-- --></A>
-<div class="evenrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$isSocketReady</span>
-			 = <span class="var-default"> false</span>			(line <span class="line-number">28</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	
-		
-		
-
-</div>
-<a name="var$nickname" id="$nickname"><!-- --></A>
-<div class="oddrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$nickname</span>
-			 = <span class="var-default"> 'PHPIRCBot'</span>			(line <span class="line-number">14</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	
-		
-		
-
-</div>
-<a name="var$nicknameAlternative" id="$nicknameAlternative"><!-- --></A>
-<div class="evenrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$nicknameAlternative</span>
-			 = <span class="var-default"> 'PHPIRCBot_'</span>			(line <span class="line-number">15</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	
-		
-		
-
-</div>
-<a name="var$realName" id="$realName"><!-- --></A>
-<div class="oddrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$realName</span>
-			 = <span class="var-default"> 'A PHPIRCBot creation'</span>			(line <span class="line-number">17</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	
-		
-		
-
-</div>
-<a name="var$serverAddress" id="$serverAddress"><!-- --></A>
-<div class="evenrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$serverAddress</span>
-			 = <span class="var-default"> null</span>			(line <span class="line-number">19</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	
-		
-		
-
-</div>
-<a name="var$serverMOTD" id="$serverMOTD"><!-- --></A>
-<div class="oddrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$serverMOTD</span>
-			 = <span class="var-default">array()</span>			(line <span class="line-number">21</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	
-		
-		
-
-</div>
-<a name="var$serverPort" id="$serverPort"><!-- --></A>
-<div class="evenrow">
-
-	<div class="var-header">
-		<span class="var-title">
-			<span class="var-type">mixed</span>
-			<span class="var-name">$serverPort</span>
-			 = <span class="var-default"> 6667</span>			(line <span class="line-number">20</span>)
-		</span>
-	</div>
-
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	
-		
-		
-
-</div>
-						
-		</div>
-	</div>
-	
-	<a name="sec-methods"></a>
-	<div class="info-box">
-		<div class="info-box-title">Methods</div>
-		<div class="nav-bar">
-			<a href="#sec-description">Description</a> |
-															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
-																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
-						
-		</div>
-		<div class="info-box-body">
-			<A NAME='method_detail'></A>
-
-<a name="method__construct" id="__construct"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">Constructor __construct</span> (line <span class="line-number">29</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">IRCBot_Types_Bot</span>
-		<span class="method-name">
-			__construct
-		</span>
-				()
-			</div>
-	
-		
-			
-	</div>
-<a name="methodconnect" id="connect"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">connect</span> (line <span class="line-number">39</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			connect
-		</span>
-					([<span class="var-type"></span>&nbsp;<span class="var-name">$address</span> = <span class="var-default">null</span>], [<span class="var-type"></span>&nbsp;<span class="var-name">$port</span> = <span class="var-default">null</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$address</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$port</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methoddisconnected" id="disconnected"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">disconnected</span> (line <span class="line-number">154</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			disconnected
-		</span>
-				()
-			</div>
-	
-		
-			
-	</div>
-<a name="methodhandleQueueIn" id="handleQueueIn"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">handleQueueIn</span> (line <span class="line-number">95</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			handleQueueIn
-		</span>
-				()
-			</div>
-	
-		
-			
-	</div>
-<a name="methodhandleQueueOut" id="handleQueueOut"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">handleQueueOut</span> (line <span class="line-number">76</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			handleQueueOut
-		</span>
-					([<span class="var-type"></span>&nbsp;<span class="var-name">$completely</span> = <span class="var-default">false</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$completely</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodhandleQueueParsed" id="handleQueueParsed"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">handleQueueParsed</span> (line <span class="line-number">110</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			handleQueueParsed
-		</span>
-				()
-			</div>
-	
-		
-			
-	</div>
-<a name="methodhandleSocket" id="handleSocket"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">handleSocket</span> (line <span class="line-number">60</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			handleSocket
-		</span>
-				()
-			</div>
-	
-		
-			
-	</div>
-<a name="methodjoin" id="join"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">join</span> (line <span class="line-number">144</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			join
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$channel</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$channel</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodmsg" id="msg"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">msg</span> (line <span class="line-number">134</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			msg
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$target</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$message</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$target</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$message</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodnotice" id="notice"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">notice</span> (line <span class="line-number">139</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			notice
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$target</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$message</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$target</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$message</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodpart" id="part"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">part</span> (line <span class="line-number">149</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			part
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$channel</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$message</span> = <span class="var-default">null</span>])
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$channel</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$message</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodprivMsg" id="privMsg"><!-- --></a>
-<div class="evenrow">
-	
-	<div class="method-header">
-		<span class="method-title">privMsg</span> (line <span class="line-number">129</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			privMsg
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$target</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$message</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$target</span>			</li>
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$message</span>			</li>
-				</ul>
-		
-			
-	</div>
-<a name="methodsendRawData" id="sendRawData"><!-- --></a>
-<div class="oddrow">
-	
-	<div class="method-header">
-		<span class="method-title">sendRawData</span> (line <span class="line-number">122</span>)
-	</div> 
-	
-	<!-- ========== Info from phpDoc block ========= -->
-	<ul class="tags">
-				<li><span class="field">access:</span> public</li>
-			</ul>
-	
-	<div class="method-signature">
-		<span class="method-result">void</span>
-		<span class="method-name">
-			sendRawData
-		</span>
-					(<span class="var-type"></span>&nbsp;<span class="var-name">$rawData</span>)
-			</div>
-	
-			<ul class="parameters">
-					<li>
-				<span class="var-type"></span>
-				<span class="var-name">$rawData</span>			</li>
-				</ul>
-		
-			
-	</div>
-						
-		</div>
-	</div>
-
-
-	<p class="notes" id="credit">
-		Documentation generated on Wed, 04 Jan 2012 16:59:20 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.4</a>
-	</p>
-	</div></body>
+</body>
 </html>
