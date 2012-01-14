@@ -1,4 +1,6 @@
 <?php
+require_once 'Response.php';
+
 class IRCBot_Types_Command extends IRCBot_Types_Response
 {
     /**

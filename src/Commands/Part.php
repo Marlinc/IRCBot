@@ -1,4 +1,7 @@
 <?php
+require_once __DIR__ . '/../Types/Command.php';
+require_once __DIR__ . '/../Types/Mask.php';
+
 class IRCBot_Commands_Part extends IRCBot_Types_Command
 {
     /**
