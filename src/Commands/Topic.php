@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/../Types/Command.php';
+
 class IRCBot_Commands_Topic extends IRCBot_Types_Command
 {
     public $channel;
@@ -26,7 +28,7 @@ class IRCBot_Commands_Topic extends IRCBot_Types_Command
     public function getIdentifiers()
     {
         $identifiers = array();
-        $identifiers['chan'] = $this->getChan();
+        $identifiers['chan'] = $this->channel;
         $identifiers['nick'] = $this->mask->nickname;
         return $identifiers;
     }
