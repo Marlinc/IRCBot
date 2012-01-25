@@ -4,7 +4,7 @@
  * 
  * PHP version 5
  * 
- * @category IRCBot
+ * @category Net
  * @package  IRCBot
  * @author   Marlin Cremers <marlinc@mms-projects.net>
  * @license  http://www.freebsd.org/copyright/freebsd-license.html  BSD License (2 Clause)
@@ -62,9 +62,11 @@ require_once 'shortFunctions.php';
  * The main IRCBot application object contains all the other important objects
  * like the database, socket and module handlers
  * 
- * @author  Marlin Cremers <marlinc@mms-projects.net>
- * @license http://www.freebsd.org/copyright/freebsd-license.html  BSD License (2 Clause)
- * @link    https://github.com/Marlinc/IRCBot
+ * @category Net
+ * @package  IRCBot
+ * @author   Marlin Cremers <marlinc@mms-projects.net>
+ * @license  http://www.freebsd.org/copyright/freebsd-license.html  BSD License (2 Clause)
+ * @link     https://github.com/Marlinc/IRCBot
  */
 class IRCBot_Application
 {

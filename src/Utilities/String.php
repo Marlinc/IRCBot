@@ -4,17 +4,21 @@
  * 
  * PHP version 5
  * 
- * @author  Marlin Cremers <marlinc@mms-projects.net>
- * @license http://www.freebsd.org/copyright/freebsd-license.html  BSD License (2 Clause)
- * @link    https://github.com/Marlinc/IRCBot
+ * @category Net
+ * @package  IRCBot
+ * @author   Marlin Cremers <marlinc@mms-projects.net>
+ * @license  http://www.freebsd.org/copyright/freebsd-license.html  BSD License (2 Clause)
+ * @link     https://github.com/Marlinc/IRCBot
  */
 
 /**
  * The actual string utility class
  * 
- * @author  Marlin Cremers <marlinc@mms-projects.net>
- * @license http://www.freebsd.org/copyright/freebsd-license.html  BSD License (2 Clause)
- * @link    https://github.com/Marlinc/IRCBot
+ * @category Net
+ * @package  IRCBot
+ * @author   Marlin Cremers <marlinc@mms-projects.net>
+ * @license  http://www.freebsd.org/copyright/freebsd-license.html  BSD License (2 Clause)
+ * @link     https://github.com/Marlinc/IRCBot
  */
 class IRCBot_Utilities_String
 {
