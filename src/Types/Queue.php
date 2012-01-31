@@ -45,4 +45,3 @@ class IRCBot_Types_Queue
         return (count($this->_queue) == 0) ? true : false;
     }
 }
-?>

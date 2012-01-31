@@ -26,15 +26,22 @@ class IRCBot_Types_Bot
     private $_queueOutId = 0;
     public $isConnected = false;
     public $isSocketReady = false;
-    public function  __construct() {
+    public function  __construct()
+    {
         $app = IRCBot_Application::getInstance();
         $queueHandler = $app->getQueueHandler();
         $socket = new IRCBot_Types_Socket();
         $socket->create(AF_INET, SOCK_STREAM, SOL_TCP);
         $this->_socketId = $app->getSocketHandler()->addSocket($socket);
-        $this->_queueInId = $queueHandler->addQueue(new IRCBot_Types_Queue());
-        $this->_queueOutId = $queueHandler->addQueue(new IRCBot_Types_Queue());
-        $this->_queueParsedId = $queueHandler->addQueue(new IRCBot_Types_Queue());
+        $this->_queueInId = $queueHandler->addQueue(
+            new IRCBot_Types_Queue()
+        );
+        $this->_queueOutId = $queueHandler->addQueue(
+            new IRCBot_Types_Queue()
+        );
+        $this->_queueParsedId = $queueHandler->addQueue(
+            new IRCBot_Types_Queue()
+        );
     }
     public function connect($address = null, $port = null)
     {
@@ -51,8 +58,9 @@ class IRCBot_Types_Bot
         $queue = IRCBot_Application::getInstance()->getQueueHandler()
             ->getQueueById($this->_queueOutId);
         $queue->addEntry(new IRCBot_Commands_Nick($this->nickname));
-        $queue->addEntry(new IRCBot_Commands_User($this->ident,
-            $this->realName));
+        $queue->addEntry(
+            new IRCBot_Commands_User($this->ident, $this->realName)
+        );
         $this->isSocketReady = true;
         $this->currentNetwork = new IRCBot_Types_Network;
         $this->handleQueueOut();
@@ -161,4 +169,3 @@ class IRCBot_Types_Bot
             ->raiseEvent('onDisconnected', $this->botId);
     }
 }
-?>

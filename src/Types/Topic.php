@@ -5,4 +5,3 @@ class IRCBot_Types_Topic
     public $who;
     public $timestamp;
 }
-?>

@@ -239,4 +239,3 @@ class IRCBot_Application
         return $this->_debugger;
     }
 }
-?>

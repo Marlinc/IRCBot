@@ -28,4 +28,3 @@ class IRCBot_Handlers_Queues
         return $this->_queues[$queueId];
     }
 }
-?>

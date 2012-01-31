@@ -20,4 +20,4 @@ class IRCBot_Commands_Quit extends IRCBot_Types_Command
         return sprintf('QUIT :%s', $this->message) . "\n\r";
     }
 }
-?>
+

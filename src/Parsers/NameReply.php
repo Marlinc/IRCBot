@@ -1,6 +1,8 @@
 <?php
-class IRCBot_Parsers_NameReply {
-    public function parseNames($rawData) {
+class IRCBot_Parsers_NameReply
+{
+    public function parseNames($rawData)
+    {
         $names = explode(' ', substr(strrchr(trim($rawData), ':'), 1));
         $nameList = array();
         foreach ($names as $name) {
@@ -13,7 +15,8 @@ class IRCBot_Parsers_NameReply {
         }
         return $nameList;
     }
-    private function _getRankByPrefix($prefix) {
+    private function _getRankByPrefix($prefix)
+    {
         if ($prefix == '@') {
             return CHAN_MODE_OP;
         } elseif ($prefix == '%') {
@@ -24,4 +27,3 @@ class IRCBot_Parsers_NameReply {
         return 0;
     }
 }
-?>

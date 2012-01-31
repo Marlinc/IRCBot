@@ -16,7 +16,8 @@ class IRCBot_Handlers_UserCommands
     public $defaultMsgType = TYPE_CHANMSG;
     private $_callbacks = array();
 
-    public function  __construct() {
+    public function  __construct()
+    {
         IRCBot_Application::getInstance()->getEventHandler()
             ->addEventCallback('onPrivMsg', array($this, 'onMsg'))
             ->addEventCallback('onNotice', array($this, 'onMsg'));
@@ -35,12 +36,11 @@ class IRCBot_Handlers_UserCommands
     }
     public function onMsg($event)
     {
-        $isChan = (substr($event->target, 0,1) == '#');
+        $isChan = (substr($event->target, 0, 1) == '#');
         $type = null;
         if ($event instanceof IRCBot_Commands_PrivMsg) {
             $type = ($isChan) ? TYPE_CHANMSG : TYPE_PRIVMSG;
-        }
-        elseif ($event instanceof IRCBot_Commands_Notice) {
+        } elseif ($event instanceof IRCBot_Commands_Notice) {
             $type = ($isChan) ? TYPE_CHANNOTICE : TYPE_PRIVNOTICE;
         }
         foreach ($this->_callbacks as $callback) {
@@ -58,8 +58,9 @@ class IRCBot_Handlers_UserCommands
                 }
             }
             if ($callback['scan_type'] == IRCBOT_USERCMD_SCANTYPE_REGEX) {
-                if (!preg_match($callback['message'], $event->message,
-                  $event->matches)) {
+                if (!preg_match(
+                    $callback['message'], $event->message, $event->matches
+                )) {
                     continue;
                 }
             }
@@ -82,4 +83,3 @@ class IRCBot_Handlers_UserCommands
         return $this;
     }
 }
-?>

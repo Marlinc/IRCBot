@@ -25,4 +25,3 @@ class IRCBot_Handlers_Identifiers
         return $this->_identifiers[$identifier];
     }
 }
-?>

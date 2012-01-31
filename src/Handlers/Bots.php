@@ -13,11 +13,13 @@ class IRCBot_Handlers_Bots
 {
     private $_bots = array();
     private $_lastId = 0;
-    public function __construct() {
+    public function __construct()
+    {
         IRCBot_Application::getInstance()->getEventHandler()
             ->addEventCallback('loopIterate', array($this, 'handleBots'));
     }
-    public function addBot(IRCBot_Types_Bot &$bot) {
+    public function addBot(IRCBot_Types_Bot &$bot)
+    {
         ++$this->_lastId;
         $bot->botId = $this->_lastId;
         $this->_bots[$this->_lastId] = $bot;
@@ -61,4 +63,3 @@ class IRCBot_Handlers_Bots
         }
     }
 }
-?>

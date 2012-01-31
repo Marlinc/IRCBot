@@ -8,8 +8,10 @@ class IRCBot_Types_Numeric extends IRCBot_Types_Response
     public $message;
     public function fromRawData($rawData)
     {
-        sscanf($rawData, ':%s %s %s %[ -~]', $this->server, $this->numeric,
-            $this->target, $this->message);
+        sscanf(
+            $rawData, ':%s %s %s %[ -~]', $this->server, $this->numeric,
+            $this->target, $this->message
+        );
     }
     public function getEventName()
     {
@@ -19,5 +21,3 @@ class IRCBot_Types_Numeric extends IRCBot_Types_Response
         return $events;
     }
 }
-
-?>

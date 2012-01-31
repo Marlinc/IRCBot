@@ -24,7 +24,8 @@ class IRCBot_Types_Channel
     public $nicklist;
     public $hasBot;
     
-    public function isOp($askedNick) {
+    public function isOp($askedNick)
+    {
         foreach ($this->nicklist as $nick => $rank) {
             if (strtolower($nick) == strtolower($askedNick)) {
                 if ($rank & CHAN_MODE_OP) {
@@ -35,4 +36,3 @@ class IRCBot_Types_Channel
         return false;
     }
 }
-?>

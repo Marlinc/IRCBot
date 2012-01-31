@@ -14,8 +14,10 @@ class IRCBot_Commands_Topic extends IRCBot_Types_Command
     }
     public function fromRawData($rawData)
     {
-        sscanf($rawData, ':%s TOPIC %s :%[ -~]', $this->who, $this->channel,
-            $this->message);
+        sscanf(
+            $rawData, ':%s TOPIC %s :%[ -~]', $this->who, $this->channel,
+            $this->message
+        );
         $mask = new IRCBot_Types_Mask();
         $mask->fromMask($this->who);
         $this->who = $mask->nickname;
@@ -37,4 +39,3 @@ class IRCBot_Commands_Topic extends IRCBot_Types_Command
         return sprintf('TOPIC %s :%s', $this->channel, $this->message) . "\n\r";
     }
 }
-?>

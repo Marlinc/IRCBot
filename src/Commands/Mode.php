@@ -20,4 +20,4 @@ class IRCBot_Commands_Mode extends IRCBot_Types_Command
         return sprintf('MODE %s %s', $this->target, $this->modes) . "\n\r";
     }
 }
-?>
+

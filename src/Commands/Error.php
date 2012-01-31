@@ -13,4 +13,3 @@ class IRCBot_Commands_Error extends IRCBot_Types_Command
         return 'onError';
     }
 }
-?>

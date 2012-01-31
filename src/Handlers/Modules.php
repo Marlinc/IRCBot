@@ -9,7 +9,8 @@
 /**
  * The module handler class
  */
-class IRCBot_Handlers_Modules {
+class IRCBot_Handlers_Modules
+{
     private $_modules = array();
 
     public function addModuleByObject(&$module)
@@ -17,8 +18,9 @@ class IRCBot_Handlers_Modules {
         $this->_modules[get_class($module)] = $module;
         return $this;
     }
-    public function getModuleByName($moduleName) {
-        return (isset($this->_modules[$moduleName])) ? $this->_modules[$moduleName] : false;
+    public function getModuleByName($moduleName)
+    {
+        return (isset($this->_modules[$moduleName]))
+            ? $this->_modules[$moduleName] : false;
     }   
 }
-?>

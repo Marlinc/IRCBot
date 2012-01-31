@@ -14,8 +14,9 @@ class IRCBot_Commands_Pong extends IRCBot_Types_Command
     {
         return 'onPong';
     }
-    public function  __toString() {
+    public function  __toString()
+    {
         return sprintf('PONG :%s', $this->code) . "\n\r";
     }
 }
-?>
+

@@ -106,8 +106,7 @@ class IRCBot_Types_Socket
             $socket = new IRCBot_Types_Socket();
             $socket->setResource($resource);
             return $socket;
-        }
-        else {
+        } else {
             return $resource;
         }
     }
@@ -233,7 +232,8 @@ class IRCBot_Types_Socket
      * If the given socket is of type AF_UNIX, socket::getPeerName() will
      * return the Unix filesystem path (e.g. /var/run/daemon.sock) in the
      * address parameter.
-     * @param int &$port If given, this will hold the port associated to address.
+     * @param int &$port If given, this will hold the port associated to
+     * address.
      * @return bool Returns TRUE on success or FALSE on failure.
      * socket::getPeerName() may also return FALSE if the socket type is not
      * any of AF_INET, AF_INET6, or AF_UNIX, in which case the last socket
@@ -287,7 +287,8 @@ class IRCBot_Types_Socket
      * connections.
      * @return bool Returns TRUE on success or FALSE on failure.
      * The error code can be retrieved with socket::lastError(). This code may 
-     * be passed to socket::strError() to get a textual explanation of the error. 
+     * be passed to socket::strError() to get a textual explanation of the
+     * error. 
      */
     public function bind($address, $port = 0)
     {
@@ -303,12 +304,15 @@ class IRCBot_Types_Socket
     }
     public function recvFrom(&$buf, $len, $flags, &$name, &$port = null)
     {
-        return socket_recvfrom($this->_resource, $buf, $len, $flags, $name,
-            $port);
+        return socket_recvfrom(
+            $this->_resource, $buf, $len, $flags, $name, $port
+        );
     }
     public function sendTo($buf, $len, $flags, $addr, $port = 0)
     {
-        return socket_sendto($this->_resource, $buf, $len, $flags, $addr, $port);
+        return socket_sendto(
+            $this->_resource, $buf, $len, $flags, $addr, $port
+        );
     }
     public function getOption($level, $optname)
     {
@@ -342,4 +346,3 @@ class IRCBot_Types_Socket
         return $data;
     }
 }
-?>

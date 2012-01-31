@@ -17,7 +17,10 @@ class IRCBot_Commands_Part extends IRCBot_Types_Command
     }
     public function fromRawData($rawData)
     {
-        sscanf($rawData, ':%s PART %s :%s', $this->mask, $this->channel, $this->message);
+        sscanf(
+            $rawData, ':%s PART %s :%s', $this->mask, $this->channel,
+            $this->message
+        );
         $mask = new IRCBot_Types_Mask();
         $mask->fromMask($this->mask);
         $this->mask = $mask;
@@ -38,4 +41,4 @@ class IRCBot_Commands_Part extends IRCBot_Types_Command
         return sprintf('PART %s :%s', $this->channel, $this->message) . "\n\r";
     }
 }
-?>
+

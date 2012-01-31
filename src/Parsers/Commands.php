@@ -46,4 +46,3 @@ class IRCBot_Parsers_Commands
         return $cmd;
     }
 }
-?>

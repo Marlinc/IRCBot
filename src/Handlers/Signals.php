@@ -18,8 +18,10 @@
  * SIGPWR
  * SIGINT
  */
-class IRCBot_Handlers_Signals {
-    public function  __construct() {
+class IRCBot_Handlers_Signals
+{
+    public function  __construct()
+    {
         //echo "Installing signal handler...\n";
         pcntl_signal(SIGHUP, array($this, 'handleSignal'));
         pcntl_signal(SIGTERM, array($this, 'handleSignal'));
@@ -42,20 +44,15 @@ class IRCBot_Handlers_Signals {
         //echo "signal handler called\n";
         if ($signal == SIGHUP) {
             $this->_raiseEvent('SIGHUP');
-        }
-        elseif ($signal == SIGTERM) {
+        } elseif ($signal == SIGTERM) {
             $this->_raiseEvent('SIGTERM');
-        }
-        elseif ($signal == SIGUSR1) {
+        } elseif ($signal == SIGUSR1) {
             $this->_raiseEvent('SIGUSR1');
-        }
-        elseif ($signal == SIGUSR2) {
+        } elseif ($signal == SIGUSR2) {
             $this->_raiseEvent('SIGUSR2');
-        }
-        elseif ($signal == SIGPWR) {
+        } elseif ($signal == SIGPWR) {
             $this->_raiseEvent('SIGPWR');
-        }
-        elseif ($signal == SIGINT) {
+        } elseif ($signal == SIGINT) {
             $this->_raiseEvent('SIGINT');
         }
     }
@@ -65,4 +62,3 @@ class IRCBot_Handlers_Signals {
             ->raiseEvent($signalName);
     }
 }
-?>

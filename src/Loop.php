@@ -39,7 +39,8 @@ class IRCBot_Loop
      * 
      * @return int Returns the amount of iterations runned
      */
-    public function startLoop($iterations = 0, $onStart = null, $onIterate = null)
+    public function startLoop($iterations = 0, $onStart = null,
+        $onIterate = null)
     {
         if (!$onStart) {
             $onStart = array($this, 'onStart');
@@ -84,4 +85,3 @@ class IRCBot_Loop
             ->raiseEvent('loopIterate', $iteration);
     }
 }
-?>

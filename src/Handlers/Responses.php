@@ -28,15 +28,15 @@ class IRCBot_Handlers_Responses
     {
         if ($response instanceof IRCBot_Types_Command) {
             $this->handleCommand($response);
-        }
-        elseif ($response instanceof IRCBot_Types_Numeric) {
+        } elseif ($response instanceof IRCBot_Types_Numeric) {
             $this->handleNumeric($response);
         }
     }
     public function handleCommand(IRCBot_Types_Command $command)
     {
         $eventHandler = IRCBot_Application::getInstance()->getEventHandler();
-        $identifiers = IRCBot_Application::getInstance()->getIdentifierHandler();
+        $identifiers = IRCBot_Application::getInstance()
+            ->getIdentifierHandler();
         $identifiers->botId = $command->botId;
         if (isset($command->message)) {
             IRCBot_Utilities_String::tokenize($command->message);
@@ -48,9 +48,9 @@ class IRCBot_Handlers_Responses
     {
         $eventHandler = IRCBot_Application::getInstance()->getEventHandler();
         IRCBot_Utilities_String::tokenize($numeric->message);
-        $identifiers = IRCBot_Application::getInstance()->getIdentifierHandler();
+        $identifiers = IRCBot_Application::getInstance()
+            ->getIdentifierHandler();
         $identifiers->botId = $numeric->botId;
         $eventHandler->raiseEvent($numeric->getEventName(), $numeric);
     }
 }
-?>

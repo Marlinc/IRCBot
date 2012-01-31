@@ -19,4 +19,4 @@ class IRCBot_Commands_Ping extends IRCBot_Types_Command
         return sprintf('PING :%s', $this->code);
     }
 }
-?>
+

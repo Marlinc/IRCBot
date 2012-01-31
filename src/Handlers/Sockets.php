@@ -10,7 +10,8 @@
  * The socket handler
  *
  * This handler is created to handle sockets
- * It can readlines from sockets if needed and then call a callback with the data
+ * It can readlines from sockets if needed and then call a callback with
+ * the data
  */
 class IRCBot_Handlers_Sockets
 {
@@ -36,4 +37,3 @@ class IRCBot_Handlers_Sockets
         return $this->_sockets[$socketId];
     }
 }
-?>

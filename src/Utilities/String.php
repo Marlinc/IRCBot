@@ -65,14 +65,14 @@ class IRCBot_Utilities_String
             if ($end < $start) {
                 $start = $end;
             }
-            $tmp1 = '';
+            $tmpOne = '';
             for ($i = (int) $start; $i < $end; ++$i) {
                 $token = (self::token($i)) ? self::token($i) : '';
                 if ($token) {
-                    $tmp1 .= (($tmp1) ? self::$_tokenizeChr : '') . $token;
+                    $tmpOne .= (($tmpOne) ? self::$_tokenizeChr : '') . $token;
                 }
             }
-            return $tmp1;
+            return $tmpOne;
         }
     }
     /**
@@ -104,4 +104,3 @@ class IRCBot_Utilities_String
         return implode(' ', $string);
     }
 }
-?>

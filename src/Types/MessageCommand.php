@@ -34,4 +34,3 @@ class IRCBot_Types_MessageCommand extends IRCBot_Types_Command
         return (substr($this->target, 0, 1) == '#') ? $this->target : '';
     }
 }
-?>

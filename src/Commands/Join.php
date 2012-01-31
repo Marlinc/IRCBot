@@ -34,4 +34,3 @@ class IRCBot_Commands_Join extends IRCBot_Types_Command
         return sprintf('JOIN :%s', $this->channel) . "\n\r";
     }
 }
-?>

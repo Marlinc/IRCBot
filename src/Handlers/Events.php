@@ -23,7 +23,8 @@ class IRCBot_Handlers_Events
     private $_callbacks = array();
     /**
      * Raises the specific event with the data if given
-     * @param mixed $eventName The name of the event to be raised or a array of names
+     * @param mixed $eventName The name of the event to be raised or a
+     * array of names
      * @param mixed $data The data send with the raised event
      */
     public function raiseEvent($eventName, $data = null)
@@ -57,14 +58,13 @@ class IRCBot_Handlers_Events
         $this->_callbacks[] = $tmp;
         if (is_array($callback)) {
             $callbackDisplay = get_class($callback[0]) . '::' . $callback[1];
-        }
-        else {
+        } else {
             $callbackDisplay = $callback;
         }
         IRCBot_Application::getInstance()->getDebugger()
-            ->log('Events', 'AddCallback', $eventName . ' => '
-                . $callbackDisplay);
+            ->log(
+                'Events', 'AddCallback', $eventName . ' => ' . $callbackDisplay
+            );
         return $this;
     }
 }
-?>

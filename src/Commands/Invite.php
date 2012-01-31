@@ -35,4 +35,4 @@ class IRCBot_Commands_Invite extends IRCBot_Types_Command
         return sprintf('INVITE %s :%s', $this->target, $this->channel) . "\n\r";
     }
 }
-?>
+
