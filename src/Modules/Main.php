@@ -1,36 +1,27 @@
 <?php
-class IRCBot_Modules_Main
+class IRCBot_Modules_Main extends IRCBot_Modules_Abstract
 {
+    public $events = array(
+        'onPing'     => 'onPing',
+        'on001'      => 'onConnect',
+        'on375'      => 'onMOTDStart',
+        'on372'      => 'onMOTD',
+        'on332'      => 'onTopic',
+        'on333'      => 'onTopicWhoTime',
+        'on353'      => 'onNameReply',
+        'on366'      => 'onEndNames',
+        'on004'      => 'onMyInfo',
+        'onJoin'     => 'onJoin',
+        'onPart'     => 'onPart',
+        'onTopic'    => 'onTopic',
+        'onError'    => 'onError',
+        'onNameReply'=> 'onNameReply',
+        'onISupport' => 'onISupport',
+        'SIGINT'     => 'onSIGINT',
+    );
+    
     private $_tmp = array();
-    public function  __construct()
-    {
-        $app = IRCBot_Application::getInstance();
-        $app->getEventHandler()
-            ->addEventCallback('onPing', array($this, 'onPing'))
-            ->addEventCallback('on' . RPL_WELCOME, array($this, 'onConnect'))
-            ->addEventCallback(
-                'on' . RPL_MOTDSTART, array($this, 'onMOTDStart')
-            )
-            ->addEventCallback('on' . RPL_MOTD, array($this, 'onMOTD'))
-            ->addEventCallback('on' . RPL_TOPIC, array($this, 'onTopic'))
-            ->addEventCallback(
-                'on' . RPL_TOPICWHOTIME, array($this, 'onTopicWhoTime')
-            )
-            ->addEventCallback(
-                'on' . RPL_NAMREPLY, array($this, 'onNameReply')
-            )
-            ->addEventCallback(
-                'on' . RPL_ENDOFNAMES, array($this, 'onEndNames')
-            )
-            ->addEventCallback('on' . RPL_MYINFO, array($this, 'onMyInfo'))
-            ->addEventCallback('onJoin', array($this, 'onJoin'))
-            ->addEventCallback('onPart', array($this, 'onPart'))
-            ->addEventCallback('onTopic', array($this, 'onTopic'))
-            ->addEventCallback('onError', array($this, 'onError'))
-            ->addEventCallback('onNameReply', array($this, 'onNameReply'))
-            ->addEventCallback('onISupport', array($this, 'onISupport'))
-            ->addEventCallback('SIGINT', array($this, 'onSIGINT'));
-    }
+    
     public function onPing(IRCBot_Commands_Ping $ping)
     {
         $bot = IRCBot_Application::getInstance()->getBotHandler()

@@ -50,6 +50,7 @@ require_once 'Commands/Topic.php';
 require_once 'Commands/Error.php';
 require_once 'Commands/Invite.php';
 require_once 'Commands/Mode.php';
+require_once 'Modules/Abstract.php';
 require_once 'Modules/Main.php';
 require_once 'Utilities/String.php';
 require_once 'Loop.php';

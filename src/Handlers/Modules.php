@@ -15,6 +15,13 @@ class IRCBot_Handlers_Modules
 
     public function addModuleByObject(&$module)
     {
+        $eventHandler = IRCBot_Application::getInstance()->getEventHandler();
+        if ($module instanceof IRCBot_Modules_Abstract) {
+            foreach ($module->events as $event => $method) {
+                $callback = array($module, $method);
+                $eventHandler->addEventCallback($event, $callback);
+            }
+        }
         $this->_modules[get_class($module)] = $module;
         return $this;
     }
