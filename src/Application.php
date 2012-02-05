@@ -54,6 +54,7 @@ require_once 'Modules/Abstract.php';
 require_once 'Modules/Main.php';
 require_once 'Utilities/String.php';
 require_once 'Loop.php';
+require_once 'Debugger/Abstract.php';
 require_once 'Debugger.php';
 require_once 'shortFunctions.php';
 
@@ -230,10 +231,20 @@ class IRCBot_Application
     {
         return $this->_loop;
     }
+    
+    public function setDebugger($class)
+    {
+        if ($class instanceof IRCBot_Debugger_Abstract) {
+            $this->_debugger = $class;
+        } else {
+            throw new InvalidArgumentException('Expected a debugger class');
+        }
+    }
+    
     /**
      * Returns the debugger class
      * 
-     * @return IRCBot_Debugger
+     * @return IRCBot_Debugger_Abstract
      */
     public function getDebugger()
     {

@@ -22,7 +22,7 @@ define('IRCBOT_DEBUG_EXTRA', 2);
  * @license  http://www.freebsd.org/copyright/freebsd-license.html  BSD License (2 Clause)
  * @link     https://github.com/Marlinc/IRCBot
  */
-class IRCBot_Debugger
+class IRCBot_Debugger extends IRCBot_Debugger_Abstract
 {
     /**
      * Log to STDOUT
