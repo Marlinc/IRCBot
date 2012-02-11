@@ -14,6 +14,8 @@
  * @link     https://github.com/Marlinc/IRCBot
  */
 
+namespace Ircbot;
+
 /**
  * Returns a bot class by the given id
  * 
@@ -28,7 +30,7 @@ function getBotById($botId = 0)
     if (!$botId) {
         $botId = botId();
     }
-    return IRCBot_Application::getInstance()->getBotHandler()
+    return \Ircbot\Application::getInstance()->getBotHandler()
         ->getBotById($botId);
 }
 /**
@@ -38,7 +40,7 @@ function getBotById($botId = 0)
  */
 function chan()
 {
-    return IRCBot_Application::getInstance()->getIdentifierHandler()->chan;
+    return \Ircbot\Application::getInstance()->getIdentifierHandler()->chan;
 }
 /**
  * Returns the nickname of the user who triggered the current event
@@ -47,7 +49,7 @@ function chan()
  */
 function nick()
 {
-    return IRCBot_Application::getInstance()->getIdentifierHandler()->nick;
+    return \Ircbot\Application::getInstance()->getIdentifierHandler()->nick;
 }
 /**
  * Returns the bot id that handles the current event
@@ -56,7 +58,7 @@ function nick()
  */
 function botId()
 {
-    return IRCBot_Application::getInstance()->getIdentifierHandler()->botId;
+    return \Ircbot\Application::getInstance()->getIdentifierHandler()->botId;
 }
 /**
  * Send a PRIVMSG from the selected bot
@@ -153,7 +155,7 @@ function partChan($channel, $message = null, $botId = 0)
  */
 function addEventCallback($eventName, $callback)
 {
-    IRCBot_Application::getInstance()->getEventHandler()
+    \Ircbot\Application::getInstance()->getEventHandler()
         ->addEventCallback($eventName, $callback);
 }
 /**
@@ -166,7 +168,7 @@ function addEventCallback($eventName, $callback)
  */
 function tokenize($string, $chr = 32)
 {
-    IRCBot_Utilities_String::tokenize($string, $chr);
+    \Ircbot\Utility\String::tokenize($string, $chr);
 }
 /**
  * Get a token from a tokenized string
@@ -177,6 +179,6 @@ function tokenize($string, $chr = 32)
  */
 function token($token)
 {
-    return IRCBot_Utilities_String::token($token);
+    return \Ircbot\Utility\String::token($token);
 }
 ?>

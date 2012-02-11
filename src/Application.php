@@ -11,52 +11,9 @@
  * @link     https://github.com/Marlinc/IRCBot
  */
 
-require_once 'Handlers/Events.php';
-require_once 'Handlers/Signals.php';
-require_once 'Handlers/Modules.php';
-require_once 'Handlers/Bots.php';
-require_once 'Handlers/Sockets.php';
-require_once 'Handlers/Queues.php';
-require_once 'Handlers/Responses.php';
-require_once 'Handlers/UserCommands.php';
-require_once 'Handlers/Identifiers.php';
-require_once 'Handlers/Channels.php';
-require_once 'Handlers/Networks.php';
-require_once 'Parsers/Commands.php';
-require_once 'Parsers/NameReply.php';
-require_once 'Types/Socket.php';
-require_once 'Types/Bot.php';
-require_once 'Types/Queue.php';
-require_once 'Types/Response.php';
-require_once 'Types/Command.php';
-require_once 'Types/Numeric.php';
-require_once 'Types/MessageCommand.php';
-require_once 'Types/Channel.php';
-require_once 'Types/Mask.php';
-require_once 'Types/Topic.php';
-require_once 'Types/NameReply.php';
-require_once 'Types/ISupport.php';
-require_once 'Types/Network.php';
-require_once 'Commands/Notice.php';
-require_once 'Commands/Ping.php';
-require_once 'Commands/Pong.php';
-require_once 'Commands/Nick.php';
-require_once 'Commands/User.php';
-require_once 'Commands/Quit.php';
-require_once 'Commands/PrivMsg.php';
-require_once 'Commands/Join.php';
-require_once 'Commands/Part.php';
-require_once 'Commands/Topic.php';
-require_once 'Commands/Error.php';
-require_once 'Commands/Invite.php';
-require_once 'Commands/Mode.php';
-require_once 'Modules/Abstract.php';
-require_once 'Modules/Main.php';
-require_once 'Utilities/String.php';
-require_once 'Loop.php';
-require_once 'Debugger/Abstract.php';
-require_once 'Debugger.php';
-require_once 'shortFunctions.php';
+namespace Ircbot;
+ 
+require_once 'Application/Autoloader.php';
 
 /**
  * The main IRCBot application object
@@ -70,7 +27,7 @@ require_once 'shortFunctions.php';
  * @license  http://www.freebsd.org/copyright/freebsd-license.html  BSD License (2 Clause)
  * @link     https://github.com/Marlinc/IRCBot
  */
-class IRCBot_Application
+class Application
 {
     private static $_instance = null;
     private $_handlers = array();
@@ -83,7 +40,15 @@ class IRCBot_Application
      */
     private function  __construct()
     {
-        
+        set_include_path(
+            implode(
+                PATH_SEPARATOR,
+                array(
+                    __DIR__,
+                    get_include_path(),
+                )
+            )
+        );
     }
     /**
      * Initialize the IRCBot application
@@ -92,21 +57,22 @@ class IRCBot_Application
      */
     private function _init()
     {
-        $this->_debugger = new IRCBot_Debugger();
-        $this->_handlers['events'] = new IRCBot_Handlers_Events();
-        $this->_handlers['signals'] = new IRCBot_Handlers_Signals();
-        $this->_handlers['modules'] = new IRCBot_Handlers_Modules();
-        $this->_handlers['bots'] = new IRCBot_Handlers_Bots();
-        $this->_handlers['sockets'] = new IRCBot_Handlers_Sockets();
-        $this->_handlers['queues'] = new IRCBot_Handlers_Queues();
-        $this->_handlers['responses'] = new IRCBot_Handlers_Responses();
-        $this->_handlers['user_commands'] = new IRCBot_Handlers_UserCommands();
-        $this->_handlers['identifiers'] = new IRCBot_Handlers_Identifiers();
-        $this->_handlers['channels'] = new IRCBot_Handlers_Channels();
-        $this->_handlers['networks'] = new IRCBot_Handlers_Networks();
-        $this->_parsers['commands'] = new IRCBot_Parsers_Commands();
-        $this->_loop = new IRCBot_Loop();
-        $mainModule = new IRCBot_Modules_Main();
+        new Application\Autoloader();
+        $this->_debugger = new Application\Debug;
+        $this->_handlers['events']        = new Handler\Events;
+        $this->_handlers['signals']       = new Handler\Signals;
+        $this->_handlers['modules']       = new Handler\Module;
+        $this->_handlers['bots']          = new Handler\Bots;
+        $this->_handlers['sockets']       = new Handler\Sockets;
+        $this->_handlers['queues']        = new Handler\Queues;
+        $this->_handlers['responses']     = new Handler\Responses;
+        $this->_handlers['user_commands'] = new Handler\UserCommands;
+        $this->_handlers['identifiers']   = new Handler\Identifiers;
+        $this->_handlers['channels']      = new Handler\Channels;
+        $this->_handlers['networks']      = new Handler\Networks;
+        $this->_parsers['commands']       = new Parser\Commands;
+        $this->_loop                      = new Application\Loop;
+        $mainModule = new Module\Main;
         $this->getModuleHandler()->addModuleByObject($mainModule);
         $this->getEventHandler()->raiseEvent('ircbotInitialized');
     }
@@ -118,7 +84,7 @@ class IRCBot_Application
     public static function getInstance()
     {
         if (!self::$_instance) {
-            self::$_instance = new IRCBot_Application();
+            self::$_instance = new self;
             self::$_instance->_init();
         }
         return self::$_instance;
@@ -234,10 +200,10 @@ class IRCBot_Application
     
     public function setDebugger($class)
     {
-        if ($class instanceof IRCBot_Debugger_Abstract) {
+        if ($class instanceof Application\Debug\ADebug) {
             $this->_debugger = $class;
         } else {
-            throw new InvalidArgumentException('Expected a debugger class');
+            throw new \InvalidArgumentException('Expected a debugger class');
         }
     }
     
