@@ -7,13 +7,13 @@ use \Ircbot\Application as Ircbot;
 class Main extends AModule
 {
     public $events = array(
+        'onRawdata'  => 'onRawdata',
         'onPing'     => 'onPing',
         'on001'      => 'onConnect',
         'on375'      => 'onMOTDStart',
         'on372'      => 'onMOTD',
         'on332'      => 'onTopic',
         'on333'      => 'onTopicWhoTime',
-        'on353'      => 'onNameReply',
         'on366'      => 'onEndNames',
         'on004'      => 'onMyInfo',
         'onJoin'     => 'onJoin',
@@ -26,6 +26,16 @@ class Main extends AModule
     );
     
     private $_tmp = array();
+
+    public function onRawdata($data)
+    {
+        list($rawdata, $queue) = $data;
+        $parser = new \Ircbot\Parser\Irc;
+        $data = $parser($rawdata);
+        if ($data) {
+            $queue->addEntry($data);
+        }
+    }
     
     public function onPing(\Ircbot\Command\Ping $ping)
     {
@@ -35,7 +45,7 @@ class Main extends AModule
         $pong->code = $ping->code;
         $bot->sendRawData($pong);
     }
-    public function onConnect(\Ircbot\Type\Numeric $numeric)
+    public function onConnect(\Ircbot\Numeric\Numeric $numeric)
     {
         $bot = Ircbot::getInstance()->getBotHandler()
             ->getBotById($numeric->botId);
@@ -43,12 +53,12 @@ class Main extends AModule
         Ircbot::getInstance()->getEventHandler()
             ->raiseEvent('onConnect', $numeric->botId);
     }
-    public function onMOTDStart(\Ircbot\Type\Numeric $numeric)
+    public function onMOTDStart(\Ircbot\Numeric\Numeric $numeric)
     {
         Ircbot::getInstance()->getBotHandler()
             ->getBotById($numeric->botId)->serverMOTD = array();
     }
-    public function onMOTD(\Ircbot\Type\Numeric $numeric)
+    public function onMOTD(\Ircbot\Numeric\Numeric $numeric)
     {
         Ircbot::getInstance()->getBotHandler()
             ->getBotById($numeric->botId)->serverMOTD[] = $numeric->message;
@@ -83,7 +93,7 @@ class Main extends AModule
     }
     public function onTopic($data)
     {
-        if ($data instanceof \Ircbot\Type\Numeric) {
+        if ($data instanceof \Ircbot\Numeric\Numeric) {
             $topic = new \Ircbot\Type\Topic();
             $topic->message = substr(\Ircbot\Utility\String::token('1-'), 1);
             $hash = md5(
@@ -101,7 +111,7 @@ class Main extends AModule
             print_r($channel);
         }
     }
-    public function onTopicWhoTime(\Ircbot\Type\Numeric $numeric)
+    public function onTopicWhoTime(\Ircbot\Numeric\Numeric $numeric)
     {
         $hash = md5(
             'topic_' . $numeric->botId . \Ircbot\Utility\String::token('0')
@@ -132,12 +142,12 @@ class Main extends AModule
             ->allBotsExecute('handleQueueOut', true);
         exit();
     }
-    public function onNameReply(\Ircbot\Type\NameReply $nameReply)
+    public function onNameReply(\Ircbot\Numeric\NameReply $nameReply)
     {
         $hash = md5('names_' . $nameReply->botId . $nameReply->channel);
         $this->_tmp[$hash][] = $nameReply;
     }
-    public function onEndNames(\Ircbot\Type\Numeric $numeric)
+    public function onEndNames(\Ircbot\Numeric\Numeric $numeric)
     {
         $hash = md5(
             'names_' . $numeric->botId . \Ircbot\Utility\String::token('0')
@@ -153,13 +163,13 @@ class Main extends AModule
         Ircbot::getInstance()->getEventHandler()
             ->raiseEvent('channelReady', $numeric);
     }
-    public function onISupport(\Ircbot\Type\ISupport $numeric)
+    public function onISupport(\Ircbot\Numeric\ISupport $numeric)
     {
         $bot = Ircbot::getInstance()->getBotHandler()
             ->getBotById($numeric->botId);
         $bot->currentNetwork->addISupport($numeric);
     }
-    public function onMyInfo(\Ircbot\Type\Numeric $numeric)
+    public function onMyInfo(\Ircbot\Numeric\Numeric $numeric)
     {
         $bot = Ircbot::getInstance()->getBotHandler()
             ->getBotById($numeric->botId);

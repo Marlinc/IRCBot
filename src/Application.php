@@ -31,7 +31,6 @@ class Application
 {
     private static $_instance = null;
     private $_handlers = array();
-    private $_parsers = array();
     private $_loop = null;
     private $_debugger = null;
     
@@ -62,7 +61,6 @@ class Application
         $this->_handlers['identifiers']   = new Handler\Identifiers;
         $this->_handlers['channels']      = new Handler\Channels;
         $this->_handlers['networks']      = new Handler\Networks;
-        $this->_parsers['commands']       = new Parser\Commands;
         $this->_loop                      = new Application\Loop;
         $mainModule = new Module\Main;
         $this->getModuleHandler()->addModuleByObject($mainModule);
@@ -125,15 +123,6 @@ class Application
     public function getQueueHandler()
     {
         return $this->_handlers['queues'];
-    }
-    /**
-     * Returns the command parser
-     * 
-     * @return IRCBot_Parsers_Commands
-     */
-    public function getCommandParser()
-    {
-        return $this->_parsers['commands'];
     }
     /**
      * Returns the response handler

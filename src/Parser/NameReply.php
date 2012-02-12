@@ -4,7 +4,7 @@ namespace Ircbot\Parser;
 
 class NameReply
 {
-    public function parseNames($rawData)
+    public function __invoke($rawData)
     {
         $names = explode(' ', substr(strrchr(trim($rawData), ':'), 1));
         $nameList = array();

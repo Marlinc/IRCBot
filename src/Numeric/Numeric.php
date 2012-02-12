@@ -1,21 +1,15 @@
 <?php
 
-namespace Ircbot\Type;
+namespace Ircbot\Numeric;
 
-class Numeric extends Response
+class Numeric extends \Ircbot\Type\Response
 {
     public $botId;
     public $numeric;
     public $server;
     public $target;
     public $message;
-    public function fromRawData($rawData)
-    {
-        sscanf(
-            $rawData, ':%s %s %s %[ -~]', $this->server, $this->numeric,
-            $this->target, $this->message
-        );
-    }
+    
     public function getEventName()
     {
         $events = array();

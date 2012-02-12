@@ -109,11 +109,8 @@ class Bot
         $queueParsed = \Ircbot\Application::getInstance()->getQueueHandler()
             ->getQueueById($this->_queueParsedId);
         if (!$queue->isEmpty()) {
-            $data = \Ircbot\Application::getInstance()->getCommandParser()
-                ->parseCommand($queue->shift());
-            if ($data) {
-                $queueParsed->addEntry($data);
-            }
+            \Ircbot\Application::getInstance()->getEventHandler()
+                ->raiseEvent('onRawdata', array($queue->shift(), $queueParsed));
         }
         return !$queue->isEmpty();
     }

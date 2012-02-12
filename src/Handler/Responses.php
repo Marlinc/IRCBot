@@ -31,7 +31,7 @@ class Responses
     {
         if ($response instanceof \Ircbot\Type\Command) {
             $this->handleCommand($response);
-        } elseif ($response instanceof \Ircbot\Type\Numeric) {
+        } elseif ($response instanceof \Ircbot\Numeric\Numeric) {
             $this->handleNumeric($response);
         }
     }
@@ -47,7 +47,7 @@ class Responses
         $identifiers->set($command->getIdentifiers());
         $eventHandler->raiseEvent($command->getEventName(), $command);
     }
-    public function handleNumeric(\Ircbot\Type\Numeric $numeric)
+    public function handleNumeric(\Ircbot\Numeric\Numeric $numeric)
     {
         $eventHandler = \Ircbot\Application::getInstance()->getEventHandler();
         \Ircbot\Utility\String::tokenize($numeric->message);

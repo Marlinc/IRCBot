@@ -8,7 +8,7 @@ class Network
     public $hostname;
     public $iSupport = array();
     
-    public function addISupport(ISupport $iSupport)
+    public function addISupport(\Ircbot\Numeric\ISupport $iSupport)
     {
         foreach ($iSupport->options as $option => $value) {
             if ($option == 'NETWORK') {
