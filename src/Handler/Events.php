@@ -54,19 +54,25 @@ class Events
      */
     public function addEventCallback($eventName, $callback)
     {
+        $debugger = \Ircbot\Application::getInstance()->getDebugger();
         $tmp = array();
         $tmp['eventName'] = $eventName;
         $tmp['callback'] = $callback;
         $this->_callbacks[] = $tmp;
         if (is_array($callback)) {
             $callbackDisplay = get_class($callback[0]) . '::' . $callback[1];
+            if (!$callback[0] instanceof \Ircbot\Module\AModule) {
+                $debugger->log(
+                    'Events', 'Warning', 'Trying to add a callback to a non '
+                        . 'module class'
+                );
+            }
         } else {
             $callbackDisplay = $callback;
         }
-        \Ircbot\Application::getInstance()->getDebugger()
-            ->log(
-                'Events', 'AddCallback', $eventName . ' => ' . $callbackDisplay
-            );
+        $debugger->log(
+            'Events', 'AddCallback', $eventName . ' => ' . $callbackDisplay
+        );
         return $this;
     }
 }

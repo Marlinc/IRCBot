@@ -7,22 +7,23 @@ use \Ircbot\Application as Ircbot;
 class Main extends AModule
 {
     public $events = array(
-        'onRawdata'  => 'onRawdata',
-        'onPing'     => 'onPing',
-        'on001'      => 'onConnect',
-        'on375'      => 'onMOTDStart',
-        'on372'      => 'onMOTD',
-        'on332'      => 'onTopic',
-        'on333'      => 'onTopicWhoTime',
-        'on366'      => 'onEndNames',
-        'on004'      => 'onMyInfo',
-        'onJoin'     => 'onJoin',
-        'onPart'     => 'onPart',
-        'onTopic'    => 'onTopic',
-        'onError'    => 'onError',
-        'onNameReply'=> 'onNameReply',
-        'onISupport' => 'onISupport',
-        'SIGINT'     => 'onSIGINT',
+        'onRawdata'   => 'onRawdata',
+        'onPing'      => 'onPing',
+        'on001'       => 'onConnect',
+        'on375'       => 'onMOTDStart',
+        'on372'       => 'onMOTD',
+        'on332'       => 'onTopic',
+        'on333'       => 'onTopicWhoTime',
+        'on366'       => 'onEndNames',
+        'on004'       => 'onMyInfo',
+        'onJoin'      => 'onJoin',
+        'onPart'      => 'onPart',
+        'onTopic'     => 'onTopic',
+        'onError'     => 'onError',
+        'onNameReply' => 'onNameReply',
+        'onISupport'  => 'onISupport',
+        'loopIterate' => 'loopIterate',
+        'SIGINT'      => 'onSIGINT',
     );
     
     private $_tmp = array();
@@ -35,6 +36,11 @@ class Main extends AModule
         if ($data) {
             $queue->addEntry($data);
         }
+    }
+    
+    public function loopIterate()
+    {
+        Ircbot::getInstance()->getSignalHandler()->getSignals();
     }
     
     public function onPing(\Ircbot\Command\Ping $ping)

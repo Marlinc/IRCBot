@@ -170,6 +170,15 @@ class Application
         return $this->_handlers['networks'];
     }
     /**
+     * Returns the network handler
+     * 
+     * @return \Ircbot\Handler\Signals
+     */
+    public function getSignalHandler()
+    {
+        return $this->_handlers['signals'];
+    }
+    /**
      * Returns the loop class
      * 
      * @return IRCBot_Loop

@@ -31,8 +31,6 @@ class Signals
         pcntl_signal(SIGUSR2, array($this, 'handleSignal'));
         pcntl_signal(SIGPWR, array($this, 'handleSignal'));
         pcntl_signal(SIGINT, array($this, 'handleSignal'));
-        \Ircbot\Application::getInstance()->getEventHandler()
-            ->addEventCallback('loopIterate', array($this, 'getSignals'));
     }
     /**
      * This function will call the signal handlers for pending signals
