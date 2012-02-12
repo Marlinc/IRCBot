@@ -4,6 +4,6 @@ php:
   - 5.4
 before_script:
   - tests/travis/extensions.sh
-script: phpunit tests/
+script: echo make
 notifications:
   irc: "irc.quakenet.org#mms-projects"
