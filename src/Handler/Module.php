@@ -19,8 +19,15 @@ class Module
     {
         $eventHandler = \Ircbot\Application::getInstance()->getEventHandler();
         if ($module instanceof \Ircbot\Module\AModule) {
-            foreach ($module->events as $event => $method) {
-                $callback = array($module, $method);
+            foreach ($module->events as $key => $value) {
+                if (is_numeric($key)) {
+                    $event  = $value;
+                    $method = $value;
+                } else {
+                    $event  = $key;
+                    $method = $value;
+                }
+                $callback   = array($module, $method);
                 $eventHandler->addEventCallback($event, $callback);
             }
         }

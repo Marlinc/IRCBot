@@ -7,8 +7,8 @@ use \Ircbot\Application as Ircbot;
 class Main extends AModule
 {
     public $events = array(
-        'onRawdata'     => 'onRawdata',
-        'onPing'        => 'onPing',
+        'onNotice'      => 'onMessage',
+        'onPrivMsg'     => 'onMessage',
         'on001'         => 'onConnect',
         'on375'         => 'onMOTDStart',
         'on372'         => 'onMOTD',
@@ -16,17 +16,17 @@ class Main extends AModule
         'on333'         => 'onTopicWhoTime',
         'on366'         => 'onEndNames',
         'on004'         => 'onMyInfo',
-        'onJoin'        => 'onJoin',
-        'onPart'        => 'onPart',
-        'onTopic'       => 'onTopic',
-        'onError'       => 'onError',
-        'onNameReply'   => 'onNameReply',
-        'onISupport'    => 'onISupport',
-        'onNotice'      => 'onMessage',
-        'onPrivMsg'     => 'onMessage',
-        'onCtcpRequest' => 'onCtcpRequest',
-        'loopIterate'   => 'loopIterate',
         'SIGINT'        => 'onSIGINT',
+        'onRawdata',
+        'onPing',
+        'onJoin',
+        'onPart',
+        'onTopic',
+        'onError',
+        'onNameReply',
+        'onISupport',
+        'onCtcpRequest',
+        'loopIterate',
     );
     
     private $_tmp = array();
