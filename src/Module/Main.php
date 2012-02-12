@@ -7,25 +7,26 @@ use \Ircbot\Application as Ircbot;
 class Main extends AModule
 {
     public $events = array(
-        'onRawdata'   => 'onRawdata',
-        'onPing'      => 'onPing',
-        'on001'       => 'onConnect',
-        'on375'       => 'onMOTDStart',
-        'on372'       => 'onMOTD',
-        'on332'       => 'onTopic',
-        'on333'       => 'onTopicWhoTime',
-        'on366'       => 'onEndNames',
-        'on004'       => 'onMyInfo',
-        'onJoin'      => 'onJoin',
-        'onPart'      => 'onPart',
-        'onTopic'     => 'onTopic',
-        'onError'     => 'onError',
-        'onNameReply' => 'onNameReply',
-        'onISupport'  => 'onISupport',
-        'onNotice'    => 'onMessage',
-        'onPrivMsg'   => 'onMessage',
-        'loopIterate' => 'loopIterate',
-        'SIGINT'      => 'onSIGINT',
+        'onNotice'      => 'onMessage',
+        'onPrivMsg'     => 'onMessage',
+        'on001'         => 'onConnect',
+        'on375'         => 'onMOTDStart',
+        'on372'         => 'onMOTD',
+        'on332'         => 'onTopic',
+        'on333'         => 'onTopicWhoTime',
+        'on366'         => 'onEndNames',
+        'on004'         => 'onMyInfo',
+        'SIGINT'        => 'onSIGINT',
+        'onRawdata',
+        'onPing',
+        'onJoin',
+        'onPart',
+        'onTopic',
+        'onError',
+        'onNameReply',
+        'onISupport',
+        'onCtcpRequest',
+        'loopIterate',
     );
     
     private $_tmp = array();
@@ -188,5 +189,18 @@ class Main extends AModule
     public function onMessage(\Ircbot\Type\MessageCommand $msg)
     {
         Ircbot::getInstance()->getUserCommandHandler()->onMsg($msg);
+    }
+    
+    public function onCtcpRequest(\Ircbot\Command\CtcpRequest $event)
+    {
+        if ($event->message == 'VERSION') {
+            $reply = new \Ircbot\Command\CtcpReply(
+                $event->mask->nickname,
+                'VERSION IRCBot https://github.com/Marlinc/IRCBot'
+            );
+            $bot = Ircbot::getInstance()->getBotHandler()
+                ->getBotById($event->botId);
+            $bot->sendRawData($reply);
+        }
     }
 }
