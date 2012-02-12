@@ -14,10 +14,18 @@ class Command
             sscanf($rawdata, 'PING :%[ -~]', $cmd->code);
         } elseif ($tmp[1] == 'NOTICE') {
             $cmd = new \Ircbot\Command\Notice;
-            sscanf(
-                $rawdata, ':%s NOTICE %s :%[ -~]', $cmd->sender, $cmd->target,
-                $cmd->message
-            );
+            preg_match('/^:(.+) NOTICE (.+) :(.*)$/', $rawdata, $matches);
+            list(, $cmd->sender, $cmd->target, $cmd->message) = $matches;
+            if (($cmd->message[0] == chr(1))
+              && ($cmd->message[strlen($cmd->message) - 1] == chr(1))) {
+                $ctcp = new \Ircbot\Command\CtcpReply;
+                $ctcp->sender = $cmd->sender;
+                $ctcp->target = $cmd->target;
+                $ctcp->message = substr(
+                    $cmd->message, 1, strlen($cmd->message) - 2
+                );
+                $cmd = $ctcp;
+            }
             $cmd->mask = $maskParser($cmd->sender);
         } elseif ($tmp[1] == 'MODE') {
             $cmd = new \Ircbot\Command\Mode;
@@ -37,10 +45,18 @@ class Command
             sscanf($rawdata, ':%s QUIT :%[ -~]', $cmd->mask, $cmd->message);
         } elseif ($tmp[1] == 'PRIVMSG') {
             $cmd = new \Ircbot\Command\PrivMsg;
-            sscanf(
-                $rawdata, ':%s PRIVMSG %s :%[ -~]', $cmd->sender, $cmd->target,
-                $cmd->message
-            );
+            preg_match('/^:(.+) PRIVMSG (.+) :(.*)$/', $rawdata, $matches);
+            list(, $cmd->sender, $cmd->target, $cmd->message) = $matches;
+            if (($cmd->message[0] == chr(1))
+              && ($cmd->message[strlen($cmd->message) - 1] == chr(1))) {
+                $ctcp = new \Ircbot\Command\CtcpRequest;
+                $ctcp->sender = $cmd->sender;
+                $ctcp->target = $cmd->target;
+                $ctcp->message = substr(
+                    $cmd->message, 1, strlen($cmd->message) - 2
+                );
+                $cmd = $ctcp;
+            }
             $cmd->mask = $maskParser($cmd->sender);
         } elseif ($tmp[1] == 'PART') {
             $cmd = new \Ircbot\Command\Part;
