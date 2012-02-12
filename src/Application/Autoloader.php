@@ -5,8 +5,11 @@ namespace Ircbot\Application;
 class Autoloader
 {
 
-    public function __construct()
+    public $applicationPath;
+
+    public function __construct($path)
     {
+        $this->applicationPath = $path;
         spl_autoload_register(array($this, 'autoload'));
     }
 
@@ -15,6 +18,7 @@ class Autoloader
         if (strstr($class, '\\')) {
             $classPath = explode('\\', $class);
             $package = array_shift($classPath);
+            array_unshift($classPath, $this->applicationPath);
             if ($package == 'Ircbot') {
                 require_once implode(DIRECTORY_SEPARATOR, $classPath) . '.php';
             }

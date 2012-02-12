@@ -40,15 +40,7 @@ class Application
      */
     private function  __construct()
     {
-        set_include_path(
-            implode(
-                PATH_SEPARATOR,
-                array(
-                    __DIR__,
-                    get_include_path(),
-                )
-            )
-        );
+
     }
     /**
      * Initialize the IRCBot application
@@ -57,7 +49,7 @@ class Application
      */
     private function _init()
     {
-        new Application\Autoloader();
+        new Application\Autoloader(__DIR__);
         $this->_debugger = new Application\Debug;
         $this->_handlers['events']        = new Handler\Events;
         $this->_handlers['signals']       = new Handler\Signals;
