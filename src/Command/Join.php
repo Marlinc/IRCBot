@@ -9,18 +9,12 @@ class Join extends \Ircbot\Type\Command
      */
     public $mask;
     public $channel;
+    
     public function  __construct($channel = null)
     {
         $this->channel = $channel;
     }
-    public function fromRawData($rawData)
-    {
-        preg_match('/^:(.+) JOIN (:)?(.+)$/', $rawData, $matches);
-        list(, $this->mask, , $this->channel) = $matches;
-        $mask = new \Ircbot\Type\Mask();
-        $mask->fromMask($this->mask);
-        $this->mask = $mask;
-    }
+    
     public function getEventName()
     {
         return 'onJoin';

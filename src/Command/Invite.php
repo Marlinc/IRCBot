@@ -10,22 +10,17 @@ class Invite extends \Ircbot\Type\Command
     public $mask;
     public $target;
     public $channel;
+    
     public function  __construct($channel = null)
     {
         $this->channel = $channel;
     }
-    public function fromRawData($rawData)
-    {
-        preg_match('/^:(.+) INVITE (.+) (:)?(.+)$/', $rawData, $matches);
-        list(, $this->mask, $this->target, , $this->channel) = $matches;
-        $mask = new \Ircbot\Type\Mask();
-        $mask->fromMask($this->mask);
-        $this->mask = $mask;
-    }
+
     public function getEventName()
     {
         return 'onInvite';
     }
+    
     public function getIdentifiers()
     {
         $identifiers = array();
@@ -33,9 +28,11 @@ class Invite extends \Ircbot\Type\Command
         $identifiers['nick'] = $this->mask->nickname;
         return $identifiers;
     }
+    
     public function  __toString()
     {
         return sprintf('INVITE %s :%s', $this->target, $this->channel) . "\n\r";
     }
+    
 }
 

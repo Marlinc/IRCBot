@@ -9,10 +9,7 @@ class Ping extends \Ircbot\Type\Command
      * @var string
      */
     public $code;
-    public function fromRawData($rawData)
-    {
-        sscanf($rawData, 'PING :%[ -~]', $this->code);
-    }
+
     public function getEventName()
     {
         return 'onPing';

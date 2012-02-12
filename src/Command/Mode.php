@@ -8,12 +8,6 @@ class Mode extends \Ircbot\Type\Command
     public $target;
     public $modes; 
     
-    public function fromRawData($rawData)
-    {
-        preg_match('/\:(.+) MODE (.+) (\:)?(.+)/', $rawData, $matches);
-        list(, $this->mask, $this->target,, $this->modes) = $matches;
-        $this->mask = new \Ircbot\Type\Mask($this->mask);
-    }
     public function getEventName()
     {
         return 'onMode';

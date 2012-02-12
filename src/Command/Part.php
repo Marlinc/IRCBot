@@ -15,16 +15,7 @@ class Part extends \Ircbot\Type\Command
         $this->channel = $channel;
         $this->message = $message;
     }
-    public function fromRawData($rawData)
-    {
-        sscanf(
-            $rawData, ':%s PART %s :%s', $this->mask, $this->channel,
-            $this->message
-        );
-        $mask = new Ircbot\Type\Mask();
-        $mask->fromMask($this->mask);
-        $this->mask = $mask;
-    }
+
     public function getEventName()
     {
         return 'onPart';

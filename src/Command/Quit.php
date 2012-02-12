@@ -10,10 +10,7 @@ class Quit extends \Ircbot\Type\Command
     {
         $this->message = $message;
     }
-    public function fromRawData($rawData)
-    {
-        sscanf($rawData, ':%s QUIT :%[ -~]', $this->mask, $this->message);
-    }
+
     public function getEventName()
     {
         return 'onQuit';

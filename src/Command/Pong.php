@@ -9,10 +9,7 @@ class Pong extends \Ircbot\Type\Command
      * @var string
      */
     public $code;
-    public function fromRawData($rawData)
-    {
-        sscanf($rawData, 'PONG :%[ -~]', $this->code);
-    }
+
     public function getEventName()
     {
         return 'onPong';

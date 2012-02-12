@@ -18,10 +18,7 @@ class Nick extends \Ircbot\Type\Command
     {
         $this->newNick = $newNick;
     }
-    public function fromRawData($rawData)
-    {
-        sscanf($rawData, ':%s NICK :%s', $this->oldNick, $this->newNick);
-    }
+
     public function  __toString()
     {
         return sprintf('NICK %s', $this->newNick) . "\n\r";

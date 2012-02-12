@@ -9,17 +9,7 @@ class Notice extends \Ircbot\Type\MessageCommand
         $this->target = $target;
         $this->message = $message;
     }
-    public function fromRawData($rawData)
-    {
-        sscanf(
-            $rawData, ':%s NOTICE %s :%[ -~]', $this->sender, $this->target,
-            $this->message
-        );
-        $mask = new \Ircbot\Type\Mask();
-        $mask->fromMask($this->sender);
-        $this->sender = $mask->nickname;
-        $this->mask = $mask;
-    }
+
     public function getEventName()
     {
         return 'onNotice';

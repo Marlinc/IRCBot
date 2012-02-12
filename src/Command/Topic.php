@@ -13,17 +13,7 @@ class Topic extends \Ircbot\Type\Command
         $this->channel = $channel;
         $this->message = $message;
     }
-    public function fromRawData($rawData)
-    {
-        sscanf(
-            $rawData, ':%s TOPIC %s :%[ -~]', $this->who, $this->channel,
-            $this->message
-        );
-        $mask = new \Ircbot\Type\Mask();
-        $mask->fromMask($this->who);
-        $this->who = $mask->nickname;
-        $this->mask = $mask;
-    }
+
     public function getEventName()
     {
         return 'onTopic';
