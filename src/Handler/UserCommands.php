@@ -19,12 +19,6 @@ class UserCommands
     public $defaultMsgType = TYPE_CHANMSG;
     private $_callbacks = array();
 
-    public function  __construct()
-    {
-        \Ircbot\Application::getInstance()->getEventHandler()
-            ->addEventCallback('onPrivMsg', array($this, 'onMsg'))
-            ->addEventCallback('onNotice', array($this, 'onMsg'));
-    }
     public function addCommand($callback, $message, $msgType = null,
         $scanType = null, $extraInfo = null)
     {

@@ -15,11 +15,7 @@ class Bots
 {
     private $_bots = array();
     private $_lastId = 0;
-    public function __construct()
-    {
-        \Ircbot\Application::getInstance()->getEventHandler()
-            ->addEventCallback('loopIterate', array($this, 'handleBots'));
-    }
+
     public function addBot(\Ircbot\Type\Bot &$bot)
     {
         ++$this->_lastId;

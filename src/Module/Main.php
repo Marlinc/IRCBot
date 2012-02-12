@@ -22,6 +22,8 @@ class Main extends AModule
         'onError'     => 'onError',
         'onNameReply' => 'onNameReply',
         'onISupport'  => 'onISupport',
+        'onNotice'    => 'onMessage',
+        'onPrivMsg'   => 'onMessage',
         'loopIterate' => 'loopIterate',
         'SIGINT'      => 'onSIGINT',
     );
@@ -41,6 +43,7 @@ class Main extends AModule
     public function loopIterate()
     {
         Ircbot::getInstance()->getSignalHandler()->getSignals();
+        Ircbot::getInstance()->getBotHandler()->handleBots();
     }
     
     public function onPing(\Ircbot\Command\Ping $ping)
@@ -180,5 +183,10 @@ class Main extends AModule
         $bot = Ircbot::getInstance()->getBotHandler()
             ->getBotById($numeric->botId);
         $bot->currentNetwork->hostname = \Ircbot\Utility\String::token('0');
+    }
+    
+    public function onMessage(\Ircbot\Type\MessageCommand $msg)
+    {
+        Ircbot::getInstance()->getUserCommandHandler()->onMsg($msg);
     }
 }

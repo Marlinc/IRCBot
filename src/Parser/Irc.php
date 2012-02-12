@@ -8,6 +8,7 @@ class Irc
     public function __invoke($rawdata)
     {
         $rawdata = rtrim($rawdata);
+        echo $rawdata . PHP_EOL;
         $maskParser    = new Mask;
         $numericParser = new Numeric;
         $commandParser = new Command;
