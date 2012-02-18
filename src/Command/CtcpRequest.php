@@ -26,6 +26,6 @@ class CtcpRequest extends \Ircbot\Type\MessageCommand
         return sprintf(
             'PRIVMSG %s :' . chr(1) . '%s' . chr(1), $this->target,
             $this->message
-        ) . "\n\r";
+        ) . "\r\n";
     }
 }

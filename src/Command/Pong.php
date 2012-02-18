@@ -16,7 +16,7 @@ class Pong extends \Ircbot\Type\Command
     }
     public function  __toString()
     {
-        return sprintf('PONG :%s', $this->code) . "\n\r";
+        return sprintf('PONG :%s', $this->code) . "\r\n";
     }
 }
 

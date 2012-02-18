@@ -23,6 +23,6 @@ class Notice extends \Ircbot\Type\MessageCommand
     }
     public function  __toString()
     {
-        return sprintf('NOTICE %s :%s', $this->target, $this->message) . "\n\r";
+        return sprintf('NOTICE %s :%s', $this->target, $this->message) . "\r\n";
     }
 }

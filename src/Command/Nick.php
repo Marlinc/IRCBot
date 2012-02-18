@@ -21,7 +21,7 @@ class Nick extends \Ircbot\Type\Command
 
     public function  __toString()
     {
-        return sprintf('NICK %s', $this->newNick) . "\n\r";
+        return sprintf('NICK %s', $this->newNick) . "\r\n";
     }
 }
 

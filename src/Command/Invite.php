@@ -31,7 +31,7 @@ class Invite extends \Ircbot\Type\Command
     
     public function  __toString()
     {
-        return sprintf('INVITE %s :%s', $this->target, $this->channel) . "\n\r";
+        return sprintf('INVITE %s :%s', $this->target, $this->channel) . "\r\n";
     }
     
 }
