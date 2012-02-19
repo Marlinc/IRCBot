@@ -16,7 +16,7 @@ class Ping extends \Ircbot\Type\Command
     }
     public function  __toString()
     {
-        return sprintf('PING :%s', $this->code);
+        return sprintf('PING :%s', $this->code) . "\r\n";
     }
 }
 

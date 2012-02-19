@@ -27,6 +27,6 @@ class Topic extends \Ircbot\Type\Command
     }
     public function  __toString()
     {
-        return sprintf('TOPIC %s :%s', $this->channel, $this->message) . "\n\r";
+        return sprintf('TOPIC %s :%s', $this->channel, $this->message) . "\r\n";
     }
 }

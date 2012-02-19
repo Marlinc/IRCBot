@@ -14,7 +14,7 @@ class Mode extends \Ircbot\Type\Command
     }
     public function  __toString()
     {
-        return sprintf('MODE %s %s', $this->target, $this->modes) . "\n\r";
+        return sprintf('MODE %s %s', $this->target, $this->modes) . "\r\n";
     }
 }
 

@@ -20,7 +20,7 @@ class User extends \Ircbot\Type\Command
     public function  __toString()
     {
         return sprintf('USER %s * * :%s', $this->ident, $this->realName)
-            . "\n\r";
+            . "\r\n";
     }
 }
 

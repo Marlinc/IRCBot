@@ -29,7 +29,7 @@ class Part extends \Ircbot\Type\Command
     }
     public function  __toString()
     {
-        return sprintf('PART %s :%s', $this->channel, $this->message) . "\n\r";
+        return sprintf('PART %s :%s', $this->channel, $this->message) . "\r\n";
     }
 }
 

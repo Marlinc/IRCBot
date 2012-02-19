@@ -25,6 +25,6 @@ class PrivMsg extends \Ircbot\Type\MessageCommand
     {
         return sprintf(
             'PRIVMSG %s :%s', $this->target, $this->message
-        ) . "\n\r";
+        ) . "\r\n";
     }
 }

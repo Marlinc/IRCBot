@@ -17,7 +17,7 @@ class Quit extends \Ircbot\Type\Command
     }
     public function  __toString()
     {
-        return sprintf('QUIT :%s', $this->message) . "\n\r";
+        return sprintf('QUIT :%s', $this->message) . "\r\n";
     }
 }
 

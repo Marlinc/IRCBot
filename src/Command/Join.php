@@ -28,6 +28,6 @@ class Join extends \Ircbot\Type\Command
     }
     public function  __toString()
     {
-        return sprintf('JOIN :%s', $this->channel) . "\n\r";
+        return sprintf('JOIN :%s', $this->channel) . "\r\n";
     }
 }

@@ -26,6 +26,6 @@ class CtcpReply extends \Ircbot\Type\MessageCommand
         return sprintf(
             'NOTICE %s :' . chr(1) . '%s' . chr(1), $this->target,
             $this->message
-        ) . "\n\r";
+        ) . "\r\n";
     }
 }
