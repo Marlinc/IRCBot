@@ -18,6 +18,11 @@ class Nick extends \Ircbot\Type\Command
     {
         $this->newNick = $newNick;
     }
+    
+    public function getEventName()
+    {
+        return 'onNick';
+    }
 
     public function  __toString()
     {
