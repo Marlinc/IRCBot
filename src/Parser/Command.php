@@ -70,7 +70,7 @@ class Command
             preg_match('/^:(.+) INVITE (.+) (:)?(.+)$/', $rawdata, $matches);
             list(, $cmd->mask, $cmd->target, , $cmd->channel) = $matches;
             $cmd->mask = $maskParser($cmd->mask);
-        } elseif ($tmp[1] == 'ERROR') {
+        } elseif ($tmp[0] == 'ERROR') {
             $cmd = new \Ircbot\Command\Error;
             sscanf($rawdata, 'ERROR :%s', $cmd->message);
         } elseif ($tmp[1] == 'TOPIC') {
@@ -81,6 +81,23 @@ class Command
             );
             $cmd->mask = $maskParser($cmd->mask);
             $cmd->who = $cmd->mask->nickname;
+        } elseif ($tmp[1] == 'NICK') {
+            $cmd = new \Ircbot\Command\Nick;
+            sscanf(
+                $rawdata, ':%s NICK :%s', $cmd->oldNick, $cmd->newNick
+            );
+        } elseif ($tmp[1] == 'KICK') {
+            $cmd = new \Ircbot\Command\Kick;
+            sscanf(
+                $rawdata, ':%s KICK %s %s :%s', $cmd->source, $cmd->channel,
+                $cmd->user, $cmd->comment
+            );
+        } elseif ($tmp[1] == 'KILL') {
+            $cmd = new \Ircbot\Command\Kill;
+            sscanf(
+                $rawdata, ':%s KILL %s :%s', $cmd->source, $cmd->user,
+                $cmd->comment
+            );
         }
         return $cmd;
     }
