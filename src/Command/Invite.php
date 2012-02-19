@@ -24,7 +24,7 @@ class Invite extends \Ircbot\Type\Command
     public function getIdentifiers()
     {
         $identifiers = array();
-        $identifiers['chan'] = $this->getChan();
+        $identifiers['chan'] = $this->channel;
         $identifiers['nick'] = $this->mask->nickname;
         return $identifiers;
     }

@@ -129,7 +129,7 @@ class Main extends AModule
         /* @var $topic IRCBot_Types_Topic */
         $topic = $this->_tmp[$hash];
         $topic->who = \Ircbot\Utility\String::token('1');
-        $topic->timestamp = \IrcbotUtility\String::token('2');
+        $topic->timestamp = \Ircbot\Utility\String::token('2');
         unset($this->_tmp[$hash]);
         $channel = Ircbot::getInstance()->getChannelHandler()
             ->getChan(\Ircbot\Utility\String::token('0'), $numeric->botId);
