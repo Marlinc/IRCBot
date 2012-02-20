@@ -71,7 +71,7 @@ class Events
             $callbackDisplay = $callback;
         }
         if (!is_callable($callback)) {
-            throw new Exception('Invalid callback');
+            throw new \Exception('Invalid callback');
         }
         $debugger->log(
             'Events', 'AddCallback', $eventName . ' => ' . $callbackDisplay
