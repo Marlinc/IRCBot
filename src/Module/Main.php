@@ -23,6 +23,7 @@ class Main extends AModule
         'onPart',
         'onTopic',
         'onError',
+        'onMode',
         'onNameReply',
         'onISupport',
         'onCtcpRequest',
@@ -201,6 +202,40 @@ class Main extends AModule
             $bot = Ircbot::getInstance()->getBotHandler()
                 ->getBotById($event->botId);
             $bot->sendRawData($reply);
+        }
+    }
+    
+    public function onMode(\Ircbot\Command\Mode $event)
+    {
+        $parser = new \Ircbot\Parser\Mode;
+        if (substr($event->target, 0, 1) == '#') {
+            $data = $parser($event->modes, \Ircbot\Parser\Mode::AREA_CHANNEL);
+            $channel = Ircbot::getInstance()->getChannelHandler()
+                ->getChan($event->target, $event->botId);
+            foreach ($data as $type => $modes) {
+                foreach ($modes as $info) {
+                    if ($info[0] == 'q') {
+                        $mode = CHAN_MODE_OWNER;
+                    } elseif ($info[0] == 'a') {
+                        $mode = CHAN_MODE_ADMIN;    
+                    } elseif ($info[0] == 'o') {
+                        $mode = CHAN_MODE_OP;    
+                    } elseif ($info[0] == 'h') {
+                        $mode = CHAN_MODE_HALFOP;    
+                    } elseif ($info[0] == 'v') {
+                        $mode = CHAN_MODE_VOICE;    
+                    }
+                    if (in_array($info[0], array('q', 'a', 'o', 'h', 'v'))) {
+                        if ($type == \Ircbot\Parser\Mode::TYPE_SET) {
+                            $channel->nicklist[$info[1]] |= $mode;
+                        } elseif ($type == \Ircbot\Parser\Mode::TYPE_UNSET) {
+                            $channel->nicklist[$info[1]] &= ~ $mode;
+                        }
+                    }
+                }
+            }
+        } else {
+            $type = \Ircbot\Parser\Mode::AREA_USER;
         }
     }
 }

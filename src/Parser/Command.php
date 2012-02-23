@@ -29,8 +29,9 @@ class Command
             $cmd->mask = $maskParser($cmd->sender);
         } elseif ($tmp[1] == 'MODE') {
             $cmd = new \Ircbot\Command\Mode;
-            preg_match('/\:(.+) MODE (.+) (\:)?(.+)/', $rawdata, $matches);
+            preg_match('/\:(.+) MODE ([^ ]+) (\:)?(.+)/', $rawdata, $matches);
             list(, $cmd->mask, $cmd->target,, $cmd->modes) = $matches;
+            $cnd->modes = $tmp;
             $cmd->mask = $maskParser($cmd->mask);
         } elseif ($tmp[1] == 'JOIN') {
             $cmd = new \Ircbot\Command\Join;
