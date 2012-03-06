@@ -91,7 +91,6 @@ class Bot
             $data = (string) $queue->shift();
             $socket = \Ircbot\Application::getInstance()->getSocketHandler()
                 ->getSocketById($this->_socketId);
-            echo '[SEND]:: ' . $data;
             while (!$status = @$socket->write($data)) {
                 if ($status === false) {
                     $this->disconnected();
