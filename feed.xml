@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://marlinc.github.com/IRCBot</id>
-    <updated>2012-03-08T22:19:26+01:00</updated>
+    <updated>2012-03-08T22:39:16+01:00</updated>
     <title>IRCBot Latest Releases</title>
     <link href="http://marlinc.github.com/IRCBot/feed.xml" rel="self" />
     <author>
         <name>http://marlinc.github.com/IRCBot</name>
     </author>
 
-
+    <entry>
+        <title>IRCBot 0.1.3 (stable)</title>
+        <link href="http://marlinc.github.com/IRCBot/get/IRCBot-0.1.3.tgz" />
+        <id>http://marlinc.github.com/IRCBot/get/IRCBot-0.1.3.tgz</id>
+        <author>
+            <name>marlinc</name>
+        </author>
+        <updated>2012-03-08T21:38:41+01:00</updated>
+        <content>
+            
+-
+ 
+        </content>
+    </entry>
 </feed>
