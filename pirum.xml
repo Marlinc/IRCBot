@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<server>
+  <name>marlinc.github.com/IRCBot</name>
+  <summary>IRCBot</summary>
+  <alias>ircbot</alias>
+  <url>http://marlinc.github.com/IRCBot/</url>
+</server>
