@@ -12,10 +12,12 @@ class Command
         if ($tmp[0] == 'PING') {
             $cmd = new \Ircbot\Command\Ping;
             sscanf($rawdata, 'PING :%[ -~]', $cmd->code);
-        } elseif ($tmp[1] == 'NOTICE') {
+        } elseif ($tmp[0] == 'NOTICE' || $tmp[1] == 'NOTICE') {
             $cmd = new \Ircbot\Command\Notice;
-            preg_match('/^:(.+) NOTICE (.+) :(.*)$/', $rawdata, $matches);
-            list(, $cmd->sender, $cmd->target, $cmd->message) = $matches;
+            preg_match('/^(:(?P<sender>.+) )?NOTICE (?P<target>.+) :(?P<message>.*)$/', $rawdata, $matches);
+            $cmd->sender = $matches['sender'];
+            $cmd->target = $matches['target'];
+            $cmd->message = $matches['message'];
             if (($cmd->message[0] == chr(1))
               && ($cmd->message[strlen($cmd->message) - 1] == chr(1))) {
                 $ctcp = new \Ircbot\Command\CtcpReply;
