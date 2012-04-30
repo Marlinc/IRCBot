@@ -14,7 +14,7 @@ class Command
             sscanf($rawdata, 'PING :%[ -~]', $cmd->code);
         } elseif ($tmp[0] == 'NOTICE' || $tmp[1] == 'NOTICE') {
             $cmd = new \Ircbot\Command\Notice;
-            preg_match('/^(:(?P<sender>.+) )?NOTICE (?P<target>.+) :(?P<message>.[^ ]+)$/', $rawdata, $matches);
+            preg_match('/^(:(?P<sender>.+) )?NOTICE (?P<target>.[^ ]+) :(?P<message>.+)$/', $rawdata, $matches);
             $cmd->sender = $matches['sender'];
             $cmd->target = $matches['target'];
             $cmd->message = $matches['message'];
@@ -49,10 +49,10 @@ class Command
         } elseif ($tmp[1] == 'PRIVMSG') {
             $cmd = new \Ircbot\Command\PrivMsg;
             preg_match('/^:(.+) PRIVMSG (.[^ ]+) :(.*)$/', $rawdata, $matches);
-            var_dump($matches);
             list(, $cmd->sender, $cmd->target, $cmd->message) = $matches;
             if (($cmd->message[0] == chr(1))
-              && ($cmd->message[strlen($cmd->message) - 1] == chr(1))) {
+                && ($cmd->message[strlen($cmd->message) - 1] == chr(1))
+            ) {
                 $ctcp = new \Ircbot\Command\CtcpRequest;
                 $ctcp->sender = $cmd->sender;
                 $ctcp->target = $cmd->target;
@@ -96,6 +96,7 @@ class Command
                 $rawdata, ':%s KICK %s %s :%s', $cmd->source, $cmd->channel,
                 $cmd->user, $cmd->comment
             );
+            $cmd->mask = $maskParser($cmd->source);
         } elseif ($tmp[1] == 'KILL') {
             $cmd = new \Ircbot\Command\Kill;
             sscanf(
