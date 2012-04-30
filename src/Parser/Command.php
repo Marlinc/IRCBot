@@ -14,7 +14,7 @@ class Command
             sscanf($rawdata, 'PING :%[ -~]', $cmd->code);
         } elseif ($tmp[0] == 'NOTICE' || $tmp[1] == 'NOTICE') {
             $cmd = new \Ircbot\Command\Notice;
-            preg_match('/^(:(?P<sender>.+) )?NOTICE (?P<target>.+) :(?P<message>.*)$/', $rawdata, $matches);
+            preg_match('/^(:(?P<sender>.+) )?NOTICE (?P<target>.+) :(?P<message>.[^ ]+)$/', $rawdata, $matches);
             $cmd->sender = $matches['sender'];
             $cmd->target = $matches['target'];
             $cmd->message = $matches['message'];
@@ -48,7 +48,8 @@ class Command
             sscanf($rawdata, ':%s QUIT :%[ -~]', $cmd->mask, $cmd->message);
         } elseif ($tmp[1] == 'PRIVMSG') {
             $cmd = new \Ircbot\Command\PrivMsg;
-            preg_match('/^:(.+) PRIVMSG (.+) :(.*)$/', $rawdata, $matches);
+            preg_match('/^:(.+) PRIVMSG (.[^ ]+) :(.*)$/', $rawdata, $matches);
+            var_dump($matches);
             list(, $cmd->sender, $cmd->target, $cmd->message) = $matches;
             if (($cmd->message[0] == chr(1))
               && ($cmd->message[strlen($cmd->message) - 1] == chr(1))) {
