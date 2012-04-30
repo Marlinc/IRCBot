@@ -46,6 +46,7 @@ class Main extends AModule
     {
         Ircbot::getInstance()->getSignalHandler()->getSignals();
         Ircbot::getInstance()->getBotHandler()->handleBots();
+        \Ircbot\Handler\Timer::executeTimers(10);
     }
     
     public function onPing(\Ircbot\Command\Ping $ping)
