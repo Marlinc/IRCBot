@@ -38,6 +38,7 @@ class Mode
     
     public function __invoke($rawdata, $area = self::AREA_CHANNEL)
     {
+        $debug = \Ircbot\Application::getInstance()->getDebugger();
         $data = array();
         $arguments = explode(' ', $rawdata);
         $argument = 0;
@@ -51,12 +52,18 @@ class Mode
                 $data[$type] = array();
             } else {
                 if (!isset($this->modes[$area][$char])) {
-                    echo 'Unknown mode \'' . $char . '\'' . PHP_EOL;
+                    $debug->log(
+                        'parser', 'mode',
+                        'Unknown ' . (($area == self::AREA_CHANNEL) ? 'channel'
+                                      : 'user')
+                            . ' mode \'' . $char . '\'' . PHP_EOL
+                    );
                     continue;
                 }
                 $info = $this->modes[$area][$char];
                 if (($type == self::TYPE_SET && $info & self::MODE_SETARG)
-                || ($type == self::TYPE_UNSET && $info & self::MODE_UNSETARG)) {
+                    || ($type == self::TYPE_UNSET && $info & self::MODE_UNSETARG)
+                ) {
                     ++$argument;
                     $tmp = $arguments[$argument];
                 }
