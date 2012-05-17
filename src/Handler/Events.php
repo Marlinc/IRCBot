@@ -8,6 +8,8 @@
 
 namespace Ircbot\Handler;
 
+use \Ircbot\Application\Debug;
+
 /**
  * The IRCBot event handler
  *
@@ -37,8 +39,9 @@ class Events
             }
         } else {
             if ($eventName != 'loopIterate') {
-                \Ircbot\Application::getInstance()->getDebugger()
-                    ->log('Events', 'RaisedEvent', $eventName);
+                \Ircbot\Application::getInstance()->getDebugger()->log(
+                    'Events', 'RaisedEvent', $eventName, Debug::LEVEL_INFO
+                );
             }
             foreach ($this->_callbacks as $callback) {
                 if ($callback['eventName'] == $eventName) {
@@ -64,7 +67,7 @@ class Events
             if (!$callback[0] instanceof \Ircbot\Module\AModule) {
                 $debugger->log(
                     'Events', 'Warning', 'Trying to add a callback to a non '
-                        . 'module class'
+                        . 'module class', Debug::LEVEL_WARN
                 );
             }
         } else {
@@ -74,7 +77,8 @@ class Events
             throw new \Exception('Invalid callback');
         }
         $debugger->log(
-            'Events', 'AddCallback', $eventName . ' => ' . $callbackDisplay
+            'Events', 'AddCallback', $eventName . ' => ' . $callbackDisplay,
+            Debug::LEVEL_DEBUG
         );
         return $this;
     }
