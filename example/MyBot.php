@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/../src/Application.php';
 require_once __DIR__ . '/../src/shortFunctions.php';
+require 'dynamic-sleep.php';
 
 use \Ircbot\Command\PrivMsg;
 use \Ircbot\Command\Notice;
@@ -39,6 +40,7 @@ class MyBot extends \Ircbot\Module\AModule
     public function onConnect($botId)
     {
         \Ircbot\joinChan('#PHPIRCBot', $botId);
+        $bot = \Ircbot\getBotById(\Ircbot\botId());
     }
 
     public function onHelloWorld(PrivMsg $msg)
@@ -66,10 +68,11 @@ class MyBot extends \Ircbot\Module\AModule
     }
 
     public function onTest(PrivMsg $msg) {
-        \Ircbot\notice(nick(), token('0-'));
+        \Ircbot\notice(\Ircbot\nick(), \Ircbot\token('0-'));
     }
 
 }
 
+$ircBot->getModuleHandler()->addModuleByObject(new SleepTest);
 $ircBot->getModuleHandler()->addModuleByObject(new MyBot);
 $ircBot->getLoop()->startLoop();

@@ -31,6 +31,9 @@ class Loop
      * @var int
      */
     public $iterations = 0;
+    
+    public $sleepTime  = 25000;
+    
     /**
      * This method will start the infinite loop
      * 
@@ -60,7 +63,7 @@ class Loop
                 $condition = true;
             }
             call_user_func($onIterate, $this->iterations);
-            usleep(25*1000);
+            usleep($this->sleepTime);
         }
         return $this->iterations;
     }
