@@ -37,9 +37,9 @@ class Debug extends Debug\ADebug
      * 
      * @return void
      */
-    public function log($category, $type, $message,
-        $level = IRCBOT_DEBUG_NORMAL)
-    {
+    public function log(
+        $category, $type, $message, $level = self::LEVEL_INFO
+    ) {
         echo sprintf('[%s][%s]:: %s', $category, $type, $message) . PHP_EOL;
     }
 }

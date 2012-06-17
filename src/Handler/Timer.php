@@ -26,14 +26,14 @@ class Timer
             if (microtime(true) * 1000 - $start * 1000 > $maxTime) {
                 $debug->log(
                     'timers', 'time-execeed',
-                    'Allowed running time exeeded'
+                    'Allowed running time exeeded', $debug::LEVEL_DEBUG
                 );
                 break;
             }
             if (microtime(true) * 1000 - $timer->lastrun * 1000 > $timer->interval) {
                 $debug->log(
                     'timers', 'execution',
-                    'Timer \'' . $timer->getName() . '\' started'
+                    'Timer \'' . $timer->getName() . '\' started', $debug::LEVEL_DEBUG
                 );
                 call_user_func($timer->callback, $timer);
                 ++$timer->iterations;
@@ -43,7 +43,7 @@ class Timer
                         $debug->log(
                             'timers', 'done',
                             'Timer \'' . $timer->getName()
-                                . '\' done. Removing..'
+                                . '\' done. Removing..', $debug::LEVEL_DEBUG
                         );
                         self::delTimer($timer->getName());
                     }
