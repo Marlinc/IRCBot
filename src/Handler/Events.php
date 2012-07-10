@@ -1,14 +1,8 @@
 <?php
-/**
- * @category IRCBot
- * @package IRCBot_Handlers
- * @subpackage Events
- * @author Marlin Cremers <marlinc@mms-projects.net>
- */
-
 namespace Ircbot\Handler;
 
 use \Ircbot\Application\Debug;
+use \Symfony\Component\EventDispatcher\Event;
 
 /**
  * The IRCBot event handler
@@ -17,7 +11,7 @@ use \Ircbot\Application\Debug;
  * you can simply raise any event by calling the raiseEvent method
  * or register a callback with any event by calling the addEventCallback method
  */
-class Events
+class Events extends \Symfony\Component\EventDispatcher\EventDispatcher
 {
     /**
      * This variable contains all the callbacks registered with the events
@@ -41,6 +35,11 @@ class Events
             if ($eventName != 'loopIterate') {
                 \Ircbot\Application::getInstance()->getDebugger()->log(
                     'Events', 'RaisedEvent', $eventName, Debug::LEVEL_INFO
+                );
+                \Ircbot\Application::getInstance()->getDebugger()->log(
+                    'Events', 'Event', 'WARNING  - This method is deprecated! '
+                        . 'Use dispatch instead. (' . $eventName . ')',
+                    Debug::LEVEL_WARN
                 );
             }
             foreach ($this->_callbacks as $callback) {
@@ -80,6 +79,31 @@ class Events
             'Events', 'AddCallback', $eventName . ' => ' . $callbackDisplay,
             Debug::LEVEL_DEBUG
         );
+        \Ircbot\Application::getInstance()->getDebugger()->log(
+            'Events', 'Callback', 'WARNING  - This method is deprecated! '
+                . 'Use addListener instead. (' . $eventName . ')',
+            Debug::LEVEL_WARN
+        );
         return $this;
     }
+    
+    public function addListener($eventName, $listener, $priority = 0)
+    {
+        if (!$this->hasListeners($eventName)) {
+            $this->dispatch('eventdispatcher.event_used.' . $eventName);
+        }
+        parent::addListener($eventName, $listener, $priority);
+    }
+    
+    protected function doDispatch($listeners, $eventName, Event $event)
+    {
+        if ($eventName != 'loop.iterated') {
+            \Ircbot\Application::getInstance()->getDebugger()->log(
+                'Symfony', 'EventDispatcher', 'Dispatched event ' . $eventName,
+                Debug::LEVEL_INFO
+            );
+        }
+        parent::doDispatch($listeners, $eventName, $event);
+    }
+    
 }
