@@ -1,10 +1,10 @@
 <?php
-
 namespace Ircbot\Module;
 
 use \Ircbot\Application as Ircbot;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-class Main extends AModule
+class Main extends AModule implements EventSubscriberInterface
 {
     public $events = array(
         'onNotice'      => 'onMessage',
@@ -16,7 +16,6 @@ class Main extends AModule
         'on333'         => 'onTopicWhoTime',
         'on366'         => 'onEndNames',
         'on004'         => 'onMyInfo',
-        'SIGINT'        => 'onSIGINT',
         'onRawdata',
         'onPing',
         'onJoin',
@@ -27,10 +26,22 @@ class Main extends AModule
         'onNameReply',
         'onISupport',
         'onCtcpRequest',
-        'loopIterate',
     );
     
     private $_tmp = array();
+    
+    public function __construct()
+    {
+        Ircbot::getInstance()->getEventHandler()->addSubscriber($this);
+    }
+    
+    static public function getSubscribedEvents()
+    {
+        return array(
+            'loop.iterated' => array('loopIterate', 0),
+            'signal.SIGINT' => array('onSIGINT',    100),
+        );
+    }
 
     public function onRawdata($data)
     {

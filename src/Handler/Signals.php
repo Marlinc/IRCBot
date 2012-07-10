@@ -1,11 +1,4 @@
 <?php
-/**
- * @category IRCBot
- * @package IRCBot_Handlers
- * @subpackage Signals
- * @author Marlin Cremers <marlinc@mms-projects.net>
- */
-
 namespace Ircbot\Handler;
 
 /**
@@ -22,26 +15,28 @@ namespace Ircbot\Handler;
  */
 class Signals
 {
+
     public function  __construct()
     {
-        //echo "Installing signal handler...\n";
-        pcntl_signal(SIGHUP, array($this, 'handleSignal'));
-        pcntl_signal(SIGTERM, array($this, 'handleSignal'));
-        pcntl_signal(SIGUSR1, array($this, 'handleSignal'));
-        pcntl_signal(SIGUSR2, array($this, 'handleSignal'));
-        pcntl_signal(SIGPWR, array($this, 'handleSignal'));
-        pcntl_signal(SIGINT, array($this, 'handleSignal'));
+        $this->addListener('SIGHUP');
+        $this->addListener('SIGTERM');
+        $this->addListener('SIGUSR1');
+        $this->addListener('SIGUSR2');
+        $this->addListener('SIGPWR');
+        $this->addListener('SIGINT');
     }
+    
     /**
      * This function will call the signal handlers for pending signals
      */
+     
     public function getSignals()
     {
         pcntl_signal_dispatch();
     }
+    
     public function handleSignal($signal)
     {
-        //echo "signal handler called\n";
         if ($signal == SIGHUP) {
             $this->_raiseEvent('SIGHUP');
         } elseif ($signal == SIGTERM) {
@@ -56,9 +51,34 @@ class Signals
             $this->_raiseEvent('SIGINT');
         }
     }
+    
+    public function activateSignalListen($event)
+    {
+        $this->listenOnSignal(end(explode('.', $event->getName())));
+    }
+    
     private function _raiseEvent($signalName)
     {
         \Ircbot\Application::getInstance()->getEventHandler()
             ->raiseEvent($signalName);
+        \Ircbot\Application::getInstance()->getEventHandler()
+            ->dispatch('signal.' . $signalName);
     }
+    
+    protected function addListener($signal)
+    {
+        \Ircbot\Application::getInstance()->getEventHandler()->addListener(
+            'eventdispatcher.event_used.signal.' . $signal,
+            array($this, 'activateSignalListen')
+        );
+    }
+        
+    protected function listenOnSignal($signal)
+    {
+        pcntl_signal(constant($signal), array($this, 'handleSignal'));
+        \Ircbot\Application::getInstance()->getDebugger()->log(
+            'Signals', 'Listening', 'Now listening on signal ' . $signal
+        );
+    }
+
 }

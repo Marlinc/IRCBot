@@ -73,6 +73,8 @@ class Loop
     {
         \Ircbot\Application::getInstance()->getEventHandler()
             ->raiseEvent('loopStarted');
+        \Ircbot\Application::getInstance()->getEventHandler()
+            ->dispatch('loop.started', new \Ircbot\Event\Loop\Started);
     }
     /**
      * Gets executed every time the loop iterates
@@ -85,5 +87,8 @@ class Loop
     {
         \Ircbot\Application::getInstance()->getEventHandler()
             ->raiseEvent('loopIterate', $iteration);
+        $event = new \Ircbot\Event\Loop\Iterated($iteration);
+        \Ircbot\Application::getInstance()->getEventHandler()
+            ->dispatch('loop.iterated', $event);
     }
 }
