@@ -4,18 +4,24 @@ require_once __DIR__ . '/../src/shortFunctions.php';
 
 use \Ircbot\Command\PrivMsg;
 use \Ircbot\Command\Notice;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 $ircBot = Ircbot\Application::getInstance();
 
-class MyBot extends \Ircbot\Module\AModule
+class MyBot extends \Ircbot\Module\AModule implements EventSubscriberInterface
 {
 
-    public $events = array(
-        'loopStarted'    => 'onLoopStarted',
-        'onConnect',
-    );
+    static public function getSubscribedEvents()
+    {
+        return array(
+            'loop.started'  => array('onLoopStarted', 0),
+            'irc.connected' => array('onConnect', 0),
+        );
+    }
 
     public function  __construct() {
+        \Ircbot\Application::getInstance()->getEventHandler()
+            ->addSubscriber($this);
         \Ircbot\Application::getInstance()->getUserCommandHandler()
             ->setDefaultMsgType(TYPE_CHANMSG)
             ->addCommand(array($this, 'onHelloWorld'), 'Hello World!')
@@ -36,9 +42,10 @@ class MyBot extends \Ircbot\Module\AModule
         \Ircbot\Application::getInstance()->getBotHandler()->addBot($bot);
     }
 
-    public function onConnect($botId)
+    public function onConnect($event)
     {
-        \Ircbot\joinChan('#PHPIRCBot', $botId);
+        
+        \Ircbot\joinChan('#PHPIRCBot', $event->getBotId());
     }
 
     public function onHelloWorld(PrivMsg $msg)

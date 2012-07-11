@@ -75,6 +75,9 @@ class Main extends AModule implements EventSubscriberInterface
         $bot->isConnected = true;
         Ircbot::getInstance()->getEventHandler()
             ->raiseEvent('onConnect', $numeric->botId);
+        $event = new \Ircbot\Event\Irc\Connected($numeric->botId, $numeric);
+        Ircbot::getInstance()->getEventHandler()
+            ->dispatch('irc.connected', $event);
     }
     public function onMOTDStart(\Ircbot\Numeric\Numeric $numeric)
     {

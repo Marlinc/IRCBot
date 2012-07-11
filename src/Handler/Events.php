@@ -36,11 +36,11 @@ class Events extends \Symfony\Component\EventDispatcher\EventDispatcher
                 \Ircbot\Application::getInstance()->getDebugger()->log(
                     'Events', 'RaisedEvent', $eventName, Debug::LEVEL_INFO
                 );
-                \Ircbot\Application::getInstance()->getDebugger()->log(
+                /*\Ircbot\Application::getInstance()->getDebugger()->log(
                     'Events', 'Event', 'WARNING  - This method is deprecated! '
                         . 'Use dispatch instead. (' . $eventName . ')',
                     Debug::LEVEL_WARN
-                );
+                );*/
             }
             foreach ($this->_callbacks as $callback) {
                 if ($callback['eventName'] == $eventName) {
@@ -79,11 +79,11 @@ class Events extends \Symfony\Component\EventDispatcher\EventDispatcher
             'Events', 'AddCallback', $eventName . ' => ' . $callbackDisplay,
             Debug::LEVEL_DEBUG
         );
-        \Ircbot\Application::getInstance()->getDebugger()->log(
+        /*\Ircbot\Application::getInstance()->getDebugger()->log(
             'Events', 'Callback', 'WARNING  - This method is deprecated! '
                 . 'Use addListener instead. (' . $eventName . ')',
             Debug::LEVEL_WARN
-        );
+        );*/
         return $this;
     }
     
