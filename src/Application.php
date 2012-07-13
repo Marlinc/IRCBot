@@ -15,6 +15,9 @@ namespace Ircbot;
  
 require_once 'Application/Autoloader.php';
 
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Reference;
+
 /**
  * The main IRCBot application object
  *
@@ -49,19 +52,41 @@ class Application
     private function _init()
     {
         new Application\Autoloader(__DIR__);
-        $this->_debugger = new Application\Debug;
-        $this->_handlers['events']        = new Handler\Events;
-        $this->_handlers['signals']       = new Handler\Signals;
-        $this->_handlers['modules']       = new Handler\Module;
-        $this->_handlers['bots']          = new Handler\Bots;
-        $this->_handlers['sockets']       = new Handler\Sockets;
-        $this->_handlers['queues']        = new Handler\Queues;
-        $this->_handlers['responses']     = new Handler\Responses;
-        $this->_handlers['user_commands'] = new Handler\UserCommands;
-        $this->_handlers['identifiers']   = new Handler\Identifiers;
+        
+        $container = new ContainerBuilder();
+        
+        $container->register('debugger', '\Ircbot\Application\Debug');
+        $container->register('events', '\Ircbot\Handler\Events')
+            ->addArgument(new Reference('debugger'));
+        $container->register('signals', '\Ircbot\Handler\Signals')
+            ->addArgument(new Reference('events'))
+            ->addArgument(new Reference('debugger'));
+        $container->register('modules', '\Ircbot\Handler\Module')
+            ->addArgument(new Reference('events'));
+        $container->register('bots', '\Ircbot\Handler\Bots');
+        $container->register('sockets', '\Ircbot\Handler\Sockets');
+        $container->register('queues', '\Ircbot\Handler\Queues');
+        $container->register('responses', '\Ircbot\Handler\Responses');
+        $container->register('user_commands', '\Ircbot\Handler\UserCommands');
+        $container->register('identifiers', '\Ircbot\Handler\Identifiers');
+        $container->register('loop', '\Ircbot\Application\Loop')
+            ->addArgument(new Reference('events'));
+            
+            
+        $this->_debugger = $container->get('debugger');
+        $this->_handlers['events']        = $container->get('events');
+        $this->_handlers['signals']       = $container->get('signals');
+        $this->_handlers['modules']       = $container->get('modules');
+        $this->_handlers['bots']          = $container->get('bots');
+        $this->_handlers['sockets']       = $container->get('sockets');
+        $this->_handlers['queues']        = $container->get('queues');
+        $this->_handlers['responses']     = $container->get('responses');
+        $this->_handlers['user_commands'] = $container->get('user_commands');
+        $this->_handlers['identifiers']   = $container->get('identifiers');
         $this->_handlers['channels']      = new Handler\Channels;
         $this->_handlers['networks']      = new Handler\Networks;
-        $this->_loop                      = new Application\Loop;
+        $this->_loop                      = $container->get('loop');
+        
         $mainModule = new Module\Main;
         $this->getModuleHandler()->addModuleByObject($mainModule);
         $this->getEventHandler()->raiseEvent('ircbotInitialized');

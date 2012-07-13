@@ -13,11 +13,17 @@ namespace Ircbot\Handler;
  */
 class Module
 {
+    
+    protected $eventHandler;
     private $_modules = array();
+
+    public function __construct(\Ircbot\Handler\Events $eventHandler)
+    {
+        $this->eventHandler = $eventHandler;
+    }
 
     public function addModuleByObject(&$module)
     {
-        $eventHandler = \Ircbot\Application::getInstance()->getEventHandler();
         if ($module instanceof \Ircbot\Module\AModule) {
             foreach ($module->events as $key => $value) {
                 if (is_numeric($key)) {
@@ -28,12 +34,13 @@ class Module
                     $method = $value;
                 }
                 $callback   = array($module, $method);
-                $eventHandler->addEventCallback($event, $callback);
+                $this->eventHandler->addEventCallback($event, $callback);
             }
         }
         $this->_modules[get_class($module)] = $module;
         return $this;
     }
+    
     public function getModuleByName($moduleName)
     {
         return (isset($this->_modules[$moduleName]))

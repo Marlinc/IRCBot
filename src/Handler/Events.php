@@ -19,6 +19,13 @@ class Events extends \Symfony\Component\EventDispatcher\EventDispatcher
      * @var array
      */
     private $_callbacks = array();
+    protected $debugger;
+    
+    public function __construct(\Ircbot\Application\Debug $debugger)
+    {
+        $this->debugger = $debugger;
+    }
+    
     /**
      * Raises the specific event with the data if given
      * @param mixed $eventName The name of the event to be raised or a
@@ -33,10 +40,10 @@ class Events extends \Symfony\Component\EventDispatcher\EventDispatcher
             }
         } else {
             if ($eventName != 'loopIterate') {
-                \Ircbot\Application::getInstance()->getDebugger()->log(
+                $this->debugger->log(
                     'Events', 'RaisedEvent', $eventName, Debug::LEVEL_INFO
                 );
-                /*\Ircbot\Application::getInstance()->getDebugger()->log(
+                /*$this->debugger->log(
                     'Events', 'Event', 'WARNING  - This method is deprecated! '
                         . 'Use dispatch instead. (' . $eventName . ')',
                     Debug::LEVEL_WARN
@@ -56,7 +63,6 @@ class Events extends \Symfony\Component\EventDispatcher\EventDispatcher
      */
     public function addEventCallback($eventName, $callback)
     {
-        $debugger = \Ircbot\Application::getInstance()->getDebugger();
         $tmp = array();
         $tmp['eventName'] = $eventName;
         $tmp['callback'] = $callback;
@@ -64,7 +70,7 @@ class Events extends \Symfony\Component\EventDispatcher\EventDispatcher
         if (is_array($callback)) {
             $callbackDisplay = get_class($callback[0]) . '::' . $callback[1];
             if (!$callback[0] instanceof \Ircbot\Module\AModule) {
-                $debugger->log(
+                $this->debugger->log(
                     'Events', 'Warning', 'Trying to add a callback to a non '
                         . 'module class', Debug::LEVEL_WARN
                 );
@@ -75,11 +81,11 @@ class Events extends \Symfony\Component\EventDispatcher\EventDispatcher
         if (!is_callable($callback)) {
             throw new \Exception('Invalid callback');
         }
-        $debugger->log(
+        $this->debugger->log(
             'Events', 'AddCallback', $eventName . ' => ' . $callbackDisplay,
             Debug::LEVEL_DEBUG
         );
-        /*\Ircbot\Application::getInstance()->getDebugger()->log(
+        /*$this->debugger->log(
             'Events', 'Callback', 'WARNING  - This method is deprecated! '
                 . 'Use addListener instead. (' . $eventName . ')',
             Debug::LEVEL_WARN
@@ -98,7 +104,7 @@ class Events extends \Symfony\Component\EventDispatcher\EventDispatcher
     protected function doDispatch($listeners, $eventName, Event $event)
     {
         if ($eventName != 'loop.iterated') {
-            \Ircbot\Application::getInstance()->getDebugger()->log(
+            $this->debugger->log(
                 'Symfony', 'EventDispatcher', 'Dispatched event ' . $eventName,
                 Debug::LEVEL_INFO
             );

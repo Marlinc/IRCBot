@@ -1,3 +1,6 @@
 [submodule "src/library/Symfony/Component/EventDispatcher"]
 	path = src/library/Symfony/Component/EventDispatcher
 	url = git://github.com/symfony/EventDispatcher.git
+[submodule "src/library/Symfony/Component/DependencyInjection"]
+	path = src/library/Symfony/Component/DependencyInjection
+	url = git://github.com/symfony/DependencyInjection.git

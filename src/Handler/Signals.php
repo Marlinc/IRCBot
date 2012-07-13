@@ -16,8 +16,15 @@ namespace Ircbot\Handler;
 class Signals
 {
 
-    public function  __construct()
-    {
+    protected $eventHandler;
+    protected $debugger;
+
+    public function  __construct(
+        \Ircbot\Handler\Events $eventHandler,
+        \Ircbot\Application\Debug $debugger
+    ) {
+        $this->eventHandler = $eventHandler;
+        $this->debugger = $debugger;
         $this->addListener('SIGHUP');
         $this->addListener('SIGTERM');
         $this->addListener('SIGUSR1');
@@ -59,15 +66,13 @@ class Signals
     
     private function _raiseEvent($signalName)
     {
-        \Ircbot\Application::getInstance()->getEventHandler()
-            ->raiseEvent($signalName);
-        \Ircbot\Application::getInstance()->getEventHandler()
-            ->dispatch('signal.' . $signalName);
+        $this->eventHandler->raiseEvent($signalName);
+        $this->eventHandler->dispatch('signal.' . $signalName);
     }
     
     protected function addListener($signal)
     {
-        \Ircbot\Application::getInstance()->getEventHandler()->addListener(
+        $this->eventHandler->addListener(
             'eventdispatcher.event_used.signal.' . $signal,
             array($this, 'activateSignalListen')
         );
@@ -76,7 +81,7 @@ class Signals
     protected function listenOnSignal($signal)
     {
         pcntl_signal(constant($signal), array($this, 'handleSignal'));
-        \Ircbot\Application::getInstance()->getDebugger()->log(
+        $this->debugger->log(
             'Signals', 'Listening', 'Now listening on signal ' . $signal
         );
     }

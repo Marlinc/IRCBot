@@ -31,6 +31,15 @@ class Loop
      * @var int
      */
     public $iterations = 0;
+    
+    protected $eventHandler;
+    
+    public function __construct(\Ircbot\Handler\Events $eventHandler)
+    {
+        $this->eventHandler = $eventHandler;
+    }
+    
+    
     /**
      * This method will start the infinite loop
      * 
@@ -41,6 +50,7 @@ class Loop
      * 
      * @return int Returns the amount of iterations runned
      */
+     
     public function startLoop($iterations = 0, $onStart = null,
         $onIterate = null)
     {
@@ -71,10 +81,10 @@ class Loop
      */
     public function onStart()
     {
-        \Ircbot\Application::getInstance()->getEventHandler()
-            ->raiseEvent('loopStarted');
-        \Ircbot\Application::getInstance()->getEventHandler()
-            ->dispatch('loop.started', new \Ircbot\Event\Loop\Started);
+        $this->eventHandler->raiseEvent('loopStarted');
+        $this->eventHandler->dispatch(
+            'loop.started', new \Ircbot\Event\Loop\Started
+        );
     }
     /**
      * Gets executed every time the loop iterates
@@ -85,10 +95,9 @@ class Loop
      */
     public function onIterate($iteration)
     {
-        \Ircbot\Application::getInstance()->getEventHandler()
-            ->raiseEvent('loopIterate', $iteration);
+        $this->eventHandler->raiseEvent('loopIterate', $iteration);
         $event = new \Ircbot\Event\Loop\Iterated($iteration);
-        \Ircbot\Application::getInstance()->getEventHandler()
-            ->dispatch('loop.iterated', $event);
+        
+        $this->eventHandler->dispatch('loop.iterated', $event);
     }
 }
