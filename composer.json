@@ -1,0 +1,14 @@
+{
+    "name": "marlinc/irc-bot",
+    "description": "A PHP IRC bot framework",
+    "require": {
+        "symfony/event-dispatcher": "2.1.0"
+    },
+    "license": "BSD-clause 2",
+    "authors": [
+        {
+            "name": "Marlin Cremers",
+            "email": "marlin.cremers@gmail.com"
+        }
+    ]
+}
