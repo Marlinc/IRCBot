@@ -4,11 +4,16 @@
     "require": {
         "symfony/event-dispatcher": "2.1.0"
     },
-    "license": "BSD-clause 2",
+    "license": "BSD-2-Clause-FreeBSD",
     "authors": [
         {
             "name": "Marlin Cremers",
             "email": "marlin.cremers@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-0": {
+            "Ircbot\\": "src/"
+        }
+    }
 }
